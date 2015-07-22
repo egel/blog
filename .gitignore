@@ -1,7 +1,11 @@
 # pelican
 output/
-plugins/  # use simlink to global folder ~/.pelican-plugins
-theme/    # use simlink to global folder ~/.pelican-themes
+
+# use simlink to global folder ~/.pelican-plugins
+plugins/
+
+# use simlink to global folder ~/.pelican-themes
+theme/
 
 
 # Python
