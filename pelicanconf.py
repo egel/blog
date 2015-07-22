@@ -45,6 +45,7 @@ DEFAULT_METADATA = {
   'status': 'draft',
 }
 
+DEFAULT_DATE_FORMAT = '%d %B %Y'
 
 THEME = "theme/egelance"
 
@@ -53,7 +54,11 @@ PLUGINS = [ 'tipue_search' ]
 
 DIRECT_TEMPLATES = (('index', 'tags', 'categories', 'archives', 'search'))
 
-PYGMENTS_RST_OPTIONS = {'classprefix': 'pgcss', 'linenos': 'table'}
+
+PYGMENTS_RST_OPTIONS = {
+    'classprefix': 'pgcss',
+    'linenos': 'table'
+}
 
 
 SUMMARY_MAX_LENGTH = 50
