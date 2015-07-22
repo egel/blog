@@ -4,10 +4,17 @@ Made with Pelican static generator.
 
 ## Initial
 
-    mkvirtualenv -p python3 blogging
-    pip install pelican markdown
+Downloading plugins, themes, ect
+
+    git clone --recursive https://github.com/getpelican/pelican-plugins ~/.pelican-plugins
+
+
+Setting environment
+
+    mkvirtualenv -p pelicanblog
+    workon pelicanblog
+    (pelicanblog) pip install -r requirements.txt --no-index
     deactivate
-    workon blogging
 
 then run server to test (it works in backgroud)
 
