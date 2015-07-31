@@ -1,4 +1,14 @@
+# pelican
+output/
+
+# use simlink to global folder ~/.pelican-plugins
+plugins/
+
+# use simlink to global folder ~/.pelican-themes
+theme/
+
+
+# Python
 *.pid
 *.pyc
 *.swp
-output/
