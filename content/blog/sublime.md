@@ -62,6 +62,7 @@ Pewnie już dostrzegłeś w nagłówku słowo "beta". Autorzy edytora tworzą ni
 
 Ręczna instalacja z [oficjalnej strony Sublime Text 3][22] lub **autmatyczna** w terminalu:
 
+    :::python
     $ wget http://c758482.r82.cf2.rackcdn.com/sublime-text_build-3059_amd64.deb -P /tmp && \
     sudo dpkg -i /tmp/sublime-text_build-3059_amd64.deb && \
     rm /tmp/sublime-text_build-3059_amd64.deb

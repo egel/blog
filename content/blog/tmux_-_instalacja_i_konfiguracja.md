@@ -1,6 +1,10 @@
-Title: Tmux - instalacja i konfiguracja
-Date: 2014-08-16 12:42
-Status: published
+Title:    Tmux - instalacja i konfiguracja
+Date:     2014-08-16 12:42
+Modified: 2015-08-09 01:42
+Author:   Maciej Sypień
+Status:   published
+Lang:     pl
+Tags:     tmux, console
 Category: Self improvement
 
 <div style="float:left">
