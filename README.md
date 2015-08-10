@@ -18,6 +18,7 @@ Setting environment
 
 then run server to test (it works in backgroud)
 
+    workon blogging
     ./develop_server.py start
 
 
