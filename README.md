@@ -8,6 +8,9 @@ Downloading plugins, themes, ect
 
     git clone --recursive https://github.com/getpelican/pelican-plugins ~/.pelican-plugins
 
+Downloading repo:
+
+    git clone --recursive git@bitbucket.org:egel/pelican-egel-blog.git
 
 Setting environment
 
