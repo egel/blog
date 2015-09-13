@@ -12,3 +12,4 @@ theme/
 *.pid
 *.pyc
 *.swp
+npm-debug.log
