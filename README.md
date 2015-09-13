@@ -3,16 +3,18 @@ Made with Pelican static generator.
 
 
 ## Initial
+Download main repository
 
-Downloading plugins, themes, ect
-
-    git clone --recursive https://github.com/getpelican/pelican-plugins ~/.pelican-plugins
-
-Downloading repo:
-
+    cd ~/workspace
     git clone --recursive git@bitbucket.org:egel/pelican-egel-blog.git
 
-Setting environment
+
+Download plugins
+
+    git clone --recursive https://github.com/getpelican/pelican-plugins ~/.pelican-plugins
+    ln -s $HOME/.pelican-plugins $HOME/workspace/pelican-egel-blog/plugins
+
+Set the environment
 
     mkvirtualenv -p pelicanblog
     workon pelicanblog
