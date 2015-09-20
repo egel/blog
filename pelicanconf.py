@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR          = 'Maciej Sypień'
 SITENAME        = "The Egel's Blog"
-SITEURL         = 'http://pelican-egel-blog.test'
+SITEURL         = 'http://pelican-egel-blog.local'
 TIMEZONE        = 'Europe/Warsaw'
 DEFAULT_LANG    = 'en'
 
@@ -49,9 +49,9 @@ DEFAULT_DATE_FORMAT = '%d %B %Y'
 THEME = "theme/egelance"
 
 PLUGIN_PATHS = [ 'plugins' ]
-PLUGINS = [ 'tipue_search' ]
+PLUGINS = [ 'tipue_search', 'better_codeblock_line_numbering' ]
 
-MD_EXTENSIONS = ['codehilite(css_class=highlight)','extra']
+MD_EXTENSIONS = ['fenced_code', 'codehilite(css_class=highlight, linenums=False)', 'extra']
 
 DIRECT_TEMPLATES = (('index', 'tags', 'categories', 'archives', 'search'))
 
@@ -62,7 +62,7 @@ SUMMARY_MAX_LENGTH      = 50
 NEWEST_FIRST_ARCHIVES   = True  # Show most recent posts first
 REVERSE_CATEGORY_ORDER  = False
 
-PYGMENTS_STYLE = "tango"
+PYGMENTS_STYLE = "monokai"
 
 # path-specific metadata
 # EXTRA_PATH_METADATA = {
