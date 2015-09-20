@@ -26,6 +26,9 @@ then run server to test (it works in backgroud)
     workon blogging
     ./develop_server.py start
 
+or run tmux session
+
+    ./tmux-console.sh
 
 ## License
 MIT 2015 Maciej Sypień
