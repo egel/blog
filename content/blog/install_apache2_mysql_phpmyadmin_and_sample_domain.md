@@ -1,72 +1,99 @@
-Title: Setup LAMP server with sample domain
-Date: 2014-04-06
-Modified: 2015-06-27
-Status: published
-Category: How to
-Tags: apache, mysql, php, domains
+Title:      Setup LAMP server with sample domain
+Date:       2014-04-06
+Modified:   2015-06-27
+Status:     published
+Category:   How to
+Tags:       apache, mysql, php, domains
+Summary:    We will install standard and secure Linux - Apache - MySQL - PHP
+            configuration with PHPMyAdmin for easy database management and Apache's
+            VirtualHost. Shall we begin? :)
+
+
+Every young IT person will at last faced with the challenge of creating his own
+website.  It could be a simple static site, managed by some static site
+generator (like [Jekkly](http://jekyllrb.com/),
+[Octopress](http://octopress.org/), [Pelican](http://docs.getpelican.com) or
+[some others examples](https://www.staticgen.com/)). But few proud, claim that
+it's to easy and they would like to try something more complex like basic PHP
+CMS similar to [Joomla](https://www.joomla.com/),
+[Wordpress](https://wordpress.org) or even use a professional, enterprise class
+frameworks like Laravel, Symfony or Zend.
+
+Whatever they choose, they will need some tools to deal with showing to the
+whole world their new website project.
+
+In this simple article I'll show you how to build your own simple (and standard
+in these days) server configuration based on (Ubuntu 14.04 LTS) LAMP, but those
+tools can be easily replaced with others technologies. For example if you're
+interested in Django you could replace PHP language with more mature Python (of
+course some setting will vary a bit from content presented in this article, but
+in the end setup will be made).
+
+I think this is good, start example to play with :) Enjoy.
+
 
 ### Table of content
-
 - [Apache 2](#apache-2)
+  * [Add user to www-data group](#add-user-to-www-data-group)
+- [MySQL](#mysql)
+- [PHP](#php)
+- [PHPMyAdmin](#phpmyadmin)
+- [Common problems](#common-problems)
+
 
 Dobry polski [artykuł](http://www.ubuntu-pomoc.org/instalacja-apache-php5-mysql/) oraz [angieslki][article_about_apache2_url].
 
 
-Let' begin from updating our system:
+Let's begin from updating our Debian based system (Ubuntu):
 
 ```shell
 sudo apt-get update
 ```
 
-### Apache 2.4
-Installation Apache with its useful depedencies
+### Apache
+Installation Apache 2.4 with its useful dependencies:
 
 ```shell
 sudo apt-get install apache2 apache2-doc apache2-utils apache2-mpm-worker
 ```
 
-And restat of the service
+and restart the service with
 
-```shell
-sudo /etc/init.d/apache2 restart
-```
-
-or
 ```shell
 sudo service apache2 restart
 ```
+Or also you can use good, oldshool [daemon][wikipedia-daemon] `sudo /etc/init.d/apache2 restart`.
 
-Now we take a peek on our server's version
+Now we take a peek on our server's version by writing `apache2 -v` in your
+console.
 
-```console
-apache2 -v
-```
+Now, if all went well, you could start your web browser with `http://localhost/`
+to check if "It works!" appears to you :)
 
-Start some of your webbrowser to check if "it works" 
+> "It works!" page is actually simple `index.html` file stored in
+> `/var/www/html/` directory, but details comes later :)
 
-```console
-firefox http://localhost/
-```
 
-Powinno ukazać się "It Works". Jest to plik index.html znajdujący sie w katalogu `/var/www/`, ale o szczegółach później.
+#### Add user to www-data group
+Now we'd like to add your current user (`$USER`)  to `www-data` group used by
+apache server. We will do this to prevent you from some error-access failures
+like user owner.
 
-#### Dodanie do www-data
-Aby sprawdzić czy nasz user jest w tej grupie sprawdzamy:
+To check if your current user belongs to `www-data` group simply do:
 
 ```shell
-groups maciek
+groups $USER
 ```
 
-
-
-Dodaj istniejącego już użytkownika do grupy `www-data` group:
+Now add existing user to `www-data` group.
 
 ```shell
 sudo usermod -a -G maciek www-data
 ```
 
-#### Dodanie nazwy dla serwera
-To wszystko aby nie powstawał komunikat o treści podobnej do:
+#### Add a name to the server
+Basic apache configuration does not impose add the server name, but I really
+don't like to see some text like this below, when I reloading the server.
 
 ```
  * Restarting web server apache2
@@ -74,19 +101,18 @@ AH00558: apache2: Could not reliably determine the server's fully qualified doma
  ...done.
 ```
 
-stad wykonujemy komendę:
+That's why we will name it :)
 
 ```shell
-echo "ServerName localhost" | sudo tee /etc/apache2/conf-available/servername.conf
+echo "MyOwnServerName localhost" | sudo tee /etc/apache2/conf-available/servername.conf
 ```
 
-i uaktywniamy naszą konfigurację:
+then we're enable its name in for apache config by
 
 ```shell
 sudo a2enconf servername
 ```
-
-Jeszcze tylko testowy restart servera:
+Just restart the server to make sure that all is done correctly.
 
 ```shell
 sudo service apache2 restart
@@ -94,20 +120,30 @@ sudo service apache2 restart
   ...done.
 ```
 
-...i pełny zaciesz z naszej strony :)
+...and now full smile should appear on your face :)
+
 
 ### MySQL
+MySQL is one of the most popular databases on the website market. So we will
+install it along.
 
-  Instalacja bazy danych MySQL. Podczas instalacji program zapyta o hasło dla użytkownika root, więc podajemy hasło i **zapamiętujemy**.
+During the installation process program ask you for the root password, so we
+write it and **remeber it** for later use.
 
 ```shell
 sudo apt-get install mysql-server
 ```
+That's it for the database server :)
 
 
 ### PHP
+Instalation of the PHP interperter isn't hard. One important thing is to install
+all modules related to our new setup, enable it, and configure to suite your
+needs. I'll show you most commony used setup to save your precious time
+searching it through Internet.
 
-#### Instalacja interpretera PHP
+####  Installation of PHP interpreter
+Below we will install all useful modules, and enable them Apache server and PHP.
 
 ```shell
 $ sudo apt-get install php5 php5-cli php5-common php5-gd libapache2-mod-php5 php5-mysql libapache2-mod-auth-mysql apache2-mpm-prefork libapache2-mod-php5 php5-mcrypt
@@ -116,16 +152,10 @@ $ sudo a2enmod rewrite
 $ sudo php5enmod mcrypt   # required by phpMyAdmin
 ```
 
-#### Pliki konfiguracyjne
-
-W poniższym pliku konfiguracynjnym warto rozważyć zmianę pozycji:
-
-
-```shell
-sudo vim /etc/php5/apache2/php.ini
-```
-
-na
+#### Configuration files
+Into below Apache's PHP configuration file stored at
+`/etc/php5/apache2/php.ini`, it worth to change default parameters according to
+those presented below. There are most commonly changed variables for PHP.
 
 ```ini
 upload_max_filesize = 50M
@@ -136,35 +166,51 @@ track_errors = On
 ```
 
 
-#### Pozostałe pliki konfiguracyjne
+#### Other useful configuration files
+
 - `/etc/apache2/sites-available/default`
-- `/home/[user-name]/apache/conf/httpd.conf`
+<!--- `/home/$USER/apache/conf/httpd.conf`-->
 
 
 
-### PhpMyAdmin
+### PHPMyAdmin
+
+Installation of PHPMyAdmin is trivial.
 
 ```shell
 sudo apt-get install phpmyadmin
 ```
+During installion, wizard ask you for:
 
-  1. Podczas instalacji program zapyta jaki serwer www wybrać. Wybieramy (spacją) `apache2`.
-  2. Następne okienko to konfiguracja pakietu phpmyadmin i integracja z obecną bazą, - wybieramy `TAK`.
+1.  Which WWW Server would you like to choose. We mark (with space key)
+    `apache2`.
+2.  Next window is the configuration of phpmyadmin package and integration with
+    current database. We mark `Yes`.
 
-> Czasem trzeba przekonfigurować i używamy do tego `sudo dpkg-reconfigure
-> phpmyadmin`
+> Sometimes we made mistake during this installion process, so command to reopen
+> this configuration wizard is `sudo dpkg-reconfigure phpmyadmin`.
 
-### Katalog public_html w apache 2.4
-Są 2 różne podejścia do tej sprawy:
+### Creating public_html directory for the user
+Some people not agree with it (mainly by security issues it can cause) but
+apache also support the old user catalog usually stored at `~/public_html`,
+and it can be working like `/var/www/html`.
 
-  - Pierwszy zakłada że katalog użytkownika to katalog użytkownika i własności plików (permissions) powinny należeć do użytkownika
-  - Drugie podejście powinno być odmienne. wszystkie pliki w katalogach powinny być własnością `www-data`. Jest to lepsze o tyle że późniejsza migracja na inne Apache nie powoduje kolizji w właściciela pliku `permissions`
+There are 2 different approaches for creating this directory.
 
-```shell
-sudo vim /etc/apache2/mods-enabled/php5.conf
-```
+1.  First one assumes that User's catalog (~/public_html) should be owned by
+    [hir][wikipedia-hir] and hir alone, also with files permissions.
+2.  The second one, presuppose that all files should be owned by `www-data`
+    user. This solution is a bit better because other files migration not cause
+    the access collisions.
 
-i w tym pliku zakomentować `##` wpisy:
+> Personally, I prefer the second approach.
+
+To enable this magical directory we need to edit
+`/etc/apache2/mods-enabled/php5.conf` (it may require `sudo` privileges to save
+it).
+
+Into this file we need to comment some lines (`##`) like in below snippet.
+
 
 ```apache
 <FilesMatch ".+\.ph(p[345]?|t|tml)$">
@@ -195,24 +241,21 @@ i w tym pliku zakomentować `##` wpisy:
 ##    </Directory>
 ##</IfModule>
 ```
-
-Teraz ustawimy serwer tak, abyśmy mogli wrzucać pliki do katalogu `public_html` w naszym katalogu domowym. Niezbęde może się okazać nadanie odpowiednich praw dla katalogu wiec i to uwzględnimy.
+Now we set server, so that we can throw files into the `~/public_html`
+directory. It maybe necessary to give the appropriate rights for the directory
+so we need to take this under consideration as well.
 
 ```shell
 mkdir ~/public_html
 chmod 775 ~/public_html
-```
-
-```
 sudo a2enmod userdir
 ```
-Teraz tylko restart Apache:
+Now restart the apache and since this moment we can easly use `~/public_html` in
+all user's catalogs like the server's one.
 
 ```shell
 sudo /etc/init.d/apache2 restart
 ```
-
-Od tego momentu możemy spokojnie używać `public_html` w katalogach użytkowników jako katalogu serwerowego.
 
 
 ##### Ustawienie httpd.conf
@@ -266,12 +309,6 @@ Prawdopodobnym podwodem jest przepisywanie url w np: Joomla (`Konfiguracja globa
 
 
 ### Problem #3
-  Ponowna konfiguracja `phpMyAdmin` w razie problemów:
-```
-sudo dpkg-reconfigure phpmyadmin
-```
-
-### Problem #4
 **Pliki** powinny mieć prawa **664**, natomiast **katalogi 755**.
 
 > Wyjątkiem są oczywiście pliki wykonywalne.
@@ -283,7 +320,7 @@ $ find ~/public_html -type d -exec chmod 755 {} \;
 $ find ~/public_html -type f -exec chmod 644 {} \;
 ```
 
-### Problem #5
+### Problem #4
 Aktualizacja wszystkich folderów i plików na `www-data` w katalogu `public_html`
 
 ```
@@ -318,6 +355,9 @@ sudo chmod +x /home/$USER/bin/public_html_fix.sh
  [textmaker_download_page_url]: http://www.xm1math.net/texmaker/download.html#linux
  [google_chrome_download_page_url]: http://www.google.pl/intl/pl/chrome/
  [dashboard_icon_link]: http://askubuntu.com/questions/68612/how-to-change-the-dash-icon-in-the-unity-launcher
+
+ [wikipedia-daemon]: https://en.wikipedia.org/wiki/Daemon_%28computing%29
+ [wikipedia-hir]: https://en.wikipedia.org/wiki/Hir_%28disambiguation%29
 
 
 
