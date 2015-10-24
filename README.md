@@ -30,5 +30,11 @@ or run tmux session
 
     ./tmux-console.sh
 
+
+## Development
+
+- date 
+  + [strftime](http://strftime.org/)
+
 ## License
 MIT 2015 Maciej Sypień

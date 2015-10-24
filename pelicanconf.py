@@ -4,6 +4,8 @@ from __future__ import unicode_literals
 
 AUTHOR          = 'Maciej Sypień'
 SITENAME        = "The Egel's Blog"
+SITE_SLOGAN     = "Do more in less time"
+SITE_SUBSLOGAN  = "Simplicity and clarity of the implementation"
 SITEURL         = 'http://pelican-egel-blog.local'
 TIMEZONE        = 'Europe/Warsaw'
 DEFAULT_LANG    = 'en'
@@ -11,9 +13,11 @@ DEFAULT_LANG    = 'en'
 PATH            = 'content'
 OUTPUT_PATH     = 'output/'
 
+
 STATIC_PATHS        = ['images', 'downloads']
 ARTICLE_PATHS       = ['blog']
 PAGE_PATHS          = ['pages']
+ARCHIVES_URL        = "archives.html"
 
 # Formatting for URLs
 # ARTICLE_URL             = '{date:%Y}/{slug}.html'
@@ -43,15 +47,76 @@ PAGE_PATHS          = ['pages']
 # MONTH_ARCHIVE_SAVE_AS = 'posts/{date:%Y}/{date:%b}/index.html'
 
 
+
+
 DEFAULT_METADATA = {'status': 'draft',}
-DEFAULT_DATE_FORMAT = '%d %B %Y'
+DEFAULT_DATE_FORMAT = '%b %-d, %Y'
+
+# Top nav
+DISPLAY_SEARCH_IN_TOP_NAV = True
+
+
+# Sidebar
+DISPLAY_SIDEBAR = False
+
+DISPLAY_ABOUT_ME_ON_SIDEBAR = False
+ABOUT_ME = """
+Hey!
+"""
+
+HIDE_SOCIAL = False
+SOCIAL = (('Twitter', 'https://twitter.com/MaciejSypien'),
+          ('Github', 'https://github.com/egel'),
+          ('LinkedIn', 'https://www.linkedin.com/in/maciejsypien'),)
+
+FEEDS =  (('All posts', 'feeds/all.atom.xml'),
+          ('Category', 'feeds/category'),
+          ('OPW', 'feeds/tag/opw.atom.xml'),)
+
+# Side bar
+DISPLAY_SEARCH_ON_SIDEBAR = False
+DISPLAY_BREADCRUMBS = False
+DISPLAY_CATEGORY_IN_BREADCRUMBS = False
+DISPLAY_TAGS_ON_SIDEBAR = True
+DISPLAY_TAGS_INLINE = True
+
+DISPLAY_RECENT_POSTS_ON_SIDEBAR = False
+DISPLAY_CATEGORIES_ON_SIDEBAR = True
+ADDTHIS_PROFILE = True
+
+# TODO:
+DISPLAY_FORK_ME_ON_GITHUB = True
+GITHUB_REPO_URL = "sgasdfasdfasdfasdf"
+
+# TODO:
+DISPLAY_GITHUB_REPOS_ON_SIDEBAR = False
+GITHUB_SHOW_USER_LINK = True
+GITHUB_USER = "egel"
+
+# TODO:
+DISPLAY_TWITTER_TIMELINE_ON_SIDEBAR = False
+TWITTER_USERNAME = "MaciejSypien"
+TWITTER_WIDGET_ID = "648150917355843584"
+
+
+DISPLAY_LINKS_ON_SIDEBAR = False
+LINKS = (('Pelican', 'http://getpelican.com/'),
+         ('Python.org', 'http://python.org/'),
+         ('Jinja2', 'http://jinja.pocoo.org/'),
+         ('You can modify those links in your config file', '#'),)
+
+# Articles
+SHOW_DATE_MODIFIED = True
+SHOW_ARTICLE_CATEGORY = True
+SHOW_ARTICLE_AUTHOR = False
+RELATED_POSTS_TEXT = "Few related posts:"
 
 THEME = "theme/egelance"
 
 PLUGIN_PATHS = [ 'plugins' ]
-PLUGINS = [ 'tipue_search', 'better_codeblock_line_numbering' ]
+PLUGINS = [  'related_posts', 'tag_cloud' ] # 'better_codeblock_line_numbering', 'tipue_search',
 
-MD_EXTENSIONS = ['fenced_code', 'codehilite(css_class=highlight, linenums=False)', 'extra']
+MD_EXTENSIONS = [ 'codehilite(css_class=highlight, linenums=True)', 'extra'] # 'fenced_code',
 
 DIRECT_TEMPLATES = (('index', 'tags', 'categories', 'archives', 'search'))
 
@@ -64,6 +129,7 @@ REVERSE_CATEGORY_ORDER  = False
 
 PYGMENTS_STYLE = "monokai"
 
+AUTHOR = "Maciej Sypień"
 # path-specific metadata
 # EXTRA_PATH_METADATA = {
 #   'extra/favicon.ico': {'path': 'favicon.ico'},
@@ -77,25 +143,6 @@ TRANSLATION_FEED_ATOM   = 'feeds/all-%s.atom.xml'
 AUTHOR_FEED_ATOM        = None
 AUTHOR_FEED_RSS         = None
 
-FEEDS =  (('All posts', 'feeds/all.atom.xml'),
-          ('Category', 'feeds/category'),
-          ('OPW', 'feeds/tag/opw.atom.xml'),)
-
-# Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
-
-# Social widget
-SOCIAL = (('Twitter', 'https://twitter.com/MaciejSypien'),
-          ('Github', 'https://github.com/egel'),
-          ('LinkedIn', 'https://www.linkedin.com/in/maciejsypien'),)
-
-HIDE_SIDEBAR = True
-ABOUT_ME = """
-Hey! I'm Maciej, geek amazed by computers, science, hacking, open source and astrophysics.
-"""
 
 DEFAULT_PAGINATION = 10
 
