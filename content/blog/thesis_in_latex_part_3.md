@@ -1,8 +1,9 @@
-Title: Praca dyplomowa w LaTeXu
+Title: Thesis in LaTeX - part 3
 Date: 2015-04-06
-Modified: 2015-06-27
 Status: published
-Category: Diary
+Category: Self improvement
+Tags: LaTeX, University
+Summary: Making a title page of the thesis and talk about how to properly write with LaTeX syntax to dunch wrong code.
 
 
 <div style="float: left;">
