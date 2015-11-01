@@ -88,7 +88,7 @@ groups $USER
 Now add existing user to `www-data` group.
 
 ```shell
-sudo usermod -a -G maciek www-data
+sudo usermod -a -G $USER www-data
 ```
 
 #### Add a name to the server
