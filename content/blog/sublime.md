@@ -1,15 +1,16 @@
-Title: Sublime Text 3 - instalacja i konfiguracja
-Date: 2014-08-16 12:31
-Modified: 2015-06-27 19:30
-Status: published
-Category: Installation, Configuration
-Tags: text editor, sublime
-Authors: Maciej Sypień
+Title:      Sublime Text 3 - instalacja i konfiguracja
+Date:       2014-08-16 12:31
+Modified:   2015-06-27 19:30
+Status:     published
+Category:   Installation, Configuration
+Tags:       text editor, sublime
+Authors:    Maciej Sypień
 
 
-<div style="float:left">
-  <a href="http://blog.egel.pl/instalacja-konfiguracja-sublime-text-3/sublime_text_logo/" rel="attachment wp-att-1500"><img src="http://blog.egel.pl/media/Sublime_Text_Logo-150x150.png" alt="Sublime Text Logo" width="150" height="150" class="alignnone size-thumbnail wp-image-1500" /></a>
+<div class="intro-image-sm" markdown="1">
+  ![Logo of Sublime Text 3]({filename}/images/Sublime_Text_Logo.png)
 </div>
+
 
 Sublime Text to po prostu niezwykły edytor tekstu. Jednak jego niezwykłość i pewna przewaga nad innymi podobnymi edytorami (tj. Notepad++), to wielka wszechstronność wykorzystania oraz duża liczba rozmaitych dodatków wspomagających pracę użytkownika.
 

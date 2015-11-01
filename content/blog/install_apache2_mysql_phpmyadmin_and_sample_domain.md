@@ -5,8 +5,8 @@ Status:     published
 Category:   How to
 Tags:       apache, mysql, php, domains
 Summary:    We will install standard and secure Linux - Apache - MySQL - PHP
-            configuration with PHPMyAdmin for easy database management and Apache's
-            VirtualHost. Shall we begin? :)
+            configuration with PHPMyAdmin for easy database management and 
+            Apache's VirtualHost. Shall we begin? :)
 
 
 Every young IT person will at last faced with the challenge of creating his own
@@ -195,6 +195,36 @@ During installion, wizard ask you for:
 
 > Sometimes we made mistake during this installion process, so command to reopen
 > this configuration wizard is `sudo dpkg-reconfigure phpmyadmin`.
+
+### Add VirtualHost
+
+> **Good practice:** If you want to create site ex: `egel.pl`, write conf file like this `egel.pl.conf`
+
+    cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/pelican-egel-blog.local.conf
+
+and create something like this
+
+    <VirtualHost *:80>
+      ServerAdmin admin@example.com
+      ServerName pelican-egel-blog.local
+      DocumentRoot /var/www/pelican-egel-blog.local/public_html/
+      <Directory /var/www/pelican-egel-blog.local/public_html/>
+        AllowOverride All
+      </Directory>
+
+      ErrorLog ${APACHE_LOG_DIR}/error.log
+      CustomLog ${APACHE_LOG_DIR}/access.log combined
+    </VirtualHost>
+
+save it.
+
+    sudo ln -s $HOME/workspace/pelican-egel-blog/output/ /var/www/pelican-egel-blog.local/public_html
+
+    sudo a2ensite pelican-egel-blog.local.conf
+
+    echo "127.0.0.1 pelican-egel-blog.local" | sudo tee /etc/hosts
+
+then `sudo service apache2 reload` and open
 
 ### Creating public_html directory for the user
 Some people not agree with it (mainly by security issues it can cause) but

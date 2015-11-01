@@ -1,9 +1,9 @@
-Title: Thesis in LaTeX - part 3
-Date: 2015-04-06
-Status: published
-Category: Self improvement
-Tags: LaTeX, University
-Summary: Making a title page of the thesis and talk about how to properly write with LaTeX syntax to dunch wrong code.
+Title:      Thesis in LaTeX - part 3
+Date:       2015-04-06
+Status:     published
+Category:   Self improvement
+Tags:       LaTeX, University
+Summary:    Making a title page of the thesis and talk about how to properly write with LaTeX syntax to dunch wrong code.
 
 
 <div style="float: left;">
