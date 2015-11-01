@@ -16,14 +16,15 @@ Download plugins
 
 Set the environment
 
+    sudo apt-get install libffi-dev libssl-dev # [issue InsecurePlatformWarning][issue-InsecurePlatformWarning]
     mkvirtualenv -p pelicanblog
     workon pelicanblog
-    (pelicanblog) pip install -r requirements.txt --no-index
+    (pelicanblog) pip install -r requirements.txt --no-index --allow-external
     deactivate
 
 then run server to test (it works in backgroud)
 
-    workon blogging
+    workon pelicanblog
     ./develop_server.py start
 
 or run tmux session
@@ -32,3 +33,6 @@ or run tmux session
 
 ## License
 MIT 2015 Maciej Sypień
+
+
+[issue-InsecurePlatformWarning]: http://stackoverflow.com/questions/29134512/insecureplatformwarning-a-true-sslcontext-object-is-not-available-this-prevent
