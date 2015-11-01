@@ -14,18 +14,25 @@ Download plugins
     git clone --recursive https://github.com/getpelican/pelican-plugins ~/.pelican-plugins
     ln -s $HOME/.pelican-plugins $HOME/workspace/pelican-egel-blog/plugins
 
+
+Before next move we need to fix python [InsecurePlatformWarning issue][issue-InsecurePlatformWarning]
+
+    sudo apt-get install libffi-dev libssl-dev #
+
+
 Set the environment
 
-    sudo apt-get install libffi-dev libssl-dev # [issue InsecurePlatformWarning][issue-InsecurePlatformWarning]
     mkvirtualenv -p pelicanblog
     workon pelicanblog
     (pelicanblog) pip install -r requirements.txt --no-index --allow-external
     deactivate
 
+
 then run server to test (it works in backgroud)
 
     workon pelicanblog
     ./develop_server.py start
+
 
 or run tmux session
 
@@ -34,7 +41,7 @@ or run tmux session
 
 ## Development
 
-- date 
+- date
   + [strftime](http://strftime.org/)
 
 ## License
