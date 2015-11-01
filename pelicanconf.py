@@ -14,10 +14,11 @@ PATH            = 'content'
 OUTPUT_PATH     = 'output/'
 
 
-STATIC_PATHS        = ['images', 'downloads']
+STATIC_PATHS        = ['extras', 'images', 'downloads']
 ARTICLE_PATHS       = ['blog']
 PAGE_PATHS          = ['pages']
 ARCHIVES_URL        = "archives.html"
+FAVICON             = "extras/favicon.png"
 
 # Formatting for URLs
 # ARTICLE_URL             = '{date:%Y}/{slug}.html'
