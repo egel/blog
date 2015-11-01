@@ -91,6 +91,12 @@ Now add existing user to `www-data` group.
 sudo usermod -a -G $USER www-data
 ```
 
+> Somtimes it is a good practice to check `SERVER_CONFIG_FILE`.
+>     /usr/sbin/apache2 -V
+>     source /etc/apache2/envvars
+>     /usr/sbin/apache2 -V
+> Should be something like `-D SERVER_CONFIG_FILE="apache2.conf"`
+
 #### Add a name to the server
 Basic apache configuration does not impose add the server name, but I really
 don't like to see some text like this below, when I reloading the server.
@@ -104,7 +110,7 @@ AH00558: apache2: Could not reliably determine the server's fully qualified doma
 That's why we will name it :)
 
 ```shell
-echo "MyOwnServerName localhost" | sudo tee /etc/apache2/conf-available/servername.conf
+echo "ServerName localhost" | sudo tee /etc/apache2/conf-available/servername.conf
 ```
 
 then we're enable its name in for apache config by
