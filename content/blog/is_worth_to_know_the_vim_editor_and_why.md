@@ -4,86 +4,119 @@ Modified:   2015-06-27 19:30
 Status:     published
 Category:   Diary
 Tags:       vim, text-editor
-Slug:       is-worth-to-know-the-vim-editor-and-why
 Authors:    Maciej Sypień
-Summary:    Short version for index and feeds
+<!-- Slug:       is-worth-to-know-the-vim-editor-and-why -->
+<!-- Summary:    I'll try to gather all my current experience about writing the code, writing in many text editors and finally express my opinion that is worth to learn Vi/Vim.  -->
 
 
-This topic has long been on my mind and in the end I wanted to share with you my reflections on one of the earliest text editors referred to, of course we talk about Vi/Vim.
-
-I'll also try to answer some important questions:
-
-- Is it worth it to know the Vim editor and why?
-- Do you know Vim can do for me, and if so, where?
-- Where to start to quickly become a Vim-iataczem?
-
-
-<div style="float:left">
-  <a href="http://blog.egel.pl/?attachment_id=1410" rel="attachment wp-att-1410"><img src="http://blog.egel.pl/media/Vim_logo-150x150.png" alt="Logo programu Vim" width="150" height="150" class="alignnone size-thumbnail wp-image-1410" /></a>
+<div class="intro-image-sm" markdown="1">
+  ![Logo of Vim]({filename}/images/Vim_logo.png)
 </div>
 
-Temat ten już od dawna chodził mi po głowie i w końcu chciałem podzielić się z Wami własną refleksja na temat jednego z najwcześniejszych edytorów tekstu mowa oczywiście o Vi/Vim.
+This topic has long been on my mind and in the end I wanted to share with my reflections on one of the earliest text editors, of course I talk about Vi/Vim.
 
-Spróbuje także odpowiedzieć na kilka ważnych pytań: m.in:
+I will also try to answer for a few important questions for those who would like to give it try, like:
 
-*   Czy warto poznać edytor Vim i dlaczego?
-*   Czy znajomość Vim-a może mi się przydać i jeśli tak, to gdzie?
-*   Od czego zacząć, aby szybko stać się **Vim**-iataczem?
+- Is it worth it to know the Vim editor and why?
+- The knowledge about Vim can be useful for me in real live, and if so, where?
+- Where I should start to quickly become a master ninja of Vim and how long it takes?
 
-<!--more-->
 
-<p style="clear:both">
-</p>
 
-### Jak to jest w końcu z tym Vim-em?
+### Quick review about Vim
 
-Zasięgając informacji z popularnej Wikipedii, można bardzo szybko dowiedzieć się, że Vim jest z nami już od 1991r., natomiast jego wcześniejszy brat, Vi siega jeszcze dalej wgłąb czasu, bo aż 1976 roku. To kawał czasu! Dodatkowo zważywszy na fakt gwałtownego postępu informatyzacji w ciągu ostatniej dekady, gdzie chociażby z cegło-podobnych telefonów tj. nokia 3310, przeszliśmy na cienkie, wielozadaniowe i błyskawicznie szybkie smartfony, czy nawet rzeczywistość rozszerzoną (ang. augmented reality), którą niedawno zaprezentował na konferencji [Microsoft z ich nowym produktem Hololens][1].
+Taking some informations from popular Wikipedia, we can find out that Vim is with us since 1991r., furthermore Vi (the elder brother of Vim) get the year of 1976. Yeah it's a lot of time, especially in IT industry!
 
-Świat się ogromnie zmienia, w szczególności w ostatnich latach. Ogromne przeskoki technologiczne jakich doświadczamy praktycznie z dnia na dzień, tak samo odnoszą się do oprogramowania, w tym edytorów tekstu. Powstają coraz to nowsze projekty tj.:
+Now the world takes a lot of changes everyday, connecting to Internet network imprint giant leap on programming software, including the software of text editors. There are constantly growing newer and newer text editors projects like: 
+
 
 *   [Notepad++][2],
 *   [Sublime][3],
-*   czy [Atom][4].
+*   or [Atom][4].
 
-Nie mówiąc już o wielkich kombajnach tj. Eclipse, NetBeans, VisualStudio - lecz to już nie zwyczajne edytory tekstu, a zintegrowane środowiska programistyczne (ang. IDE, Integrated Development Environment).
+But here I am not talk about huge IDE, like [Eclipse](), [NetBeans](), [VisualStudio](), or [JetBrains editors family](). These are not just usual text editors, but big **I**ntegrated **D**evelopment **E**nvironments.
 
-Teraz warto zadać sobie to pytanie na które ciężko znaleźć obiektywną i jasną odpowiedz.
+Now is the time, to ask a question, that it can be difficult to find a objective and clear answer.
 
-> Czy warto poznać Vim-a i dlaczego?
 
-Jest takie pytanie na portalu StackOverflow zatytułowane [`Is learning VIM worth the effort?`][5]. To bardzo wartościowe pytanie, i nota bene zawiera też dużo trafnych wypowiedzi, które mogę śmiało potwierdzić. Zachęcam więc gorąco do przeczytania wspomnianego postu, w tym odpowiedzi, a także komentarzy, które momentami niezwykle trafnie korygują spostrzeżenia autora ;)
+### Is it worth it to know the Vim editor and why?
 
-Jednak oprócz wspomnianego przeze mnie artykułu zapewne chciałbyś poznać moją opinie, na ten temat. Otóż uważam, że zdecydowanie warto się nauczyć obsługi Vim-a. I nie mówię tego bynajmniej bezmyślnie powielają opinie innych mądrych osób :) Moim zdaniem nauka Vim-a pozwala zrozumieć pewne aspekty tworzenia i działania oprogramowania sięgając jeszcze czasów gdzie nie było edytorów GUI wraz z myszkami, a jedynie konsola i klawiatura. Tak, właśnie.
+There is a very good question titled [Is learning VIM worth the effort?][5] I found it on StackOverflow portal. It has a lot fantastic insights and answers about Vim, which I mostly agree, but I some opinions smacks of the Vi/Vim religion which I'm not support.
 
-Vim jako edytor pozwala na niezwykle płynne pisanie i edycję praktycznie każdego rodzaju tekstu. Czy to piszesz: program, notatki w syntaksie markdown, bądź pracę naukową, dosłownie czegokolwiek - Vim spełnia się tym zadaniu niesamowicie efektownie!
+Beside mention StackOverflow article you probably want to know my personal opinion about Vim. So, **I think it is really worth to know Vim**, and I didn't say that because some other wise men say it. Learning Vim and how it works, allows me to better understand some basic aspects how software works a few decades ago (and now) when there was no GUI interface or mouse/touchpad, just only console and keyboard to operate. 
 
-> Czy znajomość Vim-a może mi się przydać i jeśli tak, to gdzie?
+I've also try many text editors before like for example: Emacs, Ed (it's tough!), Mate, Genny, Notepad++, Sublime, Atom and this list is much more long than that, but installation and full configuration of Vim takes me 3 min (downloading my dotfiles and run install - I say about it a bit later). 
 
-Vim (Vi) jako edytor tekstu jest obecnie chyba najbardziej rozpowszechnionym edytorem tekstu na świecie. A nawiązując do pytania czy znajomość Vim-a może Ci się przydać w życiu. Moja odpowiedź brzmi **zdecydowanie TAK**, pod warunkiem, że masz zamiar wiązać swoje życie z karierą informatyczną. W innej sytuacji wiedza ta owszem, będzie bardzo cenna (gdyż nie każdy umie Vim-a!), lecz prawdopodobnie może nie zostać doceniona przez otoczenie współpracowników lub szefa.
+Don't get me wrong, I didn't say I'm fanatic of Vim. I very like the Idea it represents, and the knowledge about Vim simply teach me how to master my IT skills like, better servers handling, building better and more sophisticated programs, just simply by understanding how to use it (Vim).    
 
-**Dlaczego tak?** Otóż uważam, że jeśli masz zamiar zajmować się w przyszłości administracją sieciową, programowaniem, bądź inną dziedziną która wiąże się poniekąd z informatyką, to z pewnością prędzej czy później będziesz mieć kiedyś odczynienia z serwerami. Zwykle taki serwer nie posiada bezpośrednio podłączonego do niego ekranu i często również bywa tak, że jest oddalony od nas o setki, jeśli nie tysiące kilometrów - wtedy najczęstszą i czasami jedyną możliwością połączenia się z nim to SSH. W tym momencie wszelkie graficzne interfejsy znikają i zostajesz sam na sam z migającą konsolą terminala. Dla początkowych użytkowników zaczynają się schody, ale również zaczyna dziać się swoista magia, która z czasem przechodzi do rytuału codziennego porządku ;)
+Vim also allows me for a very fluent writing and text editing like any other editor before for almost any kind of text file I've met. Whether I wrote a program, edit file with unknown extension, configuring servers, take notes in markdown or composing my thesis, just anything - Vim will help me accomplish this perfectly. 
 
-Mając odczynienia z serwerami w dużej większości będziemy mieć możliwość uruchomienia jedynie Vim-a, gdyż przykładowo tylko taki edytor tekstu przewidział dla nas administrator serwera (lecz niekiedy można jeszcze spotkać [Nano][6]). W takiej sytuacji praca na zdalnym serwerze, gdy jesteśmy zaznajomieni z Vim-em, przechodzi w prawdziwą przyjemność. Dzięki ciągłemu udoskonalaniu umiejętności poruszania się oraz edycji tekstów, możemy w całkiem krótkim czasie przeistoczyć w potężnego informatyka. Zdaje sobie sprawę że może brzmieć to nieco dziecinnie, lecz ta dziecinność znika z twarzy osób, które obserwując Twoje nagłe zwroty akcji w kilkunastu oknach terminala, zaczynają podziwiać Twoje "magiczne" zdolności ;)
+### The pros and cons of Vim
 
-> Od czego zacząć, aby szybko stać się **Vim**-iataczem?
+The most popular advantages that stay behind Vim are:
 
-Praktyka, to jest to od czego należy zacząć. Tak, innej drogi nie ma, jeśli chcesz szybko oswoić się z bohaterem niniejszego artykułu.
+- vim is totally free and always will;
+- supports almost any kind of OS you will use;
+- the most configurable of all I've met
+  - themes;
+  - syntax highlighting;
+  - completion;
+  - spell checking;
+  - regular expressions;
+  - has tons of tested plug-ins for any type action you will do;
+  - sessions
+  - and many, many more! see [vimawesome.com][vimawesome-webpage]
+- you can use it in LUI and GUI version;
+- you can write with it in almost any writing style you like;
+- run with minimal memory usage;
+- can be easily run with multiple instances;
+- optimize to open a very, very, very huge files;
+- works perfectly on slower machines;
+- works well remotely (ex: SSH)
 
-Na samym początku, owszem, pojawią się pewne pytania tj.: jak w ogóle zainstalować Vim-a? Nieco później po pierwszym, domyślnym uruchomianiu zobaczysz, że wyglądem to nie powala na kolana, a wręcz stwierdzisz, że: "Przecież nic w nim nie ma! O co całe to halo, ucz się Vim-a!".
+Disadvantages:
+- It can be hard to use as IDE;
+- Learning curve can difficult for newbies;
+- Mastering takes time;
+- Find perfect configuration to suite your needs may takes time;
+- 
 
-Jeśli w tym momencie nie wyczerpała Ci się cierpliwość, to kolejnym etapem jest nauka klawiszologi edytora i dostosowywanie ich do własnych potrzeb (w miarę postępów uczenia). Ostatni z etapów, który w zasadzie jednocześnie intensywnie przeplata się z poznawaniem klawiszologi edytora, to ogromne możliwości konfiguracji w pliku `~/.vimrc`. Odkryjesz z czasem wiele ciekawych rzeczy na temat Vim-a, a także możliwości wydajnego pisania na klawiaturze, gdyż domyślny układ klawiszologi Vim-a nie postał przypadkowo ;)
 
-W zasadzie to już koniec, jedyne co musisz zrobić to starać się korzystać z Vim-a w miarę możliwości jak najczęściej. A w stosunkowo krótkim czasie (mnie zajęło to około tygodnia, aby przyzwyczaić się do jego obsługi) opanujesz go w stopniu umożliwiającym szybką i płynną pracę.
+### The knowledge about Vim can be useful for me in real live, and if so, where?
 
-Poniżej drobna dygresja porównująca wysiłek (os Y) i czas (os X) jaki należy włożyć w obsługę wybranej grupy edytorów tekstu. Jak widać najciekawiej prezentującymi się krzywymi są krzywa Emacs-a oraz Vim-a ;)
+Vim (Vi) is probably the most common text editor spread around world (It is pre-installed by default almost any kind of machine). This single phrase could be crucial for give it try. But referring to the question, the knowledge about Vim will be useful for you in real live? My answer is **definitely yes**, in fact that you will bind your live with some kind of IT or educational sector. In other way this knowledge is worth a lot (because not everyone knows Vim!), but probably it will not be appreciated by the environment co-workers or boss. Shame!
 
-<a href="http://blog.egel.pl/czy-warto-poznac-edytor-vim-i-dlaczego/text_editors/" rel="attachment wp-att-1795"><img src="http://blog.egel.pl/media/text_editors.jpg" alt="Learning curve of some text editors" style="width:100%; height:auto;" class="alignnone size-full wp-image-1795" /></a>
+**Why is that?** In my opinion, if your are really interested in network administration, programming or other related field with IT sector, you probably will have to deal with some kind of servers. Usually these kind of staff is usually stored far away from you (or locked) and can be manage only remotely for ex. by SSH. In these moment any kind of pleasant GUI disappear and you stay alone with blinking console of terminal. For newbies a difficulties begins with also some magic inside, which with time is forged to daily basics.
 
-Jednak aby nie zostawić Cię bez jakiś wskazówek, polecę Ci na początek moje 2 repozytoria, które jakiś czas temu stworzyłam na własnie taką okazję. Jedno repozytorium to [`code-wiki`][7], które m.in zawiera sekcję porad i trików które spisuje i wykorzystuje w Vim-ie. Natomiast drugie repo to [`dot-files`][8]. Zwiera moje pliki konfiguracyjne dla systemu Ubuntu Linux, wtym również dla edytora Vim. Zachęcam do ich przejrzenia i forkowania, a także życzę owocnej nauki Vim-a!
+When you will work with servers, in most cases you will have opportunity to open only Vim, cause for example a "funny" admin forecast only this way input (for the lazies, sometime you can meet trivial [Nano][6], but it is only for editing). This kind of real live situation should not rise heart attack when you know the basics of Vi/Vim. In time, by the practice of using Vim you will understand and start enjoy working with it - just as I did, and many before me. Not believe me, so google it ;)
 
-<a class="btn btn-primary" href="https://github.com/egel/dot-files">Repo dot-files</a> <a class="btn btn-primary" href="https://github.com/egel/code-wiki/blob/master/programs/vim/vim.md">Code wiki for Vim</a>
+I realize that may sound a bit childish, but this childishness disappears from the face of people watching your sudden twists in a dozen terminal windows, and they are beginning to admire your "magical" IT skills ;)
 
-Stay fresh!
+
+### Where I should start to quickly become a master ninja of Vim and how long it takes?
+
+Practice, this is where you should start. And yes, there is no other quick way I know if you want to get used to the hero of this article.
+
+At the beginning, there are always some basic questions, ie.: *how to install Vim?*. A bit later, after the first run, you will notice that the look of Vim does not knock on knees, and even then you find that: "After all, there is nothing at all! Why every one say, learn Vim it is the best. No, hell no!".
+
+If at this point you patience is not completely exhausted, the next step is keyboard controls and customize them to suit your needs (as you progress through learning).
+
+The last of the steps, which substantially simultaneously intertwined with learning keyboard controls and general customization, that great power of this editor lay in its configuration (`~/.vimrc` file). You will discover over time a lot of interesting things about Vim (modes, buffers, plugins), as well as the possibility of efficient typing on a keyboard, since the default layout of Vim keyboard controls is not shaped by accident ;)
+
+In fact, this is the end. The only thing you need to do is to try to use Vim as far as possible, and as often as you can. In a relatively short period of time (it took me about a week to get used to it) you can master it in sufficient detail to enable a rapid and smooth operations.
+
+The following slight digression comparing the effort (Y axis) and time (X axis) that must be put into a selective group of text editors. As you can see the most interesting curves of all are presented by curves of Emacs and Vim.
+
+![Learning curve of some text editors]({filename}/images/text_editors.jpg)
+
+However I cannot leave you without any kind of further hint or help. So for the beginners, (and also advanced hackers) I recommend you my [`dotfiles`][8] github repository, which I've made a while ago also for this kind of situations. Amongst other stuff, it stores my Vim configuration, so it is a good start to gets nice configuration. 
+
+This repository I've made specially for my Linux OS (based on Debian, like Ubuntu, XUbuntu, Mint and so on), it also can be used for any other system, but have to be installed manually. In near future I will support Macs! ;) 
+
+This repo also contains my keyboard shortcuts in beautiful PDF to download, print or modify by your self in your own fork. Yeah!
+
+So take a try, leave a comment and say fresh!  
+
 
  [1]: http://www.microsoft.com/microsoft-hololens/en-us
  [2]: http://notepad-plus-plus.org/
@@ -93,3 +126,4 @@ Stay fresh!
  [6]: http://www.nano-editor.org/
  [7]: https://github.com/egel/code-wiki/blob/master/programs/vim/vim.md
  [8]: https://github.com/egel/dot-files
+ [vimawesome-webpage]: http://vimawesome.com/
