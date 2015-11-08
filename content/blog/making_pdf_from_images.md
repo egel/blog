@@ -1,6 +1,6 @@
-Title:      Tworzenie PDF-a ze zdjęć
+Title:      Making PDF from images
 Date:       2014-08-10 23:15
-Status:     Draft
+Status:     published
 Category:   Hacks
 Tags:       PDF, terminal
 Author:     Maciej Sypień

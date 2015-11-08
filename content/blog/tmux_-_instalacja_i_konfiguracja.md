@@ -7,8 +7,9 @@ Lang:     pl
 Tags:     tmux, console
 Category: Self improvement
 
-<div style="float:left">
-  <a href="http://blog.egel.pl/wydajniejsza-praca-dzieki-aliasom/terminal_icon/" rel="attachment wp-att-1345"><img src="http://blog.egel.pl/media/terminal_icon-150x150.png" alt="Konsola terminala" width="150" height="150" class="alignnone size-thumbnail wp-image-1345" /></a>
+
+<div class="intro-image-sm" markdown="1">
+  ![Tmux]({filename}/images/terminal_icon.png)
 </div>
 
 Tmux to terminal multiplekser, a mówiąc nieco bardziej zrozumiałym językiem tmux to program pozwalający na dzielenie domyślnego okienka terminala na części.

@@ -1,7 +1,7 @@
-Title:      Vim - instalacja i konfiguracja
+Title:      Triki w LaTeXu
 Date:       2013-10-22 
 Modified:   
-Status:     Draft
+Status:     Published
 Category:   
 Tags:       LaTeX
 Summary: 
@@ -11,11 +11,13 @@ Uwaga: ten post to nie jest kurs nauki LaTeX'a. Jeżeli szukasz kursu i/lub opra
 
 ## Jak zrobić rozdział bez numeru?
 
+    :::latex
     \chapter*{tytuł}
     
 
 ## Jak zrobić stronę poziomą?
 
+    :::latex
     \usepackage{lscape}
     ...
     \begin{landscape}
@@ -24,6 +26,7 @@ Uwaga: ten post to nie jest kurs nauki LaTeX'a. Jeżeli szukasz kursu i/lub opra
 
 ## Jak wprowadzić ukośnik \ bez użycia trybu matematycznego?
 
+    :::latex
     \textbackslash
     
 
@@ -33,11 +36,13 @@ Usuń plik AUX oraz produkt kompilacji (DVI/PDF) i spróbuj skompilować ponowni
 
 ## Jak zabronić złamania słowa przez funkcję dzielenia wyrazów?
 
+    :::latex
     \mbox{słowo}
     
 
 ## Jak uzyskać ilość stron w dokumencie (aby zrobić numer strony w formacie x/y)?
 
+    :::latex
     \usepackage{lastpage}
     
 
@@ -45,16 +50,19 @@ Numer ostatniej strony zwróci \pageref{LastPage} - uwaga na wielkość znaków.
 
 ## Jak wstawić przypisy końcowe?
 
+    :::latex
     \usepackage{endnotes}
     
 
 Przypis definiujemy:
 
+    :::latex
     \endnote{xxx}
     
 
 W miejscu wstawienia przypisów:
 
+    :::latex
     \theendnotes
     
 
@@ -64,12 +72,14 @@ np. `\"o` Z pakietem [german]{babel} wystarczy `"o`.
 
 ## Jak wprowadzić odstęp poziomy i pionowy?
 
+    :::latex
     \hspace{odleglosc}
     \vspace{odleglosc}
     
 
 ## Jak ustawić szerokość obrazka względnie do szerokości tekstu?
 
+    :::latex
     \includegraphics[0.5\textwidth]{plik.eps}
     
 
@@ -81,6 +91,7 @@ GIMP, ImageMagick (polecenie convert)
 
 Np. `\renewcommand*{\figurename}{Rys.}` Zamiast `\figurename` można wpisać inne polecenia. Lista wyciagnięta z dokumentacji pakietu babel:
 
+    :::latex
     \def\prefacename{Przedmowa}%
     \def\refname{Literatura}%
     \def\abstractname{Streszczenie}%
@@ -106,11 +117,13 @@ Np. `\renewcommand*{\figurename}{Rys.}` Zamiast `\figurename` można wpisać inn
 
 ## Jak wstawić linię poziomą w tekście?
 
+    :::latex
     \hrule
     
 
 ## Jak wznowić numerowanie z poprzedniej listy?
 
+    :::latex
     \usepackage{enumitem}
     ...
     \begin{enumerate}[resume]
@@ -120,17 +133,20 @@ Np. `\renewcommand*{\figurename}{Rys.}` Zamiast `\figurename` można wpisać inn
 
 Np. `\renewcommand{\thechapter}{\arabic{chapter} }` Komendy: `\thefigure` `\thetable` `\thepage` `\thepart` `\the(subsub)section` `\theequation` `\the(sub)paragraph` Liczniki nazywają się podobnie, np chapter. Formaty liczb: arabic, roman, Roman, alph, Alph W listach numerowanych -przykład jak zrobić listę alfabetyczną:
 
+    :::latex
     \renewcommand{\labelenumi}{\Alph{enumi}.} %poziom 1
     \renewcommand{\labelenumii}{\Alph{enumi}.\alph{enumii}} %poziom 2
     
 
 ## Jak zmienić numer strony na inny niż wynika z kolejności?
 
+    :::latex
     \setcounter{page}{numer}
     
 
 ## Jak wyłączyć dzielenie wyrazów?
 
+    :::latex
     \usepackage{hyphenat}
     ...
     \nohyphens{blok tekstu}
@@ -138,6 +154,7 @@ Np. `\renewcommand{\thechapter}{\arabic{chapter} }` Komendy: `\thefigure` `\thet
 
 ## Jak pokolorować komórki w tabeli?
 
+    :::latex
     \usepackage[table]{xcolor}
     \cellcolor[gray]{0.9}
     
@@ -148,6 +165,7 @@ poziomo: \multicolumn{ile_kolumn_scalić}{krawędzie i wyrównanie}{zawartość}
 
 ## Jak przełamać równanie na 2 linie?
 
+    :::latex
     \begin{eqnarray}
     linia 1 xxx \nonumber\\
     linia2

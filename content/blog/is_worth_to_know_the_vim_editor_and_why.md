@@ -13,7 +13,7 @@ Authors:    Maciej Sypień
   ![Logo of Vim]({filename}/images/Vim_logo.png)
 </div>
 
-This topic has long been on my mind and in the end I wanted to share with my reflections on one of the earliest text editors, of course I talk about Vi/Vim.
+This topic has been long on my mind but in the end I want to share with you with my reflections on the one of the earliest text editors, of course I talk about Vi/Vim.
 
 I will also try to answer for a few important questions for those who would like to give it try, like:
 
@@ -55,31 +55,31 @@ Vim also allows me for a very fluent writing and text editing like any other edi
 
 The most popular advantages that stay behind Vim are:
 
-- vim is totally free and always will;
-- supports almost any kind of OS you will use;
-- the most configurable of all I've met
-  - themes;
-  - syntax highlighting;
-  - completion;
-  - spell checking;
-  - regular expressions;
-  - has tons of tested plug-ins for any type action you will do;
-  - sessions
-  - and many, many more! see [vimawesome.com][vimawesome-webpage]
-- you can use it in LUI and GUI version;
-- you can write with it in almost any writing style you like;
-- run with minimal memory usage;
-- can be easily run with multiple instances;
-- optimize to open a very, very, very huge files;
-- works perfectly on slower machines;
-- works well remotely (ex: SSH)
+-   vim is totally free and always will;
+-   supports almost any kind of OS you will use;
+-   the most configurable of all I've met
+    -   themes;
+    -   syntax highlighting;
+    -   completion;
+    -   spell checking;
+    -   regular expressions;
+    -   has tons of tested plug-ins for any type action you will do;
+    -   sessions
+    -   and many, many more! see [vimawesome.com][vimawesome-webpage]
+-   you can use it in LUI and GUI version;
+-   you can write with it in almost any writing style you like;
+-   run with minimal memory usage;
+-   can be easily run with multiple instances;
+-   optimize to open a very, very, very huge files;
+-   works perfectly on slower machines;
+-   works well remotely (ex: SSH)
 
 Disadvantages:
-- It can be hard to use as IDE;
-- Learning curve can difficult for newbies;
-- Mastering takes time;
-- Find perfect configuration to suite your needs may takes time;
-- 
+
+-   it can be hard to use as IDE;
+-   learning curve can difficult for newbies;
+-   mastering takes time;
+-   find a perfect configuration which suite your needs, may takes time;
 
 
 ### The knowledge about Vim can be useful for me in real live, and if so, where?

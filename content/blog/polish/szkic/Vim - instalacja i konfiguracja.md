@@ -6,10 +6,10 @@ Category:
 Tags:       vim, text-editor
 Summary:   
 
-
-<div style="float:left">
-  <a href="http://blog.egel.pl/?attachment_id=1410" rel="attachment wp-att-1410"><img src="http://blog.egel.pl/media/Vim_logo-150x150.png" alt="Logo programu Vim" width="150" height="150" class="alignnone size-thumbnail wp-image-1410" /></a>
+<div class="intro-image-sm" markdown="1">
+  ![Logo of Vim]({filename}/images/Vim_logo.png)
 </div>
+
 
 Vim, vi - to edytor tekstu; Dla jednych to tzw. "coś nie do ogarnięcia", dla innych normalne, rzekłbym codzienne środowisko pracy.
 
