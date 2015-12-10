@@ -11,11 +11,11 @@ Authors:    Maciej Sypień
   ![Logo of Sublime Text 3]({filename}/images/Sublime_Text_Logo.png)
 </div>
 
-Sublime is just amazing text editor. I've loved it since I've taste it. However its uniqueness and some advantage in contrast with other GUI editors that is versatility of usage and huge staff of plug-ins supports user experience. 
+Sublime is just amazing text editor. I've loved it since I've taste it. However its uniqueness and some advantage in contrast with other GUI editors that is versatility of usage and huge staff of plug-ins supports user experience.
 
 It is also available with free trial version for many popular platforms (Mac, Linux, Windows). But in this article I will focus on configuration most suitable for my daily basics with system from Linux family, naturally based on Debian.
 
-<!-- 
+<!--
 #### Installation
 
 *   [Installation of Sublime Text 3 Beta][1]
@@ -44,7 +44,7 @@ It is also available with free trial version for many popular platforms (Mac, Li
 #### My Configuration
 
 *   [Key Bindings - User][20]
-*   [Settings - User][21] 
+*   [Settings - User][21]
 -->
 
 * * *
@@ -52,7 +52,7 @@ It is also available with free trial version for many popular platforms (Mac, Li
 ### Installation of Sublime Text 3
 Probably you have already notice that "beta" in title of the article. Authors of the editor have made a very stable version of software, even if it is still in beta! They rocks! I've been very surprised by the quality and stability.
 
-The best method of installation is go to [official Sublime Text 3 website][22], download it and install. 
+The best method of installation is go to [official Sublime Text 3 website][22], download it and install.
 
 
 ### Package Control
@@ -61,7 +61,7 @@ On official website of [packagecontrol.io][23] (which is a package manager for s
 * * *
 
 ### Plug-ins
-Plug-ins extend default editor functionality. 
+Plug-ins extend default editor functionality.
 
 
 #### All Autocomplete
@@ -69,7 +69,7 @@ Instalation through Package Manager: Install Package > All Autocomplete
 
 
 #### Syntax highlight for Sass
-Repozytorium dodatku: [Syntax highlighting for Sass][24]
+Repository of plug-in: [Syntax highlighting for Sass][24]
 
 Instalation through Package Manager: Install Package > Syntax highlighting for Sass
 
@@ -95,10 +95,10 @@ Repository of plug-in: [Github repo][26]
       && rm -rf LiveReload \
       && git clone -b devel https://github.com/dz0ny/LiveReload-sublimetext2.git LiveReload
 
+This plug-in also be added as plug-in of your browser [LiveReload][27] and while
+saving file into Sublime the content will be automaticaly reloaded into browser.
 
-Można pobrać również dodatk do przeglądarki [LiveReload][27] i podczas zapisu pliku w Sublime, treść będzie automatycznie odświeżana w przeglądarce.
-
-*   [Dodatek dla Chrome][28]
+*   [Chrome addon][28]
 
 
 #### Markdown Extended
@@ -109,8 +109,8 @@ Instalation through Package Manager: Install Package > Markdown Extended
 Instalation through Package Manager: Install Package > GitGutter
 
 
-#### Git-Status​Bar
-Instalation through Package Manager: Install Package > Git-Status​Bar
+#### Git-Status-Bar
+Instalation through Package Manager: Install Package > Git-Status-Bar
 
 
 #### Local History
@@ -149,7 +149,8 @@ Best theme for the editor I've came across. The website of theme <http://buymeas
 
 Instalation through Package Manager: Install Package > Theme - Soda
 
-Aby całość zadziałała, należy dodać linikję konfiguracyjną do pliku `Settings - User`. Podgląd jak to osiągnąć znajduje się w [Settings - User][21].
+To make it work, you need to add config line to `Settings - User` into Sublime.
+More info how to achieve this you can find [Settings - User][21]
 
 
 #### Gruvbox Dark Theme
@@ -196,84 +197,86 @@ Here I paste my configurations of Sublime editor, but it can become outdated in 
 
 #### Settings - User
 
-    :::json
-    {
-      // Colors + Themes
-      "theme": "Soda Dark 3.sublime-theme",
-      "color_scheme": "Packages/Tomorrow Color Schemes/Tomorrow-Night.tmTheme",
+```json
+{
+  // Colors + Themes
+  "theme": "Soda Dark 3.sublime-theme",
+  "color_scheme": "Packages/Tomorrow Color Schemes/Tomorrow-Night.tmTheme",
 
-      // Font
-      "font_face": "Ubuntu Mono",
-      "font_size": 15.0,
-      "line_padding_bottom": 0,
-      "line_padding_top": 0,
-      "highlight_line": true,
-      "font_options":
-      [
-        "subpixel_antialias",
-        "no_bold"
-      ],
+  // Font
+  "font_face": "Ubuntu Mono",
+  "font_size": 15.0,
+  "line_padding_bottom": 0,
+  "line_padding_top": 0,
+  "highlight_line": true,
+  "font_options":
+  [
+    "subpixel_antialias",
+    "no_bold"
+  ],
 
-      // Editor behavior
-      "spell_check": false,
-      "dictionary": "Packages/Language - English/en_US.dic",
-      "open_files_in_new_window": false,
-      "highlight_modified_tabs": true,
-      "always_show_minimap_viewport": true,
-      "bold_folder_labels": true,
-      "fade_fold_buttons": false,
-      "draw_minimap_border": true,
-      "find_selected_text": true,
-      "rulers": [ 79, 100 ],
-      "show_encoding": true,
-      "scroll_past_end": false,
-      "caret_style": "solid",
-      "wide_caret": true,
+  // Editor behavior
+  "spell_check": false,
+  "dictionary": "Packages/Language - English/en_US.dic",
+  "open_files_in_new_window": false,
+  "highlight_modified_tabs": true,
+  "always_show_minimap_viewport": true,
+  "bold_folder_labels": true,
+  "fade_fold_buttons": false,
+  "draw_minimap_border": true,
+  "find_selected_text": true,
+  "rulers": [ 79, 100 ],
+  "show_encoding": true,
+  "scroll_past_end": false,
+  "caret_style": "solid",
+  "wide_caret": true,
 
-      // Ignored packages
-      "ignored_packages":
-      [
-        "Vintage"
-      ],
+  // Ignored packages
+  "ignored_packages":
+  [
+    "Vintage"
+  ],
 
-      // Whitespace - no tabs, trimming, end files with \n
-      "tab_size": 4,
-      "translate_tabs_to_spaces": true,
-      "trim_automatic_white_space": true,
-      "trim_trailing_white_space_on_save": true,
-      "ensure_newline_at_eof_on_save": true,
+  // Whitespace - no tabs, trimming, end files with \n
+  "tab_size": 4,
+  "translate_tabs_to_spaces": true,
+  "trim_automatic_white_space": true,
+  "trim_trailing_white_space_on_save": true,
+  "ensure_newline_at_eof_on_save": true,
 
-      // Sidebar - exclude distracting files and folders
-      "file_exclude_patterns":
-      [
-        "*.pyc",
-        "*.pyo",
-        "*.exe",
-        "*.dll",
-        "*.obj",
-        "*.o",
-        "*.a",
-        "*.lib",
-        "*.so",
-        "*.dylib",
-        "*.ncb",
-        "*.sdf",
-        "*.suo",
-        "*.pdb",
-        "*.idb",
-        ".DS_Store",
-        "*.class",
-        "*.psd",
-        "*.db"
-      ],
-      "folder_exclude_patterns":
-        [
-            ".git",
-            "__pycache__",
-            "env",
-            "env3"
-        ],
-    }
+  // Sidebar - exclude distracting files and folders
+  "file_exclude_patterns":
+  [
+    "*.pyc",
+    "*.pyo",
+    "*.exe",
+    "*.dll",
+    "*.obj",
+    "*.o",
+    "*.a",
+    "*.lib",
+    "*.so",
+    "*.dylib",
+    "*.ncb",
+    "*.sdf",
+    "*.suo",
+    "*.pdb",
+    "*.idb",
+    ".DS_Store",
+    "*.class",
+    "*.psd",
+    "*.db"
+  ],
+  "folder_exclude_patterns":
+    [
+        ".git",
+        "__pycache__",
+        "env",
+        "env3"
+    ],
+}
+```
+
 
  [1]: #instalacja-edytora
  [2]: #package-control
