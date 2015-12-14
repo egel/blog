@@ -7,7 +7,7 @@ Tags:       text editor, sublime, gui
 Authors:    Maciej Sypień
 
 
-<div class="intro-image-sm" markdown="1">
+<div class="intro-article-image-sm" markdown="1">
   ![Logo of Sublime Text 3]({filename}/images/Sublime_Text_Logo.png)
 </div>
 

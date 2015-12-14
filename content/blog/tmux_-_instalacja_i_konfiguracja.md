@@ -8,7 +8,7 @@ Tags:     tmux, console
 Category: Self improvement
 
 
-<div class="intro-image-sm" markdown="1">
+<div class="intro-article-image-sm" markdown="1">
   ![Tmux]({filename}/images/terminal_icon.png)
 </div>
 
