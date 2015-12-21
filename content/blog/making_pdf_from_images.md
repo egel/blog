@@ -2,11 +2,11 @@ Title:      Making PDF from images
 Date:       2014-08-10 23:15
 Status:     published
 Category:   Hacks
-Tags:       PDF, terminal
+Tags:       pdf, terminal
 Author:     Maciej Sypień
 
 
-<div class="intro-image-sm" markdown="1">
+<div class="intro-article-image-sm" markdown="1">
   ![Making custom PDF]({filename}/images/pdf_book.png)
 </div>
 

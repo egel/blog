@@ -6,7 +6,7 @@ Tags:       PDF, terminal
 Author:     Maciej Sypień
 
 
-<div class="intro-image-sm" markdown="1">
+<div class="intro-article-image-sm" markdown="1">
   ![Making custom PDF]({filename}/images/pdf_book.png)
 </div>
 

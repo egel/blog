@@ -6,7 +6,7 @@ AUTHOR          = 'Maciej Sypień'
 SITENAME        = "The Egel's Blog"
 SITE_SLOGAN     = "Do more in less time"
 SITE_SUBSLOGAN  = "Simplicity and clarity of the implementation"
-SITEURL         = 'http://pelican-egel-blog.local'
+SITEURL         = 'http://pelican-egel-blog.dev'
 TIMEZONE        = 'Europe/Warsaw'
 DEFAULT_LANG    = 'en'
 
@@ -62,7 +62,7 @@ DISPLAY_SIDEBAR = False
 
 DISPLAY_ABOUT_ME_ON_SIDEBAR = False
 ABOUT_ME = """
-Hey!
+Hey, my name is Maciej. I write code, play and enjoy the life. Occasionally write my blog.
 """
 
 HIDE_SOCIAL = False
