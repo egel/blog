@@ -7,8 +7,8 @@ Tags:       linux, install
 Authors:    Maciej Sypień
 
 
-<div class="intro-image-sm" markdown="1">
-  ![Logo of Sublime Text 3]({filename}/images/Sublime_Text_Logo.png)
+<div class="intro-article-image-sm" markdown="1">
+  ![Logo of Sublime Text 3]({filename}/images/linux_logo_pinguin.jpg)
 </div>
 
 As an exmple app we will install simple SQLiteStudio to edit SQLite database.
@@ -19,7 +19,7 @@ As an exmple app we will install simple SQLiteStudio to edit SQLite database.
     `/usr/share/pixmaps/` directory to with chmod 644.
 3.  Copy to `/usr/share/application` below entry
 
-
+        
         [Desktop Entry]
         Name=SqliteStudio
         Comment=SQLite editor
@@ -30,7 +30,6 @@ As an exmple app we will install simple SQLiteStudio to edit SQLite database.
         Encoding=UTF-8
         Categories=Network;Application;
         Path=
-
 
 
 

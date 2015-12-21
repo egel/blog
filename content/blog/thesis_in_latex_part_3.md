@@ -6,8 +6,8 @@ Tags:       latex, university
 Summary:    Making a title page of your thesis and talk about how to properly write with LaTeX syntax to dunch wrong code.
 
 
-<div style="float: left;">
-  <img class="alignleft size-medium wp-image-626" alt="LaTeX_logo" src="http://blog.egel.pl/wp-content/uploads/2013/05/LaTeX_logo-300x124.png" width="300" height="124" />
+<div class="intro-article-image-md" markdown="1">
+  ![LaTeX logo]({filename}/images/LaTeX_logo.png)
 </div>
 
 W tej części artykułu zajmiemy się przede wszystkim utworzeniem strony tytułowej dla naszej pracy dyplomowej. Powiemy także jak poprawnie pisać i formatować treść pracy korzystając z domyślnych (wbudowanych) komend oraz jak korzystać z innych, poprzez dołączanie nowych pakietów.

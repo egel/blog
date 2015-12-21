@@ -9,7 +9,7 @@ Authors:    Maciej Sypień
 <!-- Summary:    I'll try to gather all my current experience about writing the code, writing in many text editors and finally express my opinion that is worth to learn Vi/Vim.  -->
 
 
-<div class="intro-image-sm" markdown="1">
+<div class="intro-article-image-sm" markdown="1">
   ![Logo of Vim]({filename}/images/Vim_logo.png)
 </div>
 
