@@ -4,7 +4,7 @@ Author:   Maciej Sypień
 Status:   published
 Lang:     pl
 Tags:     linux, console
-Category: Tutorial
+Category: How to
 
 
 <div class="intro-article-image-sm" markdown="1">
