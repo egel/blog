@@ -1,4 +1,4 @@
-Title:      How to configure nginx on macs
+Title:      How to improve nginx setup on mac osx
 Date:       2016-02-16
 Status:     draft
 Category:   Tutorial
