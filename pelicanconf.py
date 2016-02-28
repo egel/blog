@@ -1,14 +1,17 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
+import datetime
 
 AUTHOR          = 'Maciej Sypień'
 SITENAME        = "The Egel's Blog"
 SITE_SLOGAN     = "Do more in less time"
 SITE_SUBSLOGAN  = "Simplicity and clarity of the implementation"
-SITEURL         = 'http://pelican-egel-blog.dev'
+# SITEURL         = 'http://pelican-egel-blog.dev'
+SITEURL         = 'http://blog.dev'
 TIMEZONE        = 'Europe/Warsaw'
 DEFAULT_LANG    = 'en'
+CURRENT_DATE    = datetime.datetime.now()
 
 PATH            = 'content'
 OUTPUT_PATH     = 'output/'
@@ -18,6 +21,7 @@ STATIC_PATHS        = ['extras', 'images', 'downloads']
 ARTICLE_PATHS       = ['blog']
 PAGE_PATHS          = ['pages']
 ARCHIVES_URL        = "archives.html"
+READING_LIST_URL    = "reading_list.html"
 FAVICON             = "extras/favicon.png"
 
 # Formatting for URLs
@@ -62,7 +66,8 @@ DISPLAY_SIDEBAR = False
 
 DISPLAY_ABOUT_ME_ON_SIDEBAR = False
 ABOUT_ME = """
-Hey, my name is Maciej. I write code, play and enjoy the life. Occasionally write my blog.
+Programmer, soundtracks enthusiast, astrophysics fan enjoying every bit of the life.
+Occasionally writing this blog.
 """
 
 HIDE_SOCIAL = False
@@ -100,6 +105,10 @@ TWITTER_USERNAME = "MaciejSypien"
 TWITTER_WIDGET_ID = "648150917355843584"
 
 
+# Reading list (Goodreads Activity plugin)
+GOODREADS_ACTIVITY_FEED = 'https://www.goodreads.com/review/list_rss/53114611?key=ECasahL3D2H_iqiNJ4JysCh6s2BM-_W6ShRyAAXldcPy2jqO&shelf=profession'
+
+
 DISPLAY_LINKS_ON_SIDEBAR = False
 LINKS = (('Pelican', 'http://getpelican.com/'),
          ('Python.org', 'http://python.org/'),
@@ -115,14 +124,14 @@ RELATED_POSTS_TEXT = "Few related posts:"
 THEME = "theme/egelance"
 
 PLUGIN_PATHS = [ 'plugins' ]
-PLUGINS = [  'related_posts', 'tag_cloud' ] # 'better_codeblock_line_numbering', 'tipue_search',
+PLUGINS = [  'related_posts', 'tag_cloud', 'goodreads_activity' ] # 'better_codeblock_line_numbering', 'tipue_search',
 
 MD_EXTENSIONS = [ 'codehilite(css_class=highlight, linenums=True)', 'extra'] # 'fenced_code',
 
-DIRECT_TEMPLATES = (('index', 'tags', 'categories', 'archives', 'search'))
+DIRECT_TEMPLATES = (('index', 'tags', 'categories', 'archives', 'reading_list', 'search'))
 
 DISQUS_SITENAME     = "The Egel's Blog"
-GOOGLE_ANALYTICS    = 'google-analytics-id'
+GOOGLE_ANALYTICS    = 'UA-26456669-2'
 
 SUMMARY_MAX_LENGTH      = 50
 NEWEST_FIRST_ARCHIVES   = True  # Show most recent posts first
@@ -149,3 +158,4 @@ DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
+
