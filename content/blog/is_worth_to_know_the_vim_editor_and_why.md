@@ -2,11 +2,10 @@ Title:      Is worth to know the Vim Editor and why?
 Date:       2015-04-06 10:20
 Modified:   2015-06-27 19:30
 Status:     published
-Category:   Diary
+Category:   Self improvement
 Tags:       vim, text-editor
 Authors:    Maciej Sypień
-<!-- Slug:       is-worth-to-know-the-vim-editor-and-why -->
-<!-- Summary:    I'll try to gather all my current experience about writing the code, writing in many text editors and finally express my opinion that is worth to learn Vi/Vim.  -->
+<!-- Summary:    I'll try to gather all my current experience about writing the code, also writing in many text editors and finally express my opinion that is that worth to learn Vi/Vim.  -->
 
 
 <div class="intro-article-image-sm" markdown="1">
@@ -27,7 +26,7 @@ I will also try to answer for a few important questions for those who would like
 
 Taking some informations from popular Wikipedia, we can find out that Vim is with us since 1991r., furthermore Vi (the elder brother of Vim) get the year of 1976. Yeah it's a lot of time, especially in IT industry!
 
-Now the world takes a lot of changes everyday, connecting to Internet network imprint giant leap on programming software, including the software of text editors. There are constantly growing newer and newer text editors projects like: 
+Now the world takes a lot of changes everyday, connecting to Internet network imprint giant leap on programming software, including the software of text editors. There are constantly growing newer and newer text editors projects like:
 
 
 *   [Notepad++][2],
@@ -43,13 +42,13 @@ Now is the time, to ask a question, that it can be difficult to find a objective
 
 There is a very good question titled [Is learning VIM worth the effort?][5] I found it on StackOverflow portal. It has a lot fantastic insights and answers about Vim, which I mostly agree, but I some opinions smacks of the Vi/Vim religion which I'm not support.
 
-Beside mention StackOverflow article you probably want to know my personal opinion about Vim. So, **I think it is really worth to know Vim**, and I didn't say that because some other wise men say it. Learning Vim and how it works, allows me to better understand some basic aspects how software works a few decades ago (and now) when there was no GUI interface or mouse/touchpad, just only console and keyboard to operate. 
+Beside mention StackOverflow article you probably want to know my personal opinion about Vim. So, **I think it is really worth to know Vim**, and I didn't say that because some other wise men say it. Learning Vim and how it works, allows me to better understand some basic aspects how software works a few decades ago (and now) when there was no GUI interface or mouse/touchpad, just only console and keyboard to operate.
 
-I've also try many text editors before like for example: Emacs, Ed (it's tough!), Mate, Genny, Notepad++, Sublime, Atom and this list is much more long than that, but installation and full configuration of Vim takes me 3 min (downloading my dotfiles and run install - I say about it a bit later). 
+I've also try many text editors before like for example: Emacs, Ed (it's tough!), Mate, Genny, Notepad++, Sublime, Atom and this list is much more long than that, but installation and full configuration of Vim takes me 3 min (downloading my dotfiles and run install - I say about it a bit later).
 
-Don't get me wrong, I didn't say I'm fanatic of Vim. I very like the Idea it represents, and the knowledge about Vim simply teach me how to master my IT skills like, better servers handling, building better and more sophisticated programs, just simply by understanding how to use it (Vim).    
+Don't get me wrong, I didn't say I'm fanatic of Vim. I very like the Idea it represents, and the knowledge about Vim simply teach me how to master my IT skills like, better servers handling, building better and more sophisticated programs, just simply by understanding how to use it (Vim).
 
-Vim also allows me for a very fluent writing and text editing like any other editor before for almost any kind of text file I've met. Whether I wrote a program, edit file with unknown extension, configuring servers, take notes in markdown or composing my thesis, just anything - Vim will help me accomplish this perfectly. 
+Vim also allows me for a very fluent writing and text editing like any other editor before for almost any kind of text file I've met. Whether I wrote a program, edit file with unknown extension, configuring servers, take notes in markdown or composing my thesis, just anything - Vim will help me accomplish this perfectly.
 
 ### The pros and cons of Vim
 
@@ -109,13 +108,13 @@ The following slight digression comparing the effort (Y axis) and time (X axis) 
 
 ![Learning curve of some text editors]({filename}/images/text_editors.jpg)
 
-However I cannot leave you without any kind of further hint or help. So for the beginners, (and also advanced hackers) I recommend you my [`dotfiles`][8] github repository, which I've made a while ago also for this kind of situations. Amongst other stuff, it stores my Vim configuration, so it is a good start to gets nice configuration. 
+However I cannot leave you without any kind of further hint or help. So for the beginners, (and also advanced hackers) I recommend you my [`dotfiles`][8] github repository, which I've made a while ago also for this kind of situations. Amongst other stuff, it stores my Vim configuration, so it is a good start to gets nice configuration.
 
-This repository I've made specially for my Linux OS (based on Debian, like Ubuntu, XUbuntu, Mint and so on), it also can be used for any other system, but have to be installed manually. In near future I will support Macs! ;) 
+This repository I've made specially for my Linux OS (based on Debian, like Ubuntu, XUbuntu, Mint and so on), it also can be used for any other system, but have to be installed manually. In near future I will support Macs! ;)
 
 This repo also contains my keyboard shortcuts in beautiful PDF to download, print or modify by your self in your own fork. Yeah!
 
-So take a try, leave a comment and say fresh!  
+So take a try, leave a comment and say fresh!
 
 
  [1]: http://www.microsoft.com/microsoft-hololens/en-us
