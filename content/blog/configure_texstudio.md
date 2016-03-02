@@ -1,6 +1,6 @@
 Title:      How to configure TeXstudio
 Date:       2016-02-16
-Status:     published
+Status:     draft
 Category:   How to
 Tags:       text-editor, latex
 Authors:    Maciej Sypień
