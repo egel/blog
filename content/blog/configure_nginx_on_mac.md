@@ -1,13 +1,13 @@
 Title:      How to improve nginx setup on mac osx
 Date:       2016-02-16
-Status:     draft
-Category:   Tutorial
+Status:     published
+Category:   How to
 Tags:       mac os, nginx
 Authors:    Maciej Sypień
 
 
 <div class="intro-article-image-sm" markdown="1">
-  ![Logo of Sublime Text 3]({filename}/images/Sublime_Text_Logo.png)
+  ![Logo of Sublime Text 3]({filename}/images/nginx_logo.png)
 </div>
 
 If you using your nginx configuration on mac in one file... you probably can do
@@ -23,12 +23,12 @@ Some example code snippets comes from [this gist][1].
 
 ### Create desired directories
 
-  ```shell
-  mkdir -p /usr/local/etc/nginx/sites-{enabled,available}
-  cd /usr/local/etc/nginx/sites-enabled
-  ln -s ../sites-available/default.conf
-  ln -s ../sites-available/default-ssl.conf
-  ```
+```bash
+mkdir -p /usr/local/etc/nginx/sites-{enabled,available}
+cd /usr/local/etc/nginx/sites-enabled
+ln -s ../sites-available/default.conf
+ln -s ../sites-available/default-ssl.conf
+```
 
 Now some info about important file locations:
 
@@ -48,36 +48,31 @@ type: `sudo mkdir -p /Library/Logs/nginx`
 
 ```nginx
 #user  nobody;
-worker_processes  1;
+worker_processes 1;
 
-error_log  /Library/Logs/nginx/error.log;
+error_log /Library/Logs/nginx/error.log;
 
 events {
-    worker_connections  1024;
+  worker_connections  1024;
 }
 
 http {
-    include       mime.types;
-    default_type  application/octet-stream;
+  include mime.types;
+  default_type application/octet-stream;
+  log_format main   '$remote_addr - $remote_user [$time_local] "$request" '
+                    '$status $body_bytes_sent "$http_referer" '
+                    '"$http_user_agent" "$http_x_forwarded_for"';
+  access_log /Library/Logs/nginx/access.log  main;
+  sendfile on;
+  keepalive_timeout 65;
+  index index.html index.php;
 
-    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
-                      '$status $body_bytes_sent "$http_referer" '
-                      '"$http_user_agent" "$http_x_forwarded_for"';
+  upstream www-upstream-pool{
+      server unix:/tmp/php-fpm.sock;
+  }
 
-    access_log  /Library/Logs/nginx/access.log  main;
-
-    sendfile        on;
-
-    keepalive_timeout  65;
-
-    index index.html index.php;
-
-    upstream www-upstream-pool{
-        server unix:/tmp/php-fpm.sock;
-    }
-
-    include /etc/nginx/conf.d/*.conf;
-    include /usr/local/etc/nginx/sites-enabled/*.conf;
+  include /etc/nginx/conf.d/*.conf;
+  include /usr/local/etc/nginx/sites-enabled/*.conf;
 }
 ```
 
