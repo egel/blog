@@ -1,29 +1,32 @@
-Title:    Tmux - instalacja i konfiguracja
+Title:    Discover the Tmux
 Date:     2014-08-16 12:42
-Modified: 2015-08-09 01:42
-Author:   Maciej Sypień
 Status:   published
-Lang:     pl
+Lang:     en
 Tags:     tmux, console
-Category: Self improvement
+Category: Discovery
+Author:   Maciej Sypień
 
 
 <div class="intro-article-image-sm" markdown="1">
   ![Tmux]({filename}/images/terminal_icon.png)
 </div>
 
-Tmux to terminal multiplekser, a mówiąc nieco bardziej zrozumiałym językiem tmux to program pozwalający na dzielenie domyślnego okienka terminala na części.
+Tmux is a terminal multiplexer, in another words, it is a program that allows to
+split default console window for multiple screens and group them into one
+something that is called session.
 
-*Jednak dlaczego w ogóle mam zwrócić uwagę na tmux'a i poświęcać mu swój czas?*
+*Hold on! Why am I even look for tmux and give it a try?*
 
-Narzędzie to jest ogromnie przydatne przy pracy administratorów z wieloma serwerami na raz. Programiści również odnajdą w nim wiele przydatnych cech przy pracy z projektami tj. przykładowo błyskawiczne uruchamianie środowiska pracy Django + virtualenv + runserver.
+This tool is outstanding with servers administration. Programmers also find in
+it many useful features to work with projects. A good example can be quick boot
+envirionment for Django + virtualenv + runserver.
 
-Jednak puki nie spróbujesz go w praktyce, nie przekonasz się o jego ogromnych zaletach.
+But unless you try it in practice, you did not find out about his huge
+advantages.
 
 <!--more-->
 
-<p style="clear:both">
-</p>
+<p style="clear:both"></p>
 
 *   [Instalacja tmux + xclip][1]
 *   [Ustawienia dla pliku konfiguracyjnego tmux'a][2]
@@ -39,7 +42,7 @@ Dla dystrybucji Linux Ubuntu 14.04
     $ sudo add-apt-repository ppa:pi-rho/dev
     $ sudo apt-get update
     $ sudo apt-get install tmux
-    
+
 
 ...lub ręczna instalacja z [repozytorium tmux'a][5]
 
@@ -47,12 +50,12 @@ Następnie sprawdzenie wersji programu:
 
     $ tmux -V
     tmux 1.9a
-    
+
 
 Aby jeszcze wygodnie móc kopiować pomiędzy terminalem tmux'a, a systemem niezbędny będzie program `xclip` (lub inny, jednak niniejszy artykuł nie pokrywa innej konfiguracji) do kopiowania pomiędzy schowkiem tmux'a, a schowkiem systemowym.
 
     $ sudo apt-get install xclip
-    
+
 
 Teraz tylko zastosowanie konfiguracji z kolejnego akapitu i gotowe.
 
@@ -63,62 +66,62 @@ Poniższy kod zawiera konfigurację polecanych przeze mnie ustawień dla program
     #############################################################
     ##  Configuration for Linux (Ubutnu 14.04)
     #############################################################
-    
+
     # Change prefix key to
     unbind C-b
     set-option -g prefix C-a  # first prefix
     set-option -g prefix2 C-b # second prefix
-    
+
     # C-a a should send ctrl-a to the underlying shell (move to start of line)
     bind-key a send-prefix
-    
+
     # C-a C-a
     bind-key C-a last-window
-    
+
     # So we can still use ` when needed
     #bind-key C-a set-option -g prefix C-a
     #bind-key C-b set-option -g prefix `
-    
+
     # Make mouse useful in copy mode
     setw -g mode-mouse on
-    
+
     # Allow mouse to select which pane to use
     #set -g mouse-select-pane on
-    
+
     # start window index at 1
     #set -g base-index 1
-    
+
     # start pane index at 1
     #setw -g pane-base-index 1
-    
+
     # highlight window when it has new activity
     setw -g monitor-activity on
     set -g visual-activity on
-    
+
     # re-number windows when one is closed
     set -g renumber-windows on
-    
+
     # Scroll History
     set -g history-limit 30000
-    
+
     # Set ability to capture on start and restore on exit window data when running
     # an application
     setw -g alternate-screen on
-    
+
     # Lower escape timing from 500ms to 50ms for quicker response to scroll-buffer
     # access.
     set -s escape-time 50
-    
-    
-    
+
+
+
     ############################################################
     ## Key Bindings
     ############################################################
-    
+
     # Use vim keybindings in copy mode
     # vim keys in copy or choice mode
     set-window-option -g mode-keys vi
-    
+
     # copying selection vim style
     # http://jasonwryan.com/blog/2011/06/07/copy-and-paste-in-tmux/
     # https://github.com/myfreeweb/dotfiles/blob/master/tmux.conf
@@ -129,76 +132,76 @@ Poniższy kod zawiera konfigurację polecanych przeze mnie ustawień dla program
     bind-key -t vi-copy 'V' select-line         # visual line
     bind-key -t vi-copy 'y' copy-selection    # yank
     bind-key -t vi-copy 'r' rectangle-toggle    # visual block toggle
-    
+
     # read and write and delete paste buffer ( xsel method)
     # https://wiki.archlinux.org/index.php/Tmux#ICCCM_Selection_Integration
     # ctrl+shift+v
     # or see this config video: https://www.youtube.com/watch?v=OW-lKJDFOzc
-    
-    
+
+
     ##CLIPBOARD selection integration
     ###Requires prefix key before the command key
     ##Copy tmux paste buffer to CLIPBOARD
     bind y run-shell -b "tmux save-buffer - | xclip -i -selection clipboard" \; display-message "Copied tmux buffer to system clipboard"
     bind C-v run-shell -b "tmux set-buffer \"$(xclip -o)\"; tmux paste-buffer" \; display-message "Paste system clipboard to tmux buffer"
-    
-    
-    
+
+
+
     ###########################################################
     ## Status Bar
     ###########################################################
-    
+
     # enable UTF-8 support in status bar
     set -g status-utf8 on
-    
+
     # set refresh interval for status bar
     set -g status-interval 30
-    
+
     # center the status bar
     set -g status-justify left
-    
+
     # show session, window, pane in left status bar
     set -g status-left-length 40
     set -g status-left '#[fg=green]#S#[fg=blue] #I:#P#[default]'
-    
+
     # show hostname, date, time, and battery in right status bar
     set-option -g status-right '#[fg=green]#H#[default] %m/%d/%y %I:%M\
      #[fg=red]#(battery discharging)#[default]#(battery charging)'
-    
+
     # This option below is for removing administrative debris (session name, hostname, time) in status bar
     # set -g status-left ''
     # set -g status-right ''
-    
-    
-    
+
+
+
     ###########################
     ## Colors
     ###########################
-    
+
     ## use 256 term for pretty colors
     set -g default-terminal "screen-256color"
-    
+
     # color status bar
     set -g status-bg colour235
     set -g status-fg white
-    
+
     # highlight current window
     set-window-option -g window-status-current-fg black
     #set-window-option -g window-status-current-bg green
     set -g pane-border-bg black
     set -g pane-active-border-fg green
     set -g pane-active-border-bg black
-    
+
 
 Następnie przeładujemy konfigurację bezpośrednio z terminala:
 
     $ tmux source-file ~/.tmux.conf
-    
+
 
 lub już w programie tmux:
 
     <prefix> :source-file ~/.tmux.conf
-    
+
 
 > `<prefix>` domyślny wykorzystywany w tmux to połączenie klawiszy: `ctrl`+`b`, po przeładowaniu powyższych ustawień zostanie ono zmienione na wygodniejszą dla dłoni kombinacje czyli po prostu: `ctrl`+`a`.
 
