@@ -1,6 +1,7 @@
 Title:      Thesis in LaTeX - part 1
 Date:       2014-10-12 19:00:05
 Modified:   2014-10-12 17:00:05
+Lang:       en
 Status:     published
 Category:   Self improvement
 Tags:       latex, university
@@ -16,150 +17,243 @@ in real life is a collation of macros. This is not a real definition, rather
 some sort of visualization, but what it is actually, we will get later.
 
 I say this all, because in this small series of articles I will talk about how
-to make a professional thesis and not catch breathless ;)
+to make a professional thesis and not catch breathless or get bald ;)
 
 This part is basically an introduction to text processing. I will compare
 commonly known Word/Writer text preprocessors with LaTeX one. Furthermore I will
 say a bit, why LaTeX is actually better option for this kind of documents
 (documents longer then 10-15 pages, like semester assignments and yes...thesis).
 
-So lets get start!
+You will not find this type of knowledge anywhere in so easy and condensed
+version, so if you are interested, so lets get start! :)
 
 ### Listen and learn on mistakes of others
 I can honestly say that my first chapter of Bachelor's dissertation went very
-smooth and petty quick. Yes, I was suprised that in few days I have 20+ pages.
-Then I sent my work to my supervisor to correct and point weak points, meanwhile
-I wrote more pages and correct many sentens from first chapter (this one I sent
-to my supervisor). Then few days later I get my corrected first chapter. But
-then I wonder how can I implement appropriate version from supervisor with
-changed content I fixed in the meantime?
+smooth and petty quick. Yes, I was surprised that in few days I have 20+ pages.
+Then I sent my work to my supervisor to make some corrections and point weak
+points, meanwhile I wrote more pages of next chapter (second) and correct many
+sentences from first chapter (this one I already sent to my supervisor). Then
+few days later I get my corrected first chapter.  But then I wonder how can I
+implement appropriate version from supervisor with changed content I have fixed
+in the meantime?
 
-If you wonder a while on previous acapit, this can become a huge problem, if you
-do not want to spend few more hours to track every change from corrected version
-of first chapter from your professor (this before your fixes).
-Stop! This makes me dizzy - you say. Yes I agree with you, but believe me, it
-can be a tip of iceberg.
+If you wonder a while about previous paragraph, this can become a huge problem,
+if you do not want to spend few more hours to track every change from corrected
+version of first chapter from your professor (this before your fixes).  Stop!
+This makes me dizzy - you say. Yes I agree with you, but believe me, it can be
+just a tip of iceberg.
 
 But hello, no worry :) This is why I am writing this series of articles and I
-can asure you that I have solved almost all of this problems if you're not
-afraid of new things :)
+can assure you that I have solved almost all of this problems if you're not
+afraid of new things.
 
 ### WYSIWYG or WYSIWYM
 It can not be so obvious for all, but Word/Writer is program of WYSIWYG (What
-you see i what you get) type. It means that every change in document you will
-make affect on text you will receive finally. For example if you type a sentense
-and in some part of this sentense you will put 7 spaces, you will get a text
+you see is what you get) type. It means that every change in document you will
+make affect on text you will receive finally. For example if you type a sentence
+and in some part of this sentence you will put 7 spaces, you will get a text
 with those 7 spaces.
 
 This is very convenient way of typing if you write a short document 3-8 pages
-max. This is why Word has been so popular. You can probably think:
+max. This is why Word has been so popular. But you can probably think:
 
 > I can write as many pages in Word/Writer as I want and it's very easy, isn't it?
 
 Yes and no. It's very easy to write, but for short distance. You can also write
 as many pages as you want, if you do not care about potential loosing this data
-in future (Word's documents like `.docx` it's not a pure text, it's an
-archive of multiple sub-objects. Open it in some archive program to make sure).
+in future. The Word's documents like `.docx` it's not a plain text, it is
+actually an archive of multiple sub-objects. If you do not believe me, open some
+`.docx` in any archive program to make sure.
 
-Also as I mention in heading, LaTeX is an extended version of TeX, but TeX is not
-actually a programming language but set of macros that helps you type better.
-LaTeX is a WYSIWYM (What you see is what you mean) type of editor. In other
-words this means that the writer can concentrate on content which he writing,
-rather then play with changing the type of font, size, color or other stuff
-useless at the moment of writing. That is a true advantage of many which LaTeX
-has, but usually not seen nor appreciated by people. That is because when you
-want to write, you should write, not fixing size of the font of chapter or
-section.
+Also as I mention in the heading, LaTeX is an extended version of TeX, but TeX
+is not actually a programming language, though set of macros that helps you type
+better. LaTeX is a WYSIWYM (What you see is what you mean) type of editor. In
+other words this means that the writer can concentrate on content which he
+writing, rather then playing with changing the type of font, size, color or
+other stuff useless at the moment of writing. That is a true advantage of many
+which LaTeX has, but usually not seen nor appreciated by people. That is because
+when you want to write, you should write, not correcting the size of font of
+chapter or section.
 
+### Mistakes during first approach
+After writing my BA thesis in Word (yes, shame on me) I can honestly point a few
+problems that is worth to mention here:
 
+*   During writing I constantly and accidentally changing or removing a style.
+    (Usually whole document has changed and I did not notice it in reasonable
+    time!)
+*   Using and defining tons of styles (for a font of subscript, heading
+    1,2,3..., quoted text, the chapter without numbering... - a horror, even
+    for those who writing it constantly, but what about if you want to make a
+    break 2 weeks. You probably forgot what style do what and what its name)
+*   Clicking on some unidentified keybinding can call some default exotic Word's
+    shortcut and if you did not noticed it on time, it can make you, to check all
+    thesis that nothing has changed for your previous work.
+*   Sometimes I have noticed that some objects just disappear or has been
+    modified without my conscious action on it.
+*   Afraid of make hidden mistakes and just in case, I save my work in endless
+    list of `name` + (`version` or `date`) + `.docx`. Then my folder of thesis
+    contain almost 100 files and all next one was bigger then previous one.
+    First one was 0.3KB, the last 2.8MB.
+*   Managing bibliography in Word is a horror, even with additional bibliography
+    managers (What? Additional managers for private software? That is wrong or
+    Word was not meant to be a tool for writing long documents with multiple
+    bibliography sources. Or if you can do it all, learn how to do in LaTeX is
+    far more simpler and better in final look.)
 
+Those were a few irritating things I came across while writing in any kind of
+WYSIWYG editor a document that is longer then 10-15 pages (2-4 are easy, 5-9 are
+medium, but 9-15 are hard to maintenance, and that is the maximum).
 
-<p style="clear: both;">
-</p>
-
-Przyznam szczerze, pisząc pierwszy rozdział swojej pracy licencjackiej w edytorze **Word** było to bardzo wygodne i szybkie rozwiązanie, ale pisanie dłuższych dysertacji może być kłopotliwe. Edytory takie jak Word czy Libre Office to świetne programy do małych i krótkich tekstów - jednak w moim odczuciu są toporne przy większych publikacjach.
-
-Może nie być to oczywiste dla wszystkich, lecz Word to program typu **WYSIWYG** (What You See Is What You Get, tłum. dostajesz to co widzisz). WYSIWYG oznacza to, że każdy znak jaki postawimy w dokumencie (w tym również *znaki białe* np: spacje, tabulatory) są wyświetlane na ekranie. Jeśli więc przez pomyłkę wciśniemy wielokrotnie spację, to w na wydruku strony również pojawi się wielokrotnie powtórzony odstęp. Przy skupieniu się na krótkim tekście 1-3 stron człowiek bez problemu wyłapie wzrokiem niedoskonałości poprawiając je bardzo szybko i efektownie - do tego WYSIWYG jest idealny. Jednak przy pisaniu dłuższej publikacji, książki czy pracy dyplomowej uwaga autora powinna się skupić wyłącznie na treści, a nie dodatkowo na wyłapywaniu błędów.
-
-Często podczas pisania własnej pracy dyplomowej (jeszcze w Wordzie):
-
-*   Przypadkowa zmieniana lub usunięcie stylu (i cały tekst ulegał deformacji),
-*   Wykorzystywanie ogromnej ilości różnych stylów z czego trzeba większość zapamiętać, który do czego służy (a co jeśli sięgniemy do pracy po pewnym odstępie czasu? ...i weź tu nie popełnij błędu),
-*   Naciśnięcie przypadkowego przycisku lub skrótu przez nieuwagę zmienia całość tekstu w dziwny "twór",
-*   Niezidentyfikowane zaginięcie lub zmodyfikowanie spisu treści, przypisów, bądź bibliografii,
-
-powodowały u mnie dużą frustrację podczas pisania. Zamiast pisania treści pracy skupiałem się na tym, że *coś* zdeformowało mój tekst w dziwny sposób i zamiast pisać pracę to poprawiałam dokument tak, aby praca powróciła do poprzedniego stanu. Alternatywą było jeszcze cofanie (CTRL + Z) ale gdy błąd dostrzegłem zbyt późno zmiany musiałem wykonywać ręcznie.
-
-Nie to jednak było powodem mojej późniejszej zmiany ogólnego sposobu składowania tekstu. Głównym powodem zmiany była prostota i profesjonalizm LaTeXa z jakim można uzyskać tekst wynikowy. Nie bez powodu TeX/LaTeX jest wykorzystywany przy profesjonalnym składowaniu tekstu w wydawnictwach.
-
-LaTeX kładzie nacisk na treść dokumentu odsuwając wygląd na dalszy plan, który można zrealizować pod koniec pisania pracy (lub z początku, jak kto woli - chodź jest nieco trudniej, bo jeszcze nie wiemy jakie elementy zastosujemy w pracy) bez dodatkowego stresu.
-Dodatkowym atutem jest to, że nie ma znaczenia w jakim programie do edycji tekstu piszemy - możemy korzystać z dowolnego, ulubionego edytora tekstu.
-
-> Ale by była jasność w kwestii edytora tekstu - nie mówię tu o programach takich jak Libre Office, Microsoft Word, ect. Mam na myśli raczej program nie zawierający dedykowanych modułów formatowania tekstu jak np.: Notepad++, Sublime, Vim. Więcej na ten temat możesz dowiedzieć się czytając o [SDI oraz MDI][1]
-
-Plusów LaTeXa można by wymieniać w nieskończoność, ponieważ odkąd lepiej poznałem to środowisko należę do grona jego dużych zwolenników - proszę nie mylić z fanatykami.
-
-Jednak w gąszczu samych plusów są również i minusy - niestety.
-Piszę "niestety" z tego względu, że **nie jest to styl pisania dla każdego**, w szczególności dla tych nie lubiących programistycznych "robaczków", a LaTeX chodź niewielkim stopniu ale taki jest.
-
-Można oczywiście znaleźć odpowiednie środowisko programistyczne będące na styku świata Worda i LaTeXa jak np: program [Lyx][2], program ułatwiający pracę z LaTeX ze względu na swoje podobieństwo do wyglądu Worda czy Libre Office'a, ale nawet mimo tego Lyx jakoś mnie nie zdołał przekonać się do siebie - chodź był moment że usilnie starałem się go nauczyć.
-
-Mój wybór padł na program [Texmaker][3].
-Moim skromnym zdaniem to ideał programu w 100% spełniających to do czego został stworzony - prostota oraz wieloplatformowość programu połączona z ogromnymi możliwościami edycyjnymi przystosowanymi do pisania w LaTeXu zaskarbiła sobie moją uwagę.
-Chodź samym wyglądem może delikatnie przestraszyć użytkowników na co dzień nie obcujących z pisaniem programów lub skryptów (jednolity, sztywny tekst z cyferkami na boku), to mimo wszystko po pewnym czasie przyzwyczajenie może odepchnąć pozostałych konkurentów na długie miesiące ;)
-
-Tworzenie dokumentu w LaTeX jest niezwykle łatwe, chodź słowo "łatwy" jest tu kwestią dyskusyjną, ponieważ każda osoba posiada różny poziom szybkości i łatwości nauki. Sam LaTeX jest podobny do języków meta-znaczników jak HTML czy XML. Wystarczy poznać kilka prostych instrukcji i naturalnych zwyczajów rodem z prac pisanych na kartce zeszytu, aby zacząć pisać wspaniałe dokumenty.
-
-## Instalacja niezbędnego oprogramowania (lub wersja online)
-
-Zanim jednak przejdziemy do właściwego pisania pracy, musimy zaopatrzyć się w odpowiednie oprogramowanie.
-Będą nam potrzebne:
-
-*   [TexLive][4] (Linux) lub [MikTeX][5] (Windows)
-*   [Texmaker][3]
-
-### LaTeX Online
-
-Jeśli jednak nie chcesz bezpośrednio instalować całego oprogramowania związanego z LaTeXem na swoim komputerze to możliwe, że zainteresują Cię możliwości tworzenia projektów bezpośrednio w przeglądarce, a także szybkiego współdzielenia projektu czy udostępnianie go innym.
-
-W tym momencie serwisami godnymi polecenia są:
-
-1.  [Sharelatex.com][6] - genialny portal do pisania początkujących oraz abrdzo zaawansowanych dokumentów LaTeXa.
-2.  [Writelatex.com][7] - znakomity serwis do pisania dokumentów LaTeXa.
-
-Tak więc jeśli nie chcesz marnować czasu na instalowanie całego oprogramowania związanego z LaTeXem, to wypróbowanie któregoś z powyższych portali jest prawdopodobnie najlepszym rozwiązaniem dla Ciebie :)
-
-### Linux Ubuntu
-
-Instalacja obu programów to jedna krótka komenda wykonana w terminalu:
-
-    sudo apt-get install texlive-full texmaker
+I thought a lot why this kind of mistake happen to my (lastly I write programs
+daily and I did not have any of those problems before). Firstly I wonder the
+most of those problem can appears to me, because I am a perfectionist type of
+person - everything should (not must) be in order. But in time I realize that
+was not me - I was perfectly fine and still I am - I just choose wrong tools for
+this job. **So, that why the tools you use in this type of things are
+relevant.**
 
 
-W powyższej komendzie instalujemy co prawda wszystkie możliwe pakiety biblioteki [TexLive][4] (ok. 1,5GB) - to dość dużo, jak na większość bibliotek, ale to działanie spowoduje, że nie będą tak często wyskakiwać błędy typu *brak wymaganej biblioteki* - a ze swoich początków w LaTeXu wiem, że to częsty błąd występujący przy początkowych kompilacjach dokumentu.
+### If tools matters, so which should I use?
+This is also not easy question, because it depends on what style typing you like
+the most. I have met so many types of person on my way that I can in general
+determinate 2 kind of person.
 
-### Windows
+1.  **"Sure, I'll try"** - this types are open to new things, even if this new
+    stuff can be a pain for first days/weeks of work with it.
+2.  **"I'll not do this"** - this types are true conservationists. They usually
+    knew what they knew and they do not want to change this state.
 
-W systemie Windows sprawa nie jest już taka szybka i prosta (jako że jestem zwolennikiem Linuksa), ale jest równie łatwa do ogarnięcia ;)
+This is just results of my observation when I show the sample text written in
+LaTeX to them. If you are in first group you are good, but if you assign
+yourself to the second group, you will probably suffer a lot (your EGO may not
+agree with your mind and actions of your body)
 
-Bibliotekę *texlive* w Windows reprezentuje program o nazwie [MikTeX][5].
+I also must say that writing in LaTeX is a kind of writing that looks
+"programming" like, in large part of opinions. Most of time you will spend in
+usual text editor. And to be more precise by text editor I mean
+[SDI not MDI][1].  This is very important and basic knowledge. Well if you do
+not know, take your time and find it out, I will wait for you here :)
 
-**MikTeX**
-:   to w dużym skrócie zbiór różnych bibliotek zebranych w jeden wygodny instalator. Wygodną nowością w MikTeX dla systemu Windows jest automatyczne doinstalowanie pakietów nie zawartych w domyślnej instalacji (zwykle nieco dłużej trwa sama kompilacja, ponieważ w tle są pobierane i instalowane pakiety).
+Ok. So, to start writing in LaTeX you will need basically, a **TeX library**
+(texlive, miktex or mactex) and text editor. TeX libs are a standard, you
+will install this type, which operating system you have, but what is for what
+I will say later.
 
-Texmaker można również pobrać ze [strony producenta][3] i zainstalować poprzez prosty instalator.
+### Text editors
+By writing this heading I feel, like I just put a stick in an anthill. *Why?*
+This topic is so huge, that I am afraid, even a few big books can not completely
+fulfill all its aspects.
 
-*Kolejność instalacji programów nie ma prawdopodobnie znaczenia, ale z Windowsem to nigdy nie wiadomo więc lepiej jest zainstalować na początek biblioteki, a następnie Texmaker'a.*
+Although I can get you a fair start. I will point you 2 best articles about
+comparison of multiple text editors (includes some IDEs) and also say which
+editors I like the most till this moment and why I like them. I think is the
+fare start.
 
-* * *
+Take a peak on:
 
-A już wkrótce, w kolejnej [2 części][8] przedstawię Wam proces utworzenia dokumentu w LaTeXu.
+*   <http://tex.stackexchange.com/q/339/48903> - This is the most rich source of
+    knowledge I have came across till now. You will find there REALLY smart
+    comparison for almost any popular editor you can choose from.
+*   <https://en.wikipedia.org/wiki/Comparison_of_TeX_editors> - yes, it is wiki,
+    I know, but this article has outstanding comparison table. It is also worth
+    to look which editor suites you the most.
 
- [1]: http://technology.blurtit.com/114838/what-is-a-basic-difference-between-a-notepad-and-microsoft-word
- [2]: http://www.lyx.org/
- [3]: http://www.xm1math.net/texmaker/
- [4]: https://www.tug.org/texlive/
- [5]: http://miktex.org/
- [6]: http://www.sharelatex.com/
- [7]: https://www.writelatex.com/
- [8]: http://blog.egel.pl/praca-dyplomowa-w-latex-cz2/
+I like two editor the most. Among LUI type I definitely prefer
+[Vim][vim-webpage] with [latex-suite][latex-suite-website] plugin. If you want
+to start with using vim I can recommend my [dotfiles][egel-dotfiles] not as a
+ready-made solution (it also can work in this way), but as a handy help to begin
+your journey with Vim. If you are wondering or hesitating it is worth to begin
+this journey I highly suggest to read my another article called
+[Is&nbsp;worth&nbsp;to&nbsp;know&nbsp;the&nbsp;Vim&nbsp;editor&nbsp;an&nbsp;why]({filename}is_worth_to_know_the_vim_editor_and_why.md)
+
+From the GUI type, my favorite one is [TeXstudio][texstudio-webpage] and here I
+write another article
+[How&nbsp;to&nbsp;configure&nbsp;TeXstudio]({filename}configure_texstudio.md)
+where I describing how to smoothly start with this program. I also like
+[Sublime&nbsp;Text&nbsp;3][sublime3-webpage], although it has more common with
+usual text editor then with special LaTeX IDE. And here I write my thoughts
+about [Discover&nbsp;the&nbsp;Sublime&nbsp;Text&nbsp;3](discover_the_sublime_text_3.md)
+
+I will not try to convince you which one is better, because it basically does
+not matter. You can follow my footsteps and try one of those which I mention.
+Nevertheless decision which one to start with, I am laying on your hands.
+
+I hope you will not be disappointed, because as a programmer I have my writing
+standards, that are important to me during work. Those editors have gorgeous
+features (especially Vim) that is why I use them even after work for my personal
+purposes.  But unfortunately they are have not candy-like appearance if you
+demand this from modern editors.
+
+### Online alternatives vs local TeX library
+Nowadays we are not obligate to use only locally installed programs. There are
+few online tools which can replace editor and TeX compiler only by entering
+website. One is Overleaf and another is Sharelatex and I intentionally not given
+links, because I not promote those services. I want to say that there are
+similar alternatives, but most interesting features like git integration,
+demands extra charge (or subscription).
+
+We can achieve all this with much more high security level without paying
+anything (only for amortization of you computer and electricity). Why is better
+to have it locally then in one of those services?
+
+*   Working offline
+*   Much more faster compiling on local machine
+*   Your data is on your hard drive (some services have in regulations that
+    if it free account your work can be treated as the property of them)
+*   If you want you can secure loss of data with version control systems like
+    Git
+*   Free, unlimited collation using version control systems
+*   If afraid that your computer can broke down, you can secure data with any
+    instant cloud store synchronization (dropbox or mega). TeX files are just
+    text files so they are small and light, ideal to be quickly synchronized.
+
+### Installing standard TeX library
+This part should be peace of cake to you if you reach this part of article (I
+realize that it could be hard, because many things has been said this good or
+bad).
+
+There are 3 most popular standard TeX libraries (for Linux, Mac OSX and
+Windows):
+
+*   [Texlive][texlive-webpage] - available on Linux
+*   [MacTeX][mactex-webpage] - for Mac OSX
+*   [MikTeX][miktex-webpage]  - for Windows
+
+For Windows and Mac OSX installation is trivial. You are downloading the
+installer, follow the wizard and you are done.
+
+In this moment I highly recommend to install full library. We live in times that
+1-2GB of data are no longer a problem. Full installation can prevent LaTeX
+beginners from "no installed package" errors (some packages are differently
+named, name of package and name of used library, so sometime can be difficult to
+debug).
+
+For Linux users full installation looks even simpler:
+
+    :::shell
+    # Debian based systems
+    sudo apt-get install texlive-full biber
+
+And that is all for this part. You have best information about which text editor
+you can use and which TeX library to install. That is all you may need for now
+to start writing in LaTeX.
+
+### Next part
+But how to start building a LaTeX thesis I will discuss on next article
+[Thesis in LaTeX - part 2]({filename}thesis_in_latex_part_2.md).
+I will based on my implementation of [uekthesis][uekthesis-repo] class created
+for my university the Cracow University of Economics but it can be modified for
+any other University in a fly.
+
+  [1]: http://technology.blurtit.com/114838/what-is-a-basic-difference-between-a-notepad-and-microsoft-word
+  [egel-dotfiles]: http://github.com/egel/dotfiles
+  [uekthesis-repo]: https://github.com/egel/uek-latex-thesis-class
+  [vim-webpage]: http://www.vim.org/
+  [latex-suite-website]: http://vim-latex.sourceforge.net/
+  [texstudio-webpage]: http://www.texstudio.org/
+  [sublime3-webpage]: https://www.sublimetext.com/3
+  [texlive-webpage]: https://www.tug.org/texlive/
+  [miktex-webpage]: http://miktex.org/
+  [mactex-webpage]: https://tug.org/mactex/
+
