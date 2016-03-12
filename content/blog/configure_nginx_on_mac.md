@@ -1,8 +1,8 @@
-Title:      How to improve nginx setup on mac osx
+Title:      How to improve nginx setup on Mac OSX
 Date:       2016-02-16
 Status:     published
 Category:   How to
-Tags:       mac os, nginx
+Tags:       osx, nginx
 Authors:    Maciej Sypień
 
 
@@ -10,13 +10,13 @@ Authors:    Maciej Sypień
   ![Logo of Sublime Text 3]({filename}/images/nginx_logo.png)
 </div>
 
-If you using your nginx configuration on mac in one file... you probably can do
-it better.
+If you store all your configurations for nginx servers on your Mac into single
+file... you probably can do it better.
 
 Take a look how to improve your server instances by separating it into folders,
-just like Apache did it with `sites-enables` and `sites-available`.
+just like Apache handle with it by `sites-enables` and `sites-available`.
 
-Default nginx installation didn't provide this but in few quick steps we can
+Default nginx installation did not provide this but in few quick steps we can
 achieve this.
 
 Some example code snippets comes from [this gist][1].
