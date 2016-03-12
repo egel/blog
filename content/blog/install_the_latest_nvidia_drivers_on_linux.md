@@ -12,15 +12,16 @@ Author:   Maciej Sypień
 </div>
 
 And it's time that I had to face with reinstall of the Nvidia driver on my Mint
-17 distro.
+17 distribution.
 
-There arises some problems with Nvidia proprietary drivers. I just push
-`ctrl`+`alt`+`F1`, and get black screen with flashing cursor. YES! - I shout -
-the console not broke down for good - I sad to myself in mind.
+There arises some problems with Nvidia proprietary drivers. As a pro Linux guy
+I pressed `ctrl`+`alt`+`F1`, and got a black screen with flashing cursor. YES! -
+I shouted immediately - the console not broke down for good - I sad to myself in
+mind.
 
-I red somewhere that the problem has to do something with the way the
-framebuffer. So I made few modifications to `/etc/default/grub`, but remember -
-backup always go first!
+I red somewhere that the problem could to do something with the framebuffer. So
+I made few modifications to `/etc/default/grub`. Remember - backup always go
+first!
 
     :::bash
     sudo cp /etc/default/grub /etc/default/grub.bak
