@@ -128,7 +128,7 @@ PLUGINS = [  'related_posts', 'tag_cloud', 'goodreads_activity', 'simple_footnot
 
 MD_EXTENSIONS = [ 'codehilite(css_class=highlight, linenums=True)', 'extra'] # 'fenced_code',
 
-DIRECT_TEMPLATES = (('index', 'tags', 'categories', 'archives', 'reading_list', 'search'))
+DIRECT_TEMPLATES = (('index', 'tags', 'categories', 'archives', 'reading-list', 'search'))
 
 DISQUS_SITENAME     = "The Egel's Blog"
 GOOGLE_ANALYTICS    = 'UA-26456669-2'
