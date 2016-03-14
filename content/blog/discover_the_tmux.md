@@ -5,17 +5,23 @@ Lang:     en
 Tags:     tmux, console
 Category: Discovery
 Author:   Maciej Sypień
+Summary:  In this article I will try to take a look on tmux and extract its
+advantages and disadvantages for admires or developer.
 
 
 <div class="intro-article-image-sm" markdown="1">
   ![Tmux]({filename}/images/terminal_icon.png)
 </div>
 
-Tmux is a terminal multiplexer, in another words, it is a program that allows to
-split default console window for multiple screens and group them into one
-something that is called session.
+Tmux is a terminal multiplexer. But what does it mean, anyway?
+To say it in other, more understandable words, tmux is a program which allow the user divide
+console screen and gently manage them in something that is called a session.
 
 *Hold on! Why am I even look for tmux and give it a try?*
+
+This tool IMHO is the most useful program for network administrators and
+programmers, because it allows to simultaneously work with one console window
+devided for multiple sub-screens.
 
 This tool is outstanding with servers administration. Programmers also find in
 it many useful features to work with projects. A good example can be quick boot
@@ -23,6 +29,8 @@ envirionment for Django + virtualenv + runserver.
 
 But unless you try it in practice, you did not find out about his huge
 advantages.
+
+At the end of introduction I can assure you it is worth 15 minutes of your time.
 
 <!--more-->
 
