@@ -1,39 +1,32 @@
 Title:    Discover the Tmux
 Date:     2014-08-16 12:42
-Author:   Maciej Sypień
 Status:   published
 Lang:     en
 Tags:     tmux, console
 Category: Discovery
-Summary:  In this article I will try to take a look on tmux and extract its
-advantages and disadvantages for admires or developer.
+Author:   Maciej Sypień
+
 
 <div class="intro-article-image-sm" markdown="1">
   ![Tmux]({filename}/images/terminal_icon.png)
 </div>
 
-Tmux is terminal multiplexer. What does it mean, anyway? To say it in other
-words, more understandable, tmux is a program which allow the user divide
-console screen and gently manage them in something that is called a session.
+Tmux is a terminal multiplexer, in another words, it is a program that allows to
+split default console window for multiple screens and group them into one
+something that is called session.
 
-*But why, am I even try to look at tmux and spent my time with it?*
+*Hold on! Why am I even look for tmux and give it a try?*
 
-This tool IMHO is the most useful program for network administrators and
-programmers, because it allows to simultaneously work with one console window
-devided for multiple sub-screens.
+This tool is outstanding with servers administration. Programmers also find in
+it many useful features to work with projects. A good example can be quick boot
+envirionment for Django + virtualenv + runserver.
 
-Tmux also allow to prepare simple script which can setup your project so easily.
-A good exampe can be a setup of enabling Django with virtualenv and run a
-server.
+But unless you try it in practice, you did not find out about his huge
+advantages.
 
-But telling you that is good is pointless. You should not believe me, which is
-actually a very adequate reaction. You should try it yourself and get build you
-own opinion about tmux.
+<!--more-->
 
-At the end of introduction I can assure you it is worth 15 minutes of your time.
-
-<p style="clear:both">
-</p>
+<p style="clear:both"></p>
 
 *   [Instalacja tmux + xclip][1]
 *   [Ustawienia dla pliku konfiguracyjnego tmux'a][2]
@@ -42,7 +35,7 @@ At the end of introduction I can assure you it is worth 15 minutes of your time.
 
 * * *
 
-### Installation
+### <a name="instalacja" class="jumptarget"></a> Instalacja
 
 Dla dystrybucji Linux Ubuntu 14.04
 
@@ -50,11 +43,8 @@ Dla dystrybucji Linux Ubuntu 14.04
     $ sudo apt-get update
     $ sudo apt-get install tmux
 
-for Mac:
 
-    brew install tmux
-
-or manual installation from [tmux's repository][5]
+...lub ręczna instalacja z [repozytorium tmux'a][5]
 
 Następnie sprawdzenie wersji programu:
 

@@ -2,11 +2,10 @@ Title: About me
 Date: 2015-06-27 10:02
 Status: published
 
-See below intra-site link examples in Markdown format.
-
+Here's some snippet about me...
 
     :::my_identity
-    function my_fun() {
+    function lifeCycle() {
       _var = 'undefined'
     }
 

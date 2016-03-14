@@ -2,9 +2,9 @@ Title:      Praca dyplomowa w LaTeXu - cz. 1
 Date:       2014-10-12 19:00:05
 Modified:   2014-10-12 17:00:05
 Status:     inherit
-Category:   
-Tags:       
-Summary: 
+Category:
+Tags:
+Summary:
 
 
 <div style="float: left;">
@@ -33,27 +33,27 @@ powodowały u mnie dużą frustrację podczas pisania. Zamiast pisania treści p
 
 Nie to jednak było powodem mojej późniejszej zmiany ogólnego sposobu składowania tekstu. Głównym powodem zmiany była prostota i profesjonalizm LaTeXa z jakim można uzyskać tekst wynikowy. Nie bez powodu TeX/LaTeX jest wykorzystywany przy profesjonalnym składowaniu tekstu w wydawnictwach.
 
-LaTeX kładzie nacisk na treść dokumentu odsuwając wygląd na dalszy plan, który można zrealizować pod koniec pisania pracy (lub z początku, jak kto woli - chodź jest nieco trudniej, bo jeszcze nie wiemy jakie elementy zastosujemy w pracy) bez dodatkowego stresu.  
+LaTeX kładzie nacisk na treść dokumentu odsuwając wygląd na dalszy plan, który można zrealizować pod koniec pisania pracy (lub z początku, jak kto woli - chodź jest nieco trudniej, bo jeszcze nie wiemy jakie elementy zastosujemy w pracy) bez dodatkowego stresu.
 Dodatkowym atutem jest to, że nie ma znaczenia w jakim programie do edycji tekstu piszemy - możemy korzystać z dowolnego, ulubionego edytora tekstu.
 
 > Ale by była jasność w kwestii edytora tekstu - nie mówię tu o programach takich jak Libre Office, Microsoft Word, ect. Mam na myśli raczej program nie zawierający dedykowanych modułów formatowania tekstu jak np.: Notepad++, Sublime, Vim. Więcej na ten temat możesz dowiedzieć się czytając o [SDI oraz MDI][1]
 
 Plusów LaTeXa można by wymieniać w nieskończoność, ponieważ odkąd lepiej poznałem to środowisko należę do grona jego dużych zwolenników - proszę nie mylić z fanatykami.
 
-Jednak w gąszczu samych plusów są również i minusy - niestety.  
+Jednak w gąszczu samych plusów są również i minusy - niestety.
 Piszę "niestety" z tego względu, że **nie jest to styl pisania dla każdego**, w szczególności dla tych nie lubiących programistycznych "robaczków", a LaTeX chodź niewielkim stopniu ale taki jest.
 
 Można oczywiście znaleźć odpowiednie środowisko programistyczne będące na styku świata Worda i LaTeXa jak np: program [Lyx][2], program ułatwiający pracę z LaTeX ze względu na swoje podobieństwo do wyglądu Worda czy Libre Office'a, ale nawet mimo tego Lyx jakoś mnie nie zdołał przekonać się do siebie - chodź był moment że usilnie starałem się go nauczyć.
 
-Mój wybór padł na program [Texmaker][3].  
-Moim skromnym zdaniem to ideał programu w 100% spełniających to do czego został stworzony - prostota oraz wieloplatformowość programu połączona z ogromnymi możliwościami edycyjnymi przystosowanymi do pisania w LaTeXu zaskarbiła sobie moją uwagę.  
+Mój wybór padł na program [Texmaker][3].
+Moim skromnym zdaniem to ideał programu w 100% spełniających to do czego został stworzony - prostota oraz wieloplatformowość programu połączona z ogromnymi możliwościami edycyjnymi przystosowanymi do pisania w LaTeXu zaskarbiła sobie moją uwagę.
 Chodź samym wyglądem może delikatnie przestraszyć użytkowników na co dzień nie obcujących z pisaniem programów lub skryptów (jednolity, sztywny tekst z cyferkami na boku), to mimo wszystko po pewnym czasie przyzwyczajenie może odepchnąć pozostałych konkurentów na długie miesiące ;)
 
 Tworzenie dokumentu w LaTeX jest niezwykle łatwe, chodź słowo "łatwy" jest tu kwestią dyskusyjną, ponieważ każda osoba posiada różny poziom szybkości i łatwości nauki. Sam LaTeX jest podobny do języków meta-znaczników jak HTML czy XML. Wystarczy poznać kilka prostych instrukcji i naturalnych zwyczajów rodem z prac pisanych na kartce zeszytu, aby zacząć pisać wspaniałe dokumenty.
 
 ## Instalacja niezbędnego oprogramowania (lub wersja online)
 
-Zanim jednak przejdziemy do właściwego pisania pracy, musimy zaopatrzyć się w odpowiednie oprogramowanie.  
+Zanim jednak przejdziemy do właściwego pisania pracy, musimy zaopatrzyć się w odpowiednie oprogramowanie.
 Będą nam potrzebne:
 
 *   [TexLive][4] (Linux) lub [MikTeX][5] (Windows)
@@ -75,7 +75,7 @@ Tak więc jeśli nie chcesz marnować czasu na instalowanie całego oprogramowan
 Instalacja obu programów to jedna krótka komenda wykonana w terminalu:
 
     sudo apt-get install texlive-full texmaker
-    
+
 
 W powyższej komendzie instalujemy co prawda wszystkie możliwe pakiety biblioteki [TexLive][4] (ok. 1,5GB) - to dość dużo, jak na większość bibliotek, ale to działanie spowoduje, że nie będą tak często wyskakiwać błędy typu *brak wymaganej biblioteki* - a ze swoich początków w LaTeXu wiem, że to częsty błąd występujący przy początkowych kompilacjach dokumentu.
 
