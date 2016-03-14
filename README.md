@@ -22,8 +22,12 @@ Before next move we need to fix python [InsecurePlatformWarning issue][issue-Ins
 
 Set the environment
 
-    mkvirtualenv -p pelicanblog
+    :::bash
+    mkvirtualenv pelicanblog
     workon pelicanblog
+    (pelicanblog) pip install --upgrade pip
+    (pelicanblog) pip install setuptools
+    (pelicanblog) pip install requests[security]
     (pelicanblog) pip install -r requirements.txt --no-index --allow-external
     deactivate
 
