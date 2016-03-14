@@ -1,9 +1,10 @@
 Title:      Thesis in LaTeX - part 3
 Date:       2015-04-06
-Status:     published
+Status:     draft
 Category:   Self improvement
 Tags:       latex, university
-Summary:    Making a title page of your thesis and talk about how to properly write with LaTeX syntax to dunch wrong code.
+<!-- Summary:    Making a title page of your thesis and talk about how to properly
+            write with LaTeX syntax to dunch wrong code.-->
 
 
 <div class="intro-article-image-md" markdown="1">

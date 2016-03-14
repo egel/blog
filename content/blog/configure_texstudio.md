@@ -28,6 +28,12 @@ difference between **texmaker**.
 
 #### What we are going to change and why?
 
+*   show line numbers
+*   change main font to monospace type
+*   tab to spaces
+*   default language
+*   sometimes may require to add `-shell-escape` to LaTeX, PdfLaTeX, XeLaTeX,
+    LuaLaTeX compilers
 
 
 

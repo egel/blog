@@ -1,10 +1,10 @@
 Title:      Discover the docker containers
 Date:       2015-08-05 09:31
-Status:     Published
+Status:     Draft
 Category:   Discovery
 Tags:       linux, docker
 Authors:    Maciej Sypień
-Summary:    <div class="intro-article-image-sm" markdown="1">![Docker logo]({filename}/images/docker_large_logo_transparent.png)</div> We will invetigate docker containers.
+<!-- Summary:    <div class="intro-article-image-sm" markdown="1">![Docker logo]({filename}/images/docker_large_logo_transparent.png)</div> We will invetigate docker containers. -->
 
 
 <div class="intro-article-image-sm" markdown="1">
@@ -21,11 +21,11 @@ install it from site
 
 ### Run image in teminal and interactive
 
-    docker run -it 
+    docker run -it
 
 ### Save container into images
 
-You do this by `commit` I mean 
+You do this by `commit` I mean
 
     docker commit <container-ID> <yourname>/<morespec>:1.0
 
@@ -36,4 +36,4 @@ You do this by `commit` I mean
 
 then
 
-    
+
