@@ -21,7 +21,7 @@ STATIC_PATHS        = ['extras', 'images', 'downloads']
 ARTICLE_PATHS       = ['blog']
 PAGE_PATHS          = ['pages']
 ARCHIVES_URL        = "archives.html"
-READING_LIST_URL    = "reading_list.html"
+READING_LIST_URL    = "reading-list.html"
 FAVICON             = "extras/favicon.png"
 
 # Formatting for URLs
@@ -66,8 +66,8 @@ DISPLAY_SIDEBAR = False
 
 DISPLAY_ABOUT_ME_ON_SIDEBAR = False
 ABOUT_ME = """
-Programmer, soundtracks enthusiast, astrophysics fan enjoying every bit of the life.
-Occasionally writing this blog.
+Programmer, soundtracks enthusiast, astrophysics fan.
+Occasionally I'm writing this blog.
 """
 
 HIDE_SOCIAL = False
@@ -124,7 +124,7 @@ RELATED_POSTS_TEXT = "Few related posts:"
 THEME = "theme/egelance"
 
 PLUGIN_PATHS = [ 'plugins' ]
-PLUGINS = [  'related_posts', 'tag_cloud', 'goodreads_activity' ] # 'better_codeblock_line_numbering', 'tipue_search',
+PLUGINS = [  'related_posts', 'tag_cloud', 'goodreads_activity', 'simple_footnotes'  ] # 'better_codeblock_line_numbering', 'tipue_search',
 
 MD_EXTENSIONS = [ 'codehilite(css_class=highlight, linenums=True)', 'extra'] # 'fenced_code',
 
