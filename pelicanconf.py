@@ -6,7 +6,8 @@ AUTHOR          = 'Maciej Sypień'
 SITENAME        = "The Egel's Blog"
 SITE_SLOGAN     = "Do more in less time"
 SITE_SUBSLOGAN  = "Simplicity and clarity of the implementation"
-SITEURL         = 'http://pelican-egel-blog.dev'
+#SITEURL         = 'http://pelican-egel-blog.dev'
+SITEURL         = 'http://pelican.egel.pl'
 TIMEZONE        = 'Europe/Warsaw'
 DEFAULT_LANG    = 'en'
 
