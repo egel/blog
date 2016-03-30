@@ -1,12 +1,12 @@
 Title:    Discover the Tmux
 Date:     2014-08-16 12:42
-Status:   published
+Status:   draft
 Lang:     en
 Tags:     tmux, console
 Category: Discovery
 Author:   Maciej Sypień
 Summary:  In this article I will try to take a look on tmux and extract its
-advantages and disadvantages for admires or developer.
+          advantages and disadvantages for admires or developer.
 
 
 <div class="intro-article-image-sm" markdown="1">

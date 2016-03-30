@@ -1,6 +1,6 @@
 Title:      Making PDF from images
 Date:       2014-08-10 23:15
-Status:     published
+Status:     draft
 Category:   Hacks
 Tags:       pdf, terminal
 Author:     Maciej Sypień
@@ -41,7 +41,7 @@ Do wykonania naszego zadania przyda nam się program `imagemagick` --- swoisty s
 **Instalacja**:
 
     $ sudo apt-get install imagemagick
-    
+
 
 ### <a name="skanowanie-tekstu" class="jumptarget"></a> Skanowanie tekstu
 
@@ -60,7 +60,7 @@ Jak wspominałem wcześniej, wszystkie obrazki powinny mieć to samo rozszerzeni
 Poniższa komenda zamienia wszystkie obrazki z formatu `jpg` na `png` w aktualnym katalogu.
 
     $ mogrify -format jpg *.png
-    
+
 
 ### <a name="sortowanie-i-zamiana-nazw-plikow" class="jumptarget"></a> Sortowanie i zamiana nazw plików
 
@@ -106,8 +106,8 @@ W tym celu należy sprawdzić czy wszystkie zdjęcia mają podobne parametry. Po
 
 **Wykonanie poniższej komendy zwykle zajmuje parę minut** --- w zależności od ilości obrazków i parametrów komputera.
 
-    $ identify -verbose *.png | grep "Image:\|Resolution:\|Geometry:\|Filesize:\|Colorspace:" > images_stats.txt 
-    
+    $ identify -verbose *.png | grep "Image:\|Resolution:\|Geometry:\|Filesize:\|Colorspace:" > images_stats.txt
+
 
 Wszystkie wydruki powinny się mniej więcej zgadzać. Jednie dla wartości `Geometry` mogą być inne wyniki drugiego wymiaru (zaraz po `x...`, czyli 1152x**1702+0+0**). Pierwszy wymiar Geometry to szerokość strony, drugi to wysokość.
 
@@ -135,37 +135,37 @@ Zawartość wygenerowanego pliku `images_stats.txt` powinna wyglądać mniej wi�
       Colorspace: Gray
       Filesize: 200KBB
     ...
-    
+
 
 > Jak widać wszystkie parametry są podobne, jedynie **Geometry** oraz **Filesize** powinien się zmieniać. To wszystko da nam gwarancję że nie będzie różnej wielkości stron w końcowym pliku PDF.
 
 Aby **sprawdzić najmniejszy wymiar** obrazka można użyć polecenia poniżej:
 
     $ cat images_stats.txt | grep "Geometry:"
-    
+
 
 Szukamy najmniejszej wartości dla szerokości strony spośród wszystkich zdjęć (czyli: Geometry: **1152**x1700+0+0). Polecenie to można jeszcze delikatnie zmienić, aby uzyskać mniejsze wartości i wyłapać najmniejszy wymiar :)
 
     $ cat images_stats.txt | grep "Geometry: 12"
-    
+
 
 Po ustaleniu **najmniejszej** szerokości strony (width) wykonujemy poniższą komendę która zmieni szerokość wszystkich zdjęć do tej najmniejszej (zadanej przez nas).
 
     $ mogrify -geometry 1152x *.png   // zamiana z szerokości na jedną wspólną wszystkich png
-    
+
 
 Dla pewności można wykonać jeszcze raz komendę która zbada wszystkie właściwości zdjęć dla nas i zapiszę do pliku:
 
-    $ identify -verbose *.png | grep "Image:\|Resolution:\|Geometry:\|Filesize:\|Colorspace:" > images_stats_fixed.txt 
-    
+    $ identify -verbose *.png | grep "Image:\|Resolution:\|Geometry:\|Filesize:\|Colorspace:" > images_stats_fixed.txt
+
 
 ### <a name="redukacja-wagi-i-jakosci-zdjecia" class="jumptarget"></a> Redukcja wagi i jakości zdjęcia (opcjonalne)
 
-> **Uwaga:** Zmiana zdjęć odbywa się na aktualnych zdjęciach!!!  
+> **Uwaga:** Zmiana zdjęć odbywa się na aktualnych zdjęciach!!!
 > Warto więc zrobić kopię do nowego folderu i pracować na nim.
 
     $ mogrify -resize 50% -quality 80% *.jpg
-    
+
 
 Powyższa komenda zmieni domyślny rozmiar naszych zdjęć o połowę (50%) i dodatkowo zmniejszy jakość wszystkich zdjęć do 80%.
 
@@ -174,7 +174,7 @@ Powyższa komenda zmieni domyślny rozmiar naszych zdjęć o połowę (50%) i do
 Konwertowania dokonujemy komendą
 
     convert *.png ksiazka.pdf
-    
+
 
 ### <a name="weryfikacja-kolejnosci-i-zgodnosci-stron" class="jumptarget"></a> weryfikacja kolejności i zgodności stron
 
