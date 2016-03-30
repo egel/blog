@@ -7,8 +7,8 @@ AUTHOR          = 'Maciej Sypień'
 SITENAME        = "The Egel's Blog"
 SITE_SLOGAN     = "Do more in less time"
 SITE_SUBSLOGAN  = "Simplicity and clarity of the implementation"
-SITEURL         = 'http://blog.dev'
-#SITEURL         = 'http://pelican.egel.pl'
+#SITEURL         = 'http://blog.dev'
+SITEURL         = 'http://blog.egel.pl'
 TIMEZONE        = 'Europe/Warsaw'
 DEFAULT_LANG    = 'en'
 CURRENT_DATE    = datetime.datetime.now()
@@ -130,8 +130,8 @@ MD_EXTENSIONS = [ 'codehilite(css_class=highlight, linenums=True)', 'extra'] # '
 
 DIRECT_TEMPLATES = (('index', 'tags', 'categories', 'archives', 'reading-list', 'search'))
 
-DISQUS_SITENAME     = "The Egel's Blog"
-GOOGLE_ANALYTICS    = 'UA-26456669-2'
+DISQUS_SHORT_NAME = "egel"
+GOOGLE_ANALYTICS  = 'UA-26456669-2'
 
 SUMMARY_MAX_LENGTH      = 50
 NEWEST_FIRST_ARCHIVES   = True  # Show most recent posts first
