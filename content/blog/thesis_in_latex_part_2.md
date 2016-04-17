@@ -2,7 +2,7 @@ Title:      Thesis in LaTeX - part 2
 Date:       2014-10-19 12:21:49
 Modified:   2014-10-19 10:21:49
 Lang:       en
-Status:     draft
+Status:     published
 Category:   Self improvement
 Tags:       latex, university
 
@@ -11,265 +11,350 @@ Tags:       latex, university
   ![LaTeX logo]({filename}/images/LaTeX_logo.png)
 </div>
 
-I assume that at the moment of reading this second part of writing thesis in
-LaTeX you have red
+I assume, that at the moment of reading this second part of writing thesis in
+LaTeX, you have allready red the previous part:
 [Thesis&nbsp;in&nbsp;LaTeX&nbsp;part&nbsp;1]({filename}thesis_in_latex_part_1.md)
 and install required software. If you do, then perfect carry on, but if not you
 should catch up.
 
-I this part I will try to make some very basic introduction how to use LaTeX in
-practice. But it is hard. Not by writing, because paper can take everything. The
-real thing hides into a simple question how condense this knowledge in
-acceptable for average person. You can not read this article for 5 days, because
-you can read few book, far more detailed then my article in this time.
+I this part I will try to make some very basic introduction **How to use LaTeX in
+practice**. But it will not be so easy - not by writing, because paper can take
+everything. The real thing hides into a simple question:
 
-My main goal for this series is to assure and show you that creating thesis in
-LaTeX is the best you can get in reasonable time. By the way "LaTeX is the de
-facto standard for the communication and publication of scientific
-documents."[ref]Get from official LaTeX webpage
-<https://www.latex-project.org/>[/ref]
+> How condense a huge knowledge in acceptable short time for average person.
 
-LaTeX can scare with its complex examples, but those examples are usually very
-rare. In this part I will only guide you though the basics and point best
-practices which I discovered during few years of writing. But it will be a very
-good starting point.
+You can not read this article for more then 5 days, that is obvious ;) In this
+time you could read few book in this time and far more detailed then my article.
+But this series of articles have some advantages over other publications I have
+met till writing this post. Books are solid knowledge - articles by its
+definition should be short.
 
-## Creating basic document
-TeX is a compiling type of text processor. In plain words that means its
-generate from source files final product (whatever it is) and during this
-process it creating some helping content/files to achieve final result.
-So, do not panic if among your source files another will arise - that is norm
-for LaTeX.
+My main goal for this series is to assure and show you, that creating thesis in
+LaTeX is **the best you can get in reasonable period of time**. I assume that if
+you are reading this article you are probably woring on your thesis or
+considering how to start writing.
+
+By the way, if you are interesting to work as scientists or any technical
+person, this quote below might be inspiring for you to make a good decision ;)
+
+> "LaTeX is the de facto standard for the communication and publication of
+> scientific documents." - Get from official LaTeX webpage
+> <https://www.latex-project.org/>
+
+I agree, LaTeX can be scary, with its complex examples and "programming" syntax,
+but to be honest those examples are usually very rare for average documents. In
+this part I will only guide you though the basics of LaTeX and point the best
+practices which I discovered during few years of writing - It will be a very
+good starting point for you.
+
+## Learning of creating basic document
+TeX is a compiling type of text processor. In plain words that means it
+generates from source files the final product (whatever it would be `*.dvi`,
+`*.pdf` or whatever it might be) and during this process it creating some helping
+meta files to achieve this final result. So please, do not panic if among your
+source files, some another will arise - that is norm for LaTeX.
 
 I recommend to start by creating new folder with some obvious name for you (and
-you after a while). I would use `firstname_lastname_thesis`. This folder should
-lay in location easy get, because you will we regularly use it. As a programmer
-I usually use `~/workspace` as a container of my git projects, but `~/Desktop`
-is also fine if you like mess on your desk ;)
+you, after a while). I would use `yourFirstName_yourLastName_thesis`. This file
+saved into a folder should lay into a location easy get - because you will we
+regularly use it. As a programmer I usually use `~/workspace` as a container of
+my projects (most git project), but any other reasonable location is also fine,
+for example like: `~/Desktop`. It should be easy access for you.
 
-So we have got folder location for your thesis
+So we have got folder location for your thesis. This is imporant, because LaTeX
+generate many meta files while preparing final result - in our way is acctually
+a PDF file. That is structure of files is essential for your health and your
+project.
 
+The most commonly used files we will create and maintain during writing are:
+`.tex` and `.bib`.  The `.tex` is acctually a plain text files with TeX marcos
+inside, the `.bib` files are related with bibliography and store all positions
+which can be used (or not) in our thesis. The `bib` files can be understood as
+our bibliography management files and they can be used in many other documents.
 
-## Tworzenie dokumentu
+We create 4 simple text files:
 
-Tworzymy w dowolnym miejscu (dla przykładu na pulpicie) folder o nazwie *magisterka*, *praca dyplomowa* lub cokolwiek innego sensownego. W tym nowo utworzonym folderze będziemy umieszczać wszystkie pliki związane z pracą. W głównej mierze te z rozszerzeniem `.tex`, lecz również pojawią się inne (tj. `.bib`, `.cls`, `.sty`) ale nie zaprzątajmy sobie tym głowy w tej chwili.
+*   `main.tex`
+*   `chap_one.tex`
+*   `chap_two.tex`
+*   and `chap_three.tex`
 
-> Pliki umieszczamy w osobnym folderze z tego względu, że podczas kompilacji do pliku wynikowego będą tworzyły się dodatkowe pliki pomocnicze do uzyskania ostatecznej formy np: PDF.
+The first one (main.tex) will store our document configuration and order files
+will represent out chapters in the thesis.
 
-Warto zapamiętać plik z rozszerzeniem `.tex`, ponieważ jest on o tyle istotny, iż stanowi podstawę (w głównej mierze treść) naszego dokumentu. To w nim lub plikach z tym samym rozszerzeniem będziemy pisać kolejne rozdziały naszej pracy.
+> It is good practice to separate chapters to different files, mainly for for
+> further quick enable/disable, changing the order of chapters or if you write
+> document with other people, they can focus only on theirs part without
+> conflicts into document.
 
-Przykładowo główny plik naszego dokumentu będzie się nazywać `dokument.tex`, natomiast ze względu na przyszłe rozrastanie się tego pliku kolejne rozdziały umieścimy w nowych plikach z tym samym rozszerzeniem tj. `chap_rozdzial_1.tex`, `chap_rozdzial_2.tex`, `chap_rozdzial_3.tex`... i tak dalej - zasada jest prosta :)
+As you probably notice, the names of files which represents chapters begins with
+`chap`. It is not required to work (because you can put any name to files), but
+this convention is also known as namespace or pointers and is commonly used in
+LaTeX documents - more on [LaTeX labels and cross referencing][wiki-latex-labels-and-cross-ref].
 
-W nazwach plików dobrze jest utworzyć na początku nazwy "wskaźnik" do tego czym jest zawartość pliku (np: **chap_**, od ang. *chapter*) - pomaga to w późniejszej orientacji w posiadanych plikach oraz bezpośrednio w imporcie konkretnych rozdziałów już w pracy.
+The namespace **chap** stands for a chapter and is well helps with multiple
+elements that you can create in LaTeX, but more details about this we will cover
+later.
 
-> Podczas kompilacji (czasem kilkukrotnej w przypadku posiadania dodatkowo bibliografii) nasz program będzie tworzyć inne niezbędne pliki służące generowaniu pliku wynikowego (np.: PDF), a przy wielu różnych plikach których nie znamy, bądź nie rozumiemy do czego służą, łatwo się pogubić, stąd ważna jest pewna ustalona struktura pracy.
+### Preamble and actual document
+Any each new document whether is an `article`, `report`, or perhaps a `book`
+(There is a number of different ready-made patterns) consists normally of
+so-called **preamble** and the **document**.
 
-### Preambuła i treść właściwa
+> This name `document` can be tricky at first time, because in lazy thinking any
+> document is a document. But into the meaning of LaTeX, this refers to content
+> of a document written by human, the author - and that is truly reasonable.
 
-Każdy nowy dokument czy to artykuł (ang. *article*), czy raport (ang. *report*), czy może książka (ang. *book*) - jest kilka różnych gotowych schematów - składa się standardowo z tak zwanej *preambuły* oraz *treści właściwej*.
+Preamble
+:   This is a collation of rules which program must know before it generate
+final document.
 
-**Preambuła**
-:   to zestaw reguł z którymi program musi się zapoznać zanim zacznie tworzyć nasz dokument.
+Document
+:   This is a place where author writing a text of document and using proper
+commands for formatting text.
 
-**Treść właściwa**
-:   to miejsce w którym korzystając z odpowiednich poleceń układamy treść w dokumencie.
+The standard and also the simplest preamble (not quite for thesis) looks similar
+to this below:
 
-Standardowa, prosta preambuła (niekoniecznie dla prac dyplomowych) wygląda podobnie jak poniżej:
+```latex
+\documentclass[12pt, oneside, a4paper]{report}
+\usepackage[OT4, plmath]{polski}  % definition of using platex
+\usepackage[utf8]{inputenc}       % UTF-8 for multiple languages
+\usepackage[OT4]{fontenc}
+\usepackage{url}
+\title{Project and implementation of content management system}
+\author{Maciej Sypień}
+\date{\today}
+```
 
-    \documentclass[12pt, oneside, a4paper]{report}
-    \usepackage[OT4, plmath]{polski}                % definicja użycia platex
-    \usepackage[utf8]{inputenc}                     % kodowanie na UTF-8
-    \usepackage[OT4]{fontenc}
-    \usepackage{url}
-    \title{Projekt i implementacja autorskiego systemu zarządzania treścią}
-    \author{Maciej Sypień}
-    \date{\today}
+The most commonly, the preamble is being inserted into the main file of our work,
+that is, in our case, the `main.tex` file. The name can be any other as you like
+but for conventionally this is the name for main file.
+Chapters will contain only the content of the document (without preamble),
+because they will be directly included to the main document - it helps a lot in
+further steps.
 
-
-Najczęściej preambułę wstawia się w głównym pliku naszej pracy, czyli w naszym przypadku będzie to plik `main.tex`.
-Rozdziały będą zawierać jedynie treść właściwą (bez preambuły), ponieważ będą włączane bezpośrednio do głównego dokumentu.
-
-Warto wspomnieć coś o klasach. Klasa to w dużym skrócie zestaw reguł definiujących jak będzie w dużej mierze wyglądał nasz dokument końcowy. LaTeX zawiera już wstępnie zdefiniowane klasy przykładowo kilka z nich to wspomniane wcześniej:
+It is worth mentioning something about classes. Class is in short a set of rules
+that define how the document will look like. LaTeX already contains predefined
+classes, for example, a few of them are mentioned earlier:
 
 *   book
 *   report
 *   article
 *   letter
 
-Dość dobrze obrazuje to linijka `\documentclass[12pt, oneside, a4paper]{report}` w której wyraźnie napisana jest definicja klasy `report` oraz jej opcjonalne argumenty jak czcionka, rodzaj druku, czy rozmiar papieru wynikowego papieru.
 
-To tylko niewielka część z szerokiej gamy dostępnych opcji, ponieważ każda z tych klas (book, report, etc.) może zawierać te same opcjonalne argumenty ale również i inne (nowe) nie zdefiniowane w żadnej z klas podstawowych. Bynajmniej te słowa nie są po to, aby przestraszyć czytelnika, lecz ku przestrodze, że warto czasem zapoznać się z dokumentacją używanej klasy. Natomiast jeszcze inną rzeczą jest fakt, że często nowo tworzone klasy bywają bardzo kiepsko udokumentowane i zwykle ze względu na brak czasu twórcy (style potrzebne do jednego lub kilku dokumentów i na tym koniec).
+Fairly well illustrated this a line
+`\documentclass[12pt, oneside, a4paper]{report}` which is clearly written a
+definition of class `report` and its optional arguments as **font size**, **type
+of printing** and **the document size** of the resulting paper.
 
-Druga część dokumentu to treść właściwa. Z punktu pisarza jest ona najważniejsza, gdyż zawiera treść widoczną później w pliku wynikowym. Owa cześć pliku jest jedną z najprostszych do definiowania ponieważ wygląda jak przykładzie poniżej:
+This is only a small part of the wide range of available options, because each
+of these classes (book, report, etc.) may contain the same optional arguments,
+but also other not defined in any of the core classes.
 
-    \begin{document}
-    \maketitle
+These words are not in order to frighten you, but to advice that it is sometimes
+refer to the documentation used class. While yet another thing is the fact that
+often the newly created class tend to be very poorly documented and usually due
+to lack of time to maintain it properly.
 
-    \begin{abstract}
-    Dokument ten prezentuje kilka zasad składu tekstu w~systemie \LaTeX.
-    \end{abstract}
+The second part of the content of document. From the writer point of view this
+is most important, because it contains content that appears later in the output
+file. That part of the file is one of the easiest to define because it looks
+like the example below:
 
+```latex
+\begin{document}
+\maketitle
 
-    \chapter{Nasz pierwszy rozdział}
-    % pierwsza sekcja
-    \section{Tekst}\label{sec:tekst}
-    \LaTeX\ ułatwia autorowi tekstu zarządzanie numerowaniem sekcji, wypunktowaniami oraz odwołaniami do tabel, rysunków i~innych elementów. W~łatwy sposób możemy się odwołać do wzoru \ref{eqn:wzor1}.
-
-    % sekcja
-    \section{Matematyka}\label{sec:matematyka}
-    Poniższy wzór prezentuje możliwości \LaTeX\ w~zakresie składu formuł matematycznych. Wzory są numerowane automatycznie, podobnie jak inne elementy o~których mowa w~sekcji~\ref{sec:tekst}.
-
-    \begin{equation}
-        E = mc^2,
-        \label{eqn:wzor1}
-    \end{equation}
-
-    gdzie
-
-    \begin{equation}
-        m = \frac{m_0}{\sqrt{1-\frac{v^2}{c^2}}}.
-    \end{equation}
-
-    % --------------------------------------
-
-    \chapter{Nasz drugi rozdział}
-    Bardzo długa treść rozdziału drugiego.
-
-    \section{Sekcja rozdziału drugiego}
-    \label{sec:sekcjaRozdzialuDrugiego}
-    Bardzo długa treść sekcji rozdziału drugiego.
-
-    \subsection{Podsekcja sekcji rozdziału drugiego}
-    \label{subsec:podsekcjaRozdzialuDrugiego}
-    Bardzo długa treść podsekcji rozdziału drugiego.
-
-    % --------------------------------------
-
-    \chapter{Nasz trzeci rozdział}
-    Bardzo długa treść rozdziału trzeciego.
-
-    \section{Sekcja rozdziału trzeciego}
-    \label{sec:sekcjaRozdzialuTrzeciego}
-    Bardzo długa treść sekcji rozdziału trzeciego.
-
-    \subsection{Podsekcja sekcji rozdziału trzeciego}
-    \label{subsec:podsekcjaRozdzialuTrzeciego}
-    Bardzo długa treść podsekcji rozdziału trzeciego.
-
-    \end{document}
+\begin{abstract}
+Dokument ten prezentuje kilka zasad składu tekstu w~systemie \LaTeX.
+\end{abstract}
 
 
-Powyższy fragment stanowi *treść właściwą* dokumentu i jak z pewnością czytelnik już zauważył, treść właściwa rozpoczyna fraza `\begin{document}` i kończy `\end{document}`. Jednak jeden duży plik może być trudny do edycji przy dużej ilości zawartego w nim tekstu. Przejdźmy więc do podziału jednego spójnego pliku tekstowego na mniejsze, osobne fragmenty. Natomiast znaczenie poszczególnych znaków oraz fraz zostaną omówione już w kolejnej 3 części :)
+\chapter{Nasz pierwszy rozdział}
+% pierwsza sekcja
+\section{Tekst}\label{sec:tekst}
+\LaTeX\ ułatwia autorowi tekstu zarządzanie numerowaniem sekcji, wypunktowaniami oraz odwołaniami do tabel, rysunków i~innych elementów. W~łatwy sposób możemy się odwołać do wzoru \ref{eqn:wzor1}.
 
-### Podział na osobne pliki
+% sekcja
+\section{Matematyka}\label{sec:matematyka}
+Poniższy wzór prezentuje możliwości \LaTeX\ w~zakresie składu formuł matematycznych. Wzory są numerowane automatycznie, podobnie jak inne elementy o~których mowa w~sekcji~\ref{sec:tekst}.
 
-Jak wspomniałem wyżej, domyślnie interesuje nas podział dokumentu na konkretne rozdziały tak, aby każdy rozdział znajdował się w osobnym pliku.
+\begin{equation}
+  E = mc^2,
+  \label{eqn:wzor1}
+\end{equation}
 
-Plik `dokument.tex` powinien wyglądać wtedy następująco:
+gdzie
 
-    \documentclass[12pt, oneside, a4paper]{report}
-    \usepackage[OT4, plmath]{polski}                % definicja użycia platex
-    \usepackage[utf8]{inputenc}                     % kodowanie na UTF-8
-    \usepackage[OT4]{fontenc}
-    \usepackage{url}
-    \title{Projekt i implementacja autorskiego systemu zarządzania treścią}
-    \author{Maciej Sypień}
-    \date{\today}
+\begin{equation}
+  m = \frac{m_0}{\sqrt{1-\frac{v^2}{c^2}}}.
+\end{equation}
 
-    \begin{document}
-    \maketitle
+% --------------------------------------
 
-    \begin{abstract}
-    Dokument ten kilka podstawowych zasad składu tekstu w~systemie \LaTeX.
-    \end{abstract}
+\chapter{Nasz drugi rozdział}
+Bardzo długa treść rozdziału drugiego.
 
-    \tableofcontents
-    \clearpage
+\section{Sekcja rozdziału drugiego}
+\label{sec:sekcjaRozdzialuDrugiego}
+Bardzo długa treść sekcji rozdziału drugiego.
 
-    \include{chap_wstep}
-    \include{chap_rozdzial_1}
-    \include{chap_rozdzial_2}
-    \include{chap_rozdzial_3}
+\subsection{Podsekcja sekcji rozdziału drugiego}
+\label{subsec:podsekcjaRozdzialuDrugiego}
+Bardzo długa treść podsekcji rozdziału drugiego.
 
-    \end{document}
+% --------------------------------------
 
+\chapter{Nasz trzeci rozdział}
+Bardzo długa treść rozdziału trzeciego.
 
-Jak widać główny plik naszej przyszłej pracy jest prosty, przejrzysty i czytelny. Każdy z rozdziałów jest dołączany poprzez komendę `include{}`, jak zapewne zauważyłeś drogi czytelniku w przykładzie brak pełnej nazwy pliku (tj. rozszerzenia `.tex`), LaTeX dzięki swojej "magii" nie potrzebuje podawania rozszerzenia przy dołączaniu kolejnych plików z treścią. Jest to dość wygodne bo minimalnie skraca nazwę naszych rozdziałów.
+\section{Sekcja rozdziału trzeciego}
+\label{sec:sekcjaRozdzialuTrzeciego}
+Bardzo długa treść sekcji rozdziału trzeciego.
 
-Wracając do naszych rozdziałów. Każdy z nich rozpoczyna się zupełnie zwyczajnie, tak jakbyśmy dalej pisali w tym samym dokumencie (przed rozdzieleniem na osobne pliki). Dla przykładu poniżej podaje kody źródłowe dla lepszego zobrazowania tej sytuacji :)
+\subsection{Podsekcja sekcji rozdziału trzeciego}
+\label{subsec:podsekcjaRozdzialuTrzeciego}
+Bardzo długa treść podsekcji rozdziału trzeciego.
+
+\end{document}
+```
+
+Above snippet contains the actual content of the document and you have probably
+noticed that the actual content begin phrase `\begin{document}` and end
+`\end{document}`. But one big file can be difficult to edit and navigate into it.
+So I have to talk about how to split whole document into smaller peaces and also
+why it so important.
+
+### Split document for smaller peaces
+As I mention before, we will be interesting to divide our documnet into smaller
+part that every single chapter will be put into separate file.
+
+The file `main.txt` should look like this:
+
+```latex
+\documentclass[12pt, oneside, a4paper]{report}
+\usepackage[OT4, plmath]{polski}                % definicja użycia platex
+\usepackage[utf8]{inputenc}                     % kodowanie na UTF-8
+\usepackage[OT4]{fontenc}
+\usepackage{url}
+\title{Projekt i implementacja autorskiego systemu zarządzania treścią}
+\author{Maciej Sypień}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Dokument ten kilka podstawowych zasad składu tekstu w~systemie \LaTeX.
+\end{abstract}
+
+\tableofcontents
+\clearpage
+
+\include{chap_wstep}
+\include{chap_rozdzial_1}
+\include{chap_rozdzial_2}
+\include{chap_rozdzial_3}
+
+\end{document}
+```
+
+As you see, main file of our document is simple, cleat and well readable. Every
+chapter is attached by `\include{}` command - and yes it can be written also
+without additional `.tex` extension ;) It is very comfortable, because writer
+can clearly read the file name and to not be bothered by the its extension.
+
+But back to ours chapters. Each of them begins usually. You just write what you
+need, to fill the content. For better visualization of this situation I will
+paste some snippets.
 
 Prolog, **chap_prolog.tex**:
 
-    \chapter{Wstęp}
-    Tu będzie się znajdować wstęp do naszej bardzo obszernej pracy ;)
+```latex
+\chapter{Wstęp}
+Tu będzie się znajdować wstęp do naszej bardzo obszernej pracy ;)
+```
+
+First file, **chap_1.tex**:
+
+```latex
+\chapter{Nasz pierwszy rozdział}
+% pierwsza sekcja
+\section{Tekst}\label{sec:tekst}
+\LaTeX\ ułatwia autorowi tekstu zarządzanie numerowaniem sekcji, wypunktowaniami oraz odwołaniami do tabel, rysunków i~innych elementów. W~łatwy sposób możemy się odwołać do wzoru \ref{eqn:wzor1}.
+
+% sekcja
+\section{Matematyka}\label{sec:matematyka}
+Poniższy wzór prezentuje możliwości \LaTeX\ w~zakresie składu formuł matematycznych. Wzory są numerowane automatycznie, podobnie jak inne elementy o~których mowa w~sekcji~\ref{sec:tekst}.
+
+\begin{equation}
+    E = mc^2,
+    \label{eqn:wzor1}
+\end{equation}
+
+gdzie
+
+\begin{equation}
+    m = \frac{m_0}{\sqrt{1-\frac{v^2}{c^2}}}.
+\end{equation}
+```
+
+Second file, **chap_2.tex**
+
+```latex
+\chapter{Nasz drugi rozdział}
+Bardzo długa treść rozdziału drugiego.
+
+\section{Sekcja rozdziału drugiego}
+\label{sec:sekcjaRozdzialuDrugiego}
+Bardzo długa treść sekcji rozdziału drugiego.
+
+\subsection{Podsekcja sekcji rozdziału drugiego}
+\label{subsec:podsekcjaRozdzialuDrugiego}
+Bardzo długa treść podsekcji rozdziału drugiego.
+```
 
 
-Plik pierwszy, **chap_rozdzial_1.tex**:
+Third file, **chap_3.tex**
 
-    \chapter{Nasz pierwszy rozdział}
-    % pierwsza sekcja
-    \section{Tekst}\label{sec:tekst}
-    \LaTeX\ ułatwia autorowi tekstu zarządzanie numerowaniem sekcji, wypunktowaniami oraz odwołaniami do tabel, rysunków i~innych elementów. W~łatwy sposób możemy się odwołać do wzoru \ref{eqn:wzor1}.
+```latex
+\chapter{Nasz trzeci rozdział}
+Bardzo długa treść rozdziału trzeciego.
 
-    % sekcja
-    \section{Matematyka}\label{sec:matematyka}
-    Poniższy wzór prezentuje możliwości \LaTeX\ w~zakresie składu formuł matematycznych. Wzory są numerowane automatycznie, podobnie jak inne elementy o~których mowa w~sekcji~\ref{sec:tekst}.
+\section{Sekcja rozdziału trzeciego}
+\label{sec:sekcjaRozdzialuTrzeciego}
+Bardzo długa treść sekcji rozdziału trzeciego.
 
-    \begin{equation}
-        E = mc^2,
-        \label{eqn:wzor1}
-    \end{equation}
+\subsection{Podsekcja sekcji rozdziału trzeciego}
+\label{subsec:podsekcjaRozdzialuTrzeciego}
+Bardzo długa treść podsekcji rozdziału trzeciego.
+```
 
-    gdzie
-
-    \begin{equation}
-        m = \frac{m_0}{\sqrt{1-\frac{v^2}{c^2}}}.
-    \end{equation}
-
-
-Plik drugi, **chap_rozdzial_2.tex**
-
-    \chapter{Nasz drugi rozdział}
-    Bardzo długa treść rozdziału drugiego.
-
-    \section{Sekcja rozdziału drugiego}
-    \label{sec:sekcjaRozdzialuDrugiego}
-    Bardzo długa treść sekcji rozdziału drugiego.
-
-    \subsection{Podsekcja sekcji rozdziału drugiego}
-    \label{subsec:podsekcjaRozdzialuDrugiego}
-    Bardzo długa treść podsekcji rozdziału drugiego.
-
-
-Plik trzeci, **chap_rozdzial_3.tex**
-
-    \chapter{Nasz trzeci rozdział}
-    Bardzo długa treść rozdziału trzeciego.
-
-    \section{Sekcja rozdziału trzeciego}
-    \label{sec:sekcjaRozdzialuTrzeciego}
-    Bardzo długa treść sekcji rozdziału trzeciego.
-
-    \subsection{Podsekcja sekcji rozdziału trzeciego}
-    \label{subsec:podsekcjaRozdzialuTrzeciego}
-    Bardzo długa treść podsekcji rozdziału trzeciego.
-
-
-Jak widać podział naszego jednego pliku nie przyniósł, aż tak epickiego rezultatu jaki mogliśmy się spodziewać, lecz to z tego względu, że samej treści było w nim niewiele. Jednak podział jednego dużego pliku na mniejsze jest szalenie pomocny w przypadku opracowywania długich prac. Pozwala na usystematyzowanie pracy oraz lepszą organizację podczas pisania np: gdy chcemy odłączyć jakiś rozdział wystarczy że w naszym głównym pliki zakomentujemy linijkę (`\include{}`) dołączającą określony fragment i gotowe.
+Dividing of our whole document into separate fragment did not bring us some
+astonishing results (just for now), you will appreciate these changes when these
+files (chapters) grow. This allows you to better work organization while writing
+(ex: when you want to omit some chapters, you just comment `\include{}` command
+with `%` sign, compile document and done.
 
 <a href="https://www.sharelatex.com/project/543aad2f69870b1d3e39c26b" title="Pełny przykład online" class="btn btn-primary">Pełny przykład online</a>
 
-Myślę że to na tyle w tej części i dziękuje Wam za uwagę.
+I think that pretty much it for this part. Thank you for attention and leave
+comment if you like this.
 
 * * *
 
-Ale, ale... Drogi Czytelniku, jeśli nie zraziłeś się jeszcze do LaTeXa i masz ochotę poznać go nieco dokładniej zapraszam Cię już teraz do kolejnej 3 odsłony pisania pracy dyplomowej z LaTeX (która ukaże się już niebawem), a pojawi się w niej między innymi:
+But if you do not hate LaTeX yet, and you still want to get know it better I
+will be peased to invite to to next, third part and it will contain:
 
-*   omówienie poszczególnych znaczników i fraz wraz z przykładami;
-*   dodawanie oraz stosowanie nowych pakietów;
-*   podstawowe **dobre praktyki** tworzenia dokumentów w LaTeX;
-*   a także stworzymy stronę tytułową dla naszej pracy.
+*   we will discuss about LaTeX{}'s elements (environments)
+*   how to add and use new packages
+*   basic **good practices** during writing in LaTeX
+*   and we will make the title page for our thesis
 
-...tak więc będzie dużo dobrej zabawy ;)
+...well, fun will be guarantee ;)
+
 
  [1]: http://blog.egel.pl/praca-dyplomowa-w-latex-cz1/
+ [wiki-latex-labels-and-cross-ref]: https://en.wikibooks.org/wiki/LaTeX/Labels_and_Cross-referencing
