@@ -15,14 +15,16 @@ Recently I have been working on some cloud project. We will use
 [Apiary][apiary-webpage] as a backend bridge for RESTful API, while the real
 backend was being built.
 
-
-The main gole for proper nginx configuration was to serve `*.example.com`
+The main gole for proper nginx configuration was to serve `*.example.dev`
 domains, but with some exceptions (restrictions) for subdomains:
 
 *   `www` subdomain as a legacy restriction
 *   `api` subdomain reserved for final REST API
 *   `tests` this subdomain (for my purpose only) provides easy URL to code coverage with
     unit tests
+
+> I use `dev` domain only for on my local machine only. Feel free to change it
+> on whatever name you like.
 
 For building frontend application I figured out that nginx configuration could
 look like this presented at the bottom snippet.
