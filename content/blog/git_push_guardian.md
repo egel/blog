@@ -80,5 +80,18 @@ done
 exit 0 # push will execute when won't match protected_branches
 ```
 
+## How to use it?
+You need to enter into your git project `~/workspace/<your_project>`. In this
+folder you should have a `.git/hooks` directory (if not you have poprably git
+older then 1.8.2). Then save above file as
+`~/workspace/<your_project>/.git/hooks/pre-push`.
+
+> Do not forget to add `chmod +x pre-push`.
+
+Now every time you will push to one of `protected_branches` listed into the
+file, Git will ask you is that was your intend action. For git masters, this
+trick can spare someone life ;)
+
+
   [1]: http://technology.blurtit.com/114838/what-is-a-basic-difference-between-a-notepad-and-microsoft-word
   [gist-pre-push]: https://gist.github.com/egel/2058f19cf78df84ade741b7a77a38006
