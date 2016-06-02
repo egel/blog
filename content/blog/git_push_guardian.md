@@ -32,19 +32,20 @@ With some examples on web and git documentation, I wrote simple git **pre-push**
 script that will check on which branch you are in and it will ask you "Are you
 intend to push?" to those protected branches.
 
-Full script are available into my gist on github - [HERE][gist-pre-push], but
-also paste this snippet here to complete the article.
+Full script are available into my gist on github [HERE - git pre-push][gist-pre-push],
+but I also paste this snippet here, to make the article complete.
 
 ### Implemented features:
-- Array with protected branches (easy to maintain)
-- Base terminal colors to improve visibility
-- Question that only work when confirm with enter (time to wonder it is correct action)
-- Default value of question set to `No`
-- Message of committed action
+-   Array with protected branches (easy to maintain)
+-   Base terminal colors to improve visibility
+-   Question that only work when confirm with enter (time to wonder it is
+    correct action)
+-   Default value of question set to `No`
+-   Message of committed action
 
 ### Things which may be improved in the future:
-- Download list of protected branches direct from repository
-- Add support for some popular flags like: `--force`
+-   Download list of protected branches direct from repository
+-   Add support for some popular flags like: `--force`
 
 ```bash
 #!/bin/bash
@@ -90,7 +91,7 @@ older then 1.8.2). Then save above file as
 
 Now every time you will push to one of `protected_branches` listed into the
 file, Git will ask you is that was your intend action. For git masters, this
-trick can spare someone life ;)
+little trick can save a day ;)
 
 
   [1]: http://technology.blurtit.com/114838/what-is-a-basic-difference-between-a-notepad-and-microsoft-word
