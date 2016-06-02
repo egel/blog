@@ -1,4 +1,4 @@
-Title:      Nginx configuration for AngularJS and Apiary cloud project
+Title:      Nginx configuration for AngularJS cloud project with Apiary
 Date:       2016-04-13 12:44
 Status:     published
 Category:   Diary
