@@ -1,6 +1,5 @@
 Title:      Thesis in LaTeX - part 1
 Date:       2014-10-12 19:00:05
-Modified:   2014-10-12 17:00:05
 Lang:       en
 Status:     published
 Category:   Self improvement
