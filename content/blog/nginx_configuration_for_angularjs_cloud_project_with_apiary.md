@@ -10,8 +10,8 @@ Authors:    Maciej Sypień
   ![Logo of Sublime Text 3]({filename}/images/nginx_logo.png)
 </div>
 
-Recently I have been working on some cloud project. We will use
-[AngularJS][angularjs-webpage] as frontend framework and
+Recently I have been working on some cloud project with my coworkers. We used
+ [AngularJS][angularjs-webpage] as frontend framework and
 [Apiary][apiary-webpage] as a backend bridge for RESTful API, while the real
 backend was being built.
 
@@ -26,32 +26,31 @@ domains, but with some exceptions (restrictions) for subdomains:
 > I use `dev` domain only for on my local machine only. Feel free to change it
 > on whatever name you like.
 
-For building frontend application I figured out that nginx configuration could
-look like this presented at the bottom snippet.
+While building frontend application I have made some basic nginx configuration
+and it looks like this snippet presented at the bottom.
 
-This configuration provides 4 servers:
+This configuration provides 5 servers:
 
-*   First one for frontend application with exceptions for `api`, `tests` and `www`
-    subdomains.
+*   First one is for frontend application, which may support organizations with
+    some exceptions for `api`, `tests` and `www`.
 *   Second for legacy domain `www` redirect.
-*   The third for REST backend domain redirect provided by apiary.
+*   The third is for frontend aplication which may support only basic domain.
+*   Next one is for REST backend domain redirect provided by apiary.
 *   The Last one provides easy access for auto generated code coverage for
     fronted app.
-
-
 
 ```nginx
 server {
   listen 80;
-  server_name ~^(?:(?!www)(?!api)(?!tests))(.*)\.example\.dev$ example.dev;
-  access_log /tmp/example.dev.log;
-  error_log  /tmp/example.dev.error.log;
+  server_name ~^(?:(?!www)(?!api)(?!tests))(.*)\.example\.dev$;
+  access_log /tmp/subdomains.example.dev.log;
+  error_log  /tmp/subdomains.example.dev.error.log;
 
   client_max_body_size 100M;
 
   location / {
     add_header 'Access-Control-Allow-Origin' '*';
-    root '/ABSOLUTE_PATH_TO_WORKING_DIR/example-frontend/build';
+    root '/ABSOLUTE_PATH_TO_WORKING_DIR/example-subdomain-frontend/build';
     try_files $uri $uri/ /index.html =404;
   }
 }
@@ -64,6 +63,21 @@ server {
 
 server {
   listen 80;
+  server_name example.dev;
+  access_log /tmp/example.dev.log;
+  error_log  /tmp/example.dev.error.log;
+
+  client_max_body_size 100M;
+
+  location / {
+    add_header 'Access-Control-Allow-Origin' '*';
+    root '/ABSOLUTE_PATH_TO_WORKING_DIR/example-domain-frontend/build';
+    try_files $uri $uri/ /index.html =404;
+  }
+}
+
+server {
+  listen 80;
   server_name api.example.dev;
 
   access_log /tmp/api.example.dev.log;
@@ -71,7 +85,7 @@ server {
 
   location / {
     add_header 'Access-Control-Allow-Credentials' 'true';
-    add_header 'Access-Control-Allow-Methods' 'GET, POST, DELETE, OPTIONS';
+    add_header 'Access-Control-Allow-Methods' 'GET, POST, PUT, DELETE, OPTIONS';
     add_header 'Access-Control-Allow-Headers' 'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type';
 
     proxy_pass http://private-ABCDE-example.apiary-mock.com;
@@ -85,7 +99,7 @@ server {
 
   client_max_body_size 100M;
 
-  root "/ABSOLUTE_PATH_TO_WORKING_DIR/example-frontend/tests/test-coverage/PhantomJS 2.1.1 (Mac OS X 0.0.0)";
+  root "/ABSOLUTE_PATH_TO_WORKING_DIR/example-subdomain-frontend/tests/test-coverage/PhantomJS 2.1.1 (Mac OS X 0.0.0)";
 }
 ```
 
