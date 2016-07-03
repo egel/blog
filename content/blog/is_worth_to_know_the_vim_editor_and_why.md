@@ -24,23 +24,23 @@ I will also try to answer for a few important questions for those who would like
 
 ### Quick review about Vim
 
-Taking some informations from popular Wikipedia, we can find out that Vim is with us since 1991r., furthermore Vi (the elder brother of Vim) get the year of 1976. Yeah it's a lot of time, especially in IT industry!
+Taking some informations from popular Wikipedia, we can find out, that Vim is with us since 1991r. Furthermore Vi (the elder brother of Vim) get the year of 1976. Yeah, it is a lot of time, especially in IT industry!
 
-Now the world takes a lot of changes everyday, connecting to Internet network imprint giant leap on programming software, including the software of text editors. There are constantly growing newer and newer text editors projects like:
+Now, the world takes a lot of changes everyday, connecting to Internet network imprint giant leap on programming software, including the software of text editors. There are constantly growing newer and newer text editors projects like:
 
 
-*   [Notepad++][2],
 *   [Sublime][3],
+*   [Notepad++][2],
 *   or [Atom][4].
 
-But here I am not talk about huge IDE, like [Eclipse](), [NetBeans](), [VisualStudio](), or [JetBrains editors family](). These are not just usual text editors, but big **I**ntegrated **D**evelopment **E**nvironments.
+But, here I will not talk about huge IDEs, like [Eclipse](), [NetBeans](), [VisualStudio](), or [JetBrains editors family](). These aren't just common text editors, rather a big **I**ntegrated **D**evelopment **E**nvironments.
 
-Now is the time, to ask a question, that it can be difficult to find a objective and clear answer.
+Now is the time, to ask a question, which finding a objective and clear answer can be difficult task.
 
 
 ### Is it worth it to know the Vim editor and why?
 
-There is a very good question titled [Is learning VIM worth the effort?][5] I found it on StackOverflow portal. It has a lot fantastic insights and answers about Vim, which I mostly agree, but I some opinions smacks of the Vi/Vim religion which I'm not support.
+There is a very good question titled [Is learning VIM worth the effort?][5] I found it on StackOverflow portal. It has a lot fantastic insights and answers about Vim, which I mostly agree, but some opinions reveals, smacks of the Vi/Vim religion, which I'm not support (find the reasonable level of application is the key).
 
 Beside mention StackOverflow article you probably want to know my personal opinion about Vim. So, **I think it is really worth to know Vim**, and I didn't say that because some other wise men say it. Learning Vim and how it works, allows me to better understand some basic aspects how software works a few decades ago (and now) when there was no GUI interface or mouse/touchpad, just only console and keyboard to operate.
 
@@ -85,7 +85,7 @@ Disadvantages:
 
 Vim (Vi) is probably the most common text editor spread around world (It is pre-installed by default almost any kind of machine). This single phrase could be crucial for give it try. But referring to the question, the knowledge about Vim will be useful for you in real live? My answer is **definitely yes**, in fact that you will bind your live with some kind of IT or educational sector. In other way this knowledge is worth a lot (because not everyone knows Vim!), but probably it will not be appreciated by the environment co-workers or boss. Shame!
 
-**Why is that?** In my opinion, if your are really interested in network administration, programming or other related field with IT sector, you probably will have to deal with some kind of servers. Usually these kind of staff is usually stored far away from you (or locked) and can be manage only remotely for ex. by SSH. In these moment any kind of pleasant GUI disappear and you stay alone with blinking console of terminal. For newbies a difficulties begins with also some magic inside, which with time is forged to daily basics.
+**Why is that?** In my opinion, if your are really interested in network administration, programming or other related field with IT sector, you probably will have to deal with some kind of servers. Usually these kind of staff is stored far away from you (or locked) and can be manage only remotely for ex. by SSH. In these moment any kind of pleasant GUI disappear and you stay alone with blinking console of terminal. For newbies a difficulties begins with also some magic inside, which with time is forged to daily basics.
 
 When you will work with servers, in most cases you will have opportunity to open only Vim, cause for example a "funny" admin forecast only this way input (for the lazies, sometime you can meet trivial [Nano][6], but it is only for editing). This kind of real live situation should not rise heart attack when you know the basics of Vi/Vim. In time, by the practice of using Vim you will understand and start enjoy working with it - just as I did, and many before me. Not believe me, so google it ;)
 
