@@ -29,12 +29,14 @@ domains, but with some exceptions (restrictions) for subdomains:
 While building frontend application I have made some basic nginx configuration
 and it looks like this snippet presented at the bottom.
 
+> It might be important for Readers. We have decided to split application for two separate projects, due to AngularJS have problems with support of multiple subdomains. Finally one of our application serve subdomains `<variable>.example.dev` and other serve bacis domain `example.dev`.
+
 This configuration provides 5 servers:
 
 *   First one is for frontend application, which may support organizations with
-    some exceptions for `api`, `tests` and `www`.
+    some exceptions for `api`, `tests` and `www` (ex.: `companyname.example.dev`).
 *   Second for legacy domain `www` redirect.
-*   The third is for frontend aplication which may support only basic domain.
+*   The third is for frontend aplication which may support only basic domain (ex.: `example.dev`).
 *   Next one is for REST backend domain redirect provided by apiary.
 *   The Last one provides easy access for auto generated code coverage for
     fronted app.
