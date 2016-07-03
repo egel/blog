@@ -14,9 +14,9 @@ I am also involved in few Open Source projects and among them are:
 But that is only a fragment of my efforts. If you have some interesting project propositions or just want to say "Hi", you can achieve it by <maciej@egel.pl>. I am always happy to have a nice talk :)
 
 ### The blog
-In the blog you can read some of my articles from IT world and usually focus on unique topics, that might be hard to find in the Web.
+In the blog you can read some of my articles from IT world which usually focus on unique topics, that might be hard to find in the Web.
 
-This blog is also partly my work diary, so many decisions and reason why I made it that way, you will also may find here. Well, I pleased to invite you to sit comfortable, enjoy the content and leave a comment.
+This blog is also partly my work diary, so many decisions and reason why I made it that way, you will also may find here. Well, lastly I am pleased to invite you to sit comfortably, enjoy the content of my blog and do not hesitate to leave a comment.
 
 ### Are you appreciate my work? Thank you!
 If you want say thank you or want to appreciate my work, you can do it here
