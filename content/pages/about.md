@@ -2,6 +2,9 @@ Title: About me
 Date: 2015-06-27 10:02
 Status: published
 
+
+<img class="avatar thumbnail" src="https://secure.gravatar.com/avatar/4d66c5a2d6be57e7cb9bdef200417b4d?s=200"/>
+
 Hey Internet! My name is Maciej Sypień and I am a software engineer from Poland with passion for web development.
 During work I am always trying to do my best, furthermore with enthusiasm and open mind search for or listen to other creative conceptions.
 
