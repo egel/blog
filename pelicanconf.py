@@ -7,15 +7,14 @@ AUTHOR          = 'Maciej Sypień'
 SITENAME        = "The Egel's Blog"
 SITE_SLOGAN     = "Do more in less time"
 SITE_SUBSLOGAN  = "Simplicity and clarity of the implementation"
-#SITEURL         = 'http://blog.dev'
-SITEURL         = 'http://blog.egel.pl'
+SITEURL         = 'http://blog.dev' # local develop
+#SITEURL         = 'http://blog.egel.pl' # public
 TIMEZONE        = 'Europe/Warsaw'
 DEFAULT_LANG    = 'en'
 CURRENT_DATE    = datetime.datetime.now()
 
 PATH            = 'content'
 OUTPUT_PATH     = 'output/'
-
 
 STATIC_PATHS        = ['extras', 'images', 'downloads']
 ARTICLE_PATHS       = ['blog']
@@ -53,21 +52,22 @@ FAVICON             = "extras/favicon.png"
 
 
 
-
 DEFAULT_METADATA = {'status': 'draft',}
 DEFAULT_DATE_FORMAT = '%b %-d, %Y'
 
 # Top nav
 DISPLAY_SEARCH_IN_TOP_NAV = True
 
-
 # Sidebar
 DISPLAY_SIDEBAR = False
 
-DISPLAY_ABOUT_ME_ON_SIDEBAR = False
+# Avatar
+DISPLAY_AVATAR  = True
+AVATAR_SRC      = 'https://secure.gravatar.com/avatar/4d66c5a2d6be57e7cb9bdef200417b4d?s=200'
+DISPLAY_ABOUT_ME_ON_SIDEBAR = True
 ABOUT_ME = """
 Programmer, soundtracks enthusiast, astrophysics fan.
-Occasionally I'm writing this blog.
+Occasionally hacking this blog with new articles.
 """
 
 HIDE_SOCIAL = False
@@ -124,7 +124,13 @@ RELATED_POSTS_TEXT = "Few related posts:"
 THEME = "theme/egelance"
 
 PLUGIN_PATHS = [ 'plugins' ]
-PLUGINS = [  'related_posts', 'tag_cloud', 'goodreads_activity', 'simple_footnotes'  ] # 'better_codeblock_line_numbering', 'tipue_search',
+PLUGINS = [
+    'related_posts',
+    'tag_cloud',
+    'goodreads_activity',
+    'simple_footnotes',
+    'pelican_gist'
+] # 'better_codeblock_line_numbering', 'tipue_search',
 
 MD_EXTENSIONS = [ 'codehilite(css_class=highlight, linenums=True)', 'extra'] # 'fenced_code',
 
@@ -144,6 +150,7 @@ AUTHOR = "Maciej Sypień"
 # EXTRA_PATH_METADATA = {
 #   'extra/favicon.ico': {'path': 'favicon.ico'},
 # }
+
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM           = 'feeds/all.atom.xml'
