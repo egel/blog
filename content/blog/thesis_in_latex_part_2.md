@@ -11,8 +11,7 @@ Tags:       latex, university
 </div>
 
 I assume, that at the moment of reading this second part of writing thesis in
-LaTeX, you have allready red the previous part:
-[Thesis&nbsp;in&nbsp;LaTeX&nbsp;part&nbsp;1]({filename}thesis_in_latex_part_1.md)
+LaTeX, you have already red the previous [part 1]({filename}thesis_in_latex_part_1.md)
 and install required software. If you do, then perfect carry on, but if not you
 should catch up.
 
@@ -20,9 +19,9 @@ I this part I will try to make some very basic introduction **How to use LaTeX i
 practice**. But it will not be so easy - not by writing, because paper can take
 everything. The real thing hides into a simple question:
 
-> How condense a huge knowledge in acceptable short time for average person.
+> How condense a huge knowledge in acceptable short time for average person?
 
-You can not read this article for more then 5 days, that is obvious ;) In this
+You can't read this article for more then 5 days, that is obvious ;) In this
 time you could read few book in this time and far more detailed then my article.
 But this series of articles have some advantages over other publications I have
 met till writing this post. Books are solid knowledge - articles by its
@@ -144,7 +143,7 @@ classes, for example, a few of them are mentioned earlier:
 
 
 Fairly well illustrated this a line
-`\documentclass[12pt, oneside, a4paper]{report}` which is clearly written a
+`\documentclass[12pt, oneside, a4paper]{report}`, which is clearly written a
 definition of class `report` and its optional arguments as **font size**, **type
 of printing** and **the document size** of the resulting paper.
 
@@ -167,25 +166,24 @@ like the example below:
 \maketitle
 
 \begin{abstract}
-Dokument ten prezentuje kilka zasad składu tekstu w~systemie \LaTeX.
+This document presents few rules of how things goes into \LaTeX.
 \end{abstract}
 
+\chapter{Our first chapter}
+% 1st section
+\section{Text}\label{sec:tekst}
+\LaTeX\ allows to the author to manage numbering of section, lists, refering for tables, pictures and other elements. I~easy way we can refer to the formula  \ref{eqn:wzor1}.
 
-\chapter{Nasz pierwszy rozdział}
-% pierwsza sekcja
-\section{Tekst}\label{sec:tekst}
-\LaTeX\ ułatwia autorowi tekstu zarządzanie numerowaniem sekcji, wypunktowaniami oraz odwołaniami do tabel, rysunków i~innych elementów. W~łatwy sposób możemy się odwołać do wzoru \ref{eqn:wzor1}.
-
-% sekcja
-\section{Matematyka}\label{sec:matematyka}
-Poniższy wzór prezentuje możliwości \LaTeX\ w~zakresie składu formuł matematycznych. Wzory są numerowane automatycznie, podobnie jak inne elementy o~których mowa w~sekcji~\ref{sec:tekst}.
+% 2nd section
+\section{Math}\label{sec:matematyka}
+Below formula presents the possibilities of \LaTeX\ with writing math. The equations are automatically numering, just like other elemnets, which were mention into section~\ref{sec:tekst}.
 
 \begin{equation}
   E = mc^2,
   \label{eqn:wzor1}
 \end{equation}
 
-gdzie
+where
 
 \begin{equation}
   m = \frac{m_0}{\sqrt{1-\frac{v^2}{c^2}}}.
@@ -193,29 +191,29 @@ gdzie
 
 % --------------------------------------
 
-\chapter{Nasz drugi rozdział}
-Bardzo długa treść rozdziału drugiego.
+\chapter{Our second chapter}
+This is very long content of second chapter.
 
 \section{Sekcja rozdziału drugiego}
 \label{sec:sekcjaRozdzialuDrugiego}
-Bardzo długa treść sekcji rozdziału drugiego.
+This is very long content of second section of second chapter.
 
-\subsection{Podsekcja sekcji rozdziału drugiego}
+\subsection{This is subsection of second chapter}
 \label{subsec:podsekcjaRozdzialuDrugiego}
-Bardzo długa treść podsekcji rozdziału drugiego.
+This is very long content of subsection of second chapter.
 
 % --------------------------------------
 
-\chapter{Nasz trzeci rozdział}
-Bardzo długa treść rozdziału trzeciego.
+\chapter{Our third chapter}
+This is very long content of third chapter.
 
-\section{Sekcja rozdziału trzeciego}
-\label{sec:sekcjaRozdzialuTrzeciego}
-Bardzo długa treść sekcji rozdziału trzeciego.
+\section{Section of third chapter}
+\label{sec:sec_of_3rd_chap}
+This is very long content of first section of third chapter.
 
-\subsection{Podsekcja sekcji rozdziału trzeciego}
-\label{subsec:podsekcjaRozdzialuTrzeciego}
-Bardzo długa treść podsekcji rozdziału trzeciego.
+\subsection{Subsection of first section of third chapter}
+\label{subsec:sub_sec_of_3rd_chap}
+Very long content of subsection of the third chapter.
 
 \end{document}
 ```
@@ -223,22 +221,22 @@ Bardzo długa treść podsekcji rozdziału trzeciego.
 Above snippet contains the actual content of the document and you have probably
 noticed that the actual content begin phrase `\begin{document}` and end
 `\end{document}`. But one big file can be difficult to edit and navigate into it.
-So I have to talk about how to split whole document into smaller peaces and also
-why it so important.
+So I have to talk something about: How to split whole document into smaller peaces and also
+why it so important?
 
-### Split document for smaller peaces
-As I mention before, we will be interesting to divide our documnet into smaller
-part that every single chapter will be put into separate file.
+### Splitting document for smaller peaces
+As I mention before, we will be interesting to divide our document into smaller
+parts, that every single chapter will be put into separate file.
 
 The file `main.txt` should look like this:
 
 ```latex
 \documentclass[12pt, oneside, a4paper]{report}
-\usepackage[OT4, plmath]{polski}                % definicja użycia platex
-\usepackage[utf8]{inputenc}                     % kodowanie na UTF-8
+\usepackage[OT4, plmath]{polski}                % definition of platex
+\usepackage[utf8]{inputenc}                     % UTF-8 encoding
 \usepackage[OT4]{fontenc}
 \usepackage{url}
-\title{Projekt i implementacja autorskiego systemu zarządzania treścią}
+\title{Project and impementation of the copyright content management system}
 \author{Maciej Sypień}
 \date{\today}
 
@@ -246,16 +244,16 @@ The file `main.txt` should look like this:
 \maketitle
 
 \begin{abstract}
-Dokument ten kilka podstawowych zasad składu tekstu w~systemie \LaTeX.
+This document presents few rules of how things goes into \LaTeX.
 \end{abstract}
 
 \tableofcontents
 \clearpage
 
-\include{chap_wstep}
-\include{chap_rozdzial_1}
-\include{chap_rozdzial_2}
-\include{chap_rozdzial_3}
+\include{chap_intro}
+\include{chap_1}
+\include{chap_2}
+\include{chap_3}
 
 \end{document}
 ```
@@ -269,91 +267,90 @@ But back to ours chapters. Each of them begins usually. You just write what you
 need, to fill the content. For better visualization of this situation I will
 paste some snippets.
 
-Prolog, **chap_prolog.tex**:
+Prologue, **chap_intro.tex**:
 
 ```latex
 \chapter{Wstęp}
-Tu będzie się znajdować wstęp do naszej bardzo obszernej pracy ;)
+Here will be the place of prologue for our extensive thesis :)
 ```
 
 First file, **chap_1.tex**:
 
 ```latex
-\chapter{Nasz pierwszy rozdział}
-% pierwsza sekcja
-\section{Tekst}\label{sec:tekst}
-\LaTeX\ ułatwia autorowi tekstu zarządzanie numerowaniem sekcji, wypunktowaniami oraz odwołaniami do tabel, rysunków i~innych elementów. W~łatwy sposób możemy się odwołać do wzoru \ref{eqn:wzor1}.
+% 1st section
+\section{Text}\label{sec:tekst}
+\LaTeX\ allows to the author to manage numbering of section, lists, refering for tables, pictures and other elements. I~easy way we can refer to the formula  \ref{eqn:wzor1}.
 
-% sekcja
-\section{Matematyka}\label{sec:matematyka}
-Poniższy wzór prezentuje możliwości \LaTeX\ w~zakresie składu formuł matematycznych. Wzory są numerowane automatycznie, podobnie jak inne elementy o~których mowa w~sekcji~\ref{sec:tekst}.
-
-\begin{equation}
-    E = mc^2,
-    \label{eqn:wzor1}
-\end{equation}
-
-gdzie
+% 2nd section
+\section{Math}\label{sec:matematyka}
+Below formula presents the possibilities of \LaTeX\ with writing math. The equations are automatically numering, just like other elemnets, which were mention into section~\ref{sec:tekst}.
 
 \begin{equation}
-    m = \frac{m_0}{\sqrt{1-\frac{v^2}{c^2}}}.
+  E = mc^2,
+  \label{eqn:wzor1}
 \end{equation}
+
+where
+
+\begin{equation}
+  m = \frac{m_0}{\sqrt{1-\frac{v^2}{c^2}}}.
+\end{equation}
+
 ```
 
 Second file, **chap_2.tex**
 
 ```latex
-\chapter{Nasz drugi rozdział}
-Bardzo długa treść rozdziału drugiego.
+
+\chapter{Our second chapter}
+This is very long content of second chapter.
 
 \section{Sekcja rozdziału drugiego}
-\label{sec:sekcjaRozdzialuDrugiego}
-Bardzo długa treść sekcji rozdziału drugiego.
+\label{sec:sec_of_2nd_chap}
+This is very long content of second section of second chapter.
 
-\subsection{Podsekcja sekcji rozdziału drugiego}
+\subsection{This is subsection of second chapter}
 \label{subsec:podsekcjaRozdzialuDrugiego}
-Bardzo długa treść podsekcji rozdziału drugiego.
+This is very long content of subsection of second chapter.
 ```
-
 
 Third file, **chap_3.tex**
 
 ```latex
-\chapter{Nasz trzeci rozdział}
-Bardzo długa treść rozdziału trzeciego.
+\chapter{Our third chapter}
+This is very long content of third chapter.
 
-\section{Sekcja rozdziału trzeciego}
-\label{sec:sekcjaRozdzialuTrzeciego}
-Bardzo długa treść sekcji rozdziału trzeciego.
+\section{Section of third chapter}
+\label{sec:sec_of_3rd_chap}
+This is very long content of first section of third chapter.
 
-\subsection{Podsekcja sekcji rozdziału trzeciego}
-\label{subsec:podsekcjaRozdzialuTrzeciego}
-Bardzo długa treść podsekcji rozdziału trzeciego.
+\subsection{Subsection of first section of third chapter}
+\label{subsec:sub_sec_of_3rd_chap}
+Very long content of subsection of the third chapter.
 ```
 
 Dividing of our whole document into separate fragment did not bring us some
 astonishing results (just for now), you will appreciate these changes when these
-files (chapters) grow. This allows you to better work organization while writing
-(ex: when you want to omit some chapters, you just comment `\include{}` command
-with `%` sign, compile document and done.
+files (chapters) grow up to hundreds of lines. This allow you to better
+work organization while writing (ex.: when you want to omit some chapters, you
+just comment `\include{}` command with `%` sign, the recompile the document and done.
 
-<a href="https://www.sharelatex.com/project/543aad2f69870b1d3e39c26b" title="Pełny przykład online" class="btn btn-primary">Pełny przykład online</a>
+<a href="https://www.sharelatex.com/project/543aad2f69870b1d3e39c26b" title="Full online example" class="btn btn-primary">Full online example</a>
 
-I think that pretty much it for this part. Thank you for attention and leave
-comment if you like this.
+I think that pretty much it for this part. Thank you for attention and leave comment if you like this.
 
 * * *
 
 But if you do not hate LaTeX yet, and you still want to get know it better I
-will be peased to invite to to next, third part and it will contain:
+will be pleased to invite to to next, third part and it will contain:
 
-*   we will discuss about LaTeX{}'s elements (environments)
+*   we will discuss about LaTeX's elements (environments)
 *   how to add and use new packages
 *   basic **good practices** during writing in LaTeX
 *   and we will make the title page for our thesis
 
 ...well, fun will be guarantee ;)
 
+[1]: http://blog.egel.pl/praca-dyplomowa-w-latex-cz1/
+[wiki-latex-labels-and-cross-ref]: https://en.wikibooks.org/wiki/LaTeX/Labels_and_Cross-referencing
 
- [1]: http://blog.egel.pl/praca-dyplomowa-w-latex-cz1/
- [wiki-latex-labels-and-cross-ref]: https://en.wikibooks.org/wiki/LaTeX/Labels_and_Cross-referencing
