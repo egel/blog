@@ -175,7 +175,7 @@ This document presents few rules of how things goes into \LaTeX.
 \LaTeX\ allows to the author to manage numbering of section, lists, refering for tables, pictures and other elements. I~easy way we can refer to the formula  \ref{eqn:wzor1}.
 
 % 2nd section
-\section{Math}\label{sec:matematyka}
+\section{Math}\label{sec:math}
 Below formula presents the possibilities of \LaTeX\ with writing math. The equations are automatically numering, just like other elemnets, which were mention into section~\ref{sec:tekst}.
 
 \begin{equation}
@@ -189,21 +189,19 @@ where
   m = \frac{m_0}{\sqrt{1-\frac{v^2}{c^2}}}.
 \end{equation}
 
-% --------------------------------------
-
+% ---------------------------------------------------------
 \chapter{Our second chapter}
 This is very long content of second chapter.
 
-\section{Sekcja rozdziału drugiego}
-\label{sec:sekcjaRozdzialuDrugiego}
+\section{Section of second chapter}
+\label{sec:sec_of_2nd_chap}
 This is very long content of second section of second chapter.
 
 \subsection{This is subsection of second chapter}
 \label{subsec:podsekcjaRozdzialuDrugiego}
 This is very long content of subsection of second chapter.
 
-% --------------------------------------
-
+% ---------------------------------------------------------
 \chapter{Our third chapter}
 This is very long content of third chapter.
 
@@ -232,8 +230,8 @@ The file `main.txt` should look like this:
 
 ```latex
 \documentclass[12pt, oneside, a4paper]{report}
-\usepackage[OT4, plmath]{polski}                % definition of platex
-\usepackage[utf8]{inputenc}                     % UTF-8 encoding
+\usepackage[OT4, plmath]{polski}        % definition of platex
+\usepackage[utf8]{inputenc}             % UTF-8 encoding
 \usepackage[OT4]{fontenc}
 \usepackage{url}
 \title{Project and impementation of the copyright content management system}
@@ -260,7 +258,7 @@ This document presents few rules of how things goes into \LaTeX.
 
 As you see, main file of our document is simple, cleat and well readable. Every
 chapter is attached by `\include{}` command - and yes it can be written also
-without additional `.tex` extension ;) It is very comfortable, because writer
+without additional `.tex` extension ;) It is very comfortable, because the writer
 can clearly read the file name and to not be bothered by the its extension.
 
 But back to ours chapters. Each of them begins usually. You just write what you
@@ -278,16 +276,16 @@ First file, **chap_1.tex**:
 
 ```latex
 % 1st section
-\section{Text}\label{sec:tekst}
-\LaTeX\ allows to the author to manage numbering of section, lists, refering for tables, pictures and other elements. I~easy way we can refer to the formula  \ref{eqn:wzor1}.
+\section{Text}\label{sec:text}
+\LaTeX\ allows to the author to manage numbering of section, lists, refering for tables, pictures and other elements. I~easy way we can refer to the formula \ref{eqn:equation1}.
 
 % 2nd section
 \section{Math}\label{sec:matematyka}
-Below formula presents the possibilities of \LaTeX\ with writing math. The equations are automatically numering, just like other elemnets, which were mention into section~\ref{sec:tekst}.
+Below formula presents the possibilities of \LaTeX\ with writing math. The equations are automatically numering, just like other elemnets, which were mention into section~\ref{sec:text}.
 
 \begin{equation}
   E = mc^2,
-  \label{eqn:wzor1}
+  \label{eqn:equation1}
 \end{equation}
 
 where
