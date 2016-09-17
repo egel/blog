@@ -16,6 +16,7 @@ ndg-httpsclient==0.4.0
 numpy==1.10.4
 pandas==0.17.1
 pelican==3.6.3
+pelican-gist==0.3.3
 pyasn1==0.1.9
 pycparser==2.14
 Pygments==2.0.2
