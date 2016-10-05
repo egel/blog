@@ -119,6 +119,7 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
 SHOW_DATE_MODIFIED = True
 SHOW_ARTICLE_CATEGORY = True
 SHOW_ARTICLE_AUTHOR = False
+SHOW_ARTICLE_READTIME = True
 RELATED_POSTS_TEXT = "Few related posts:"
 
 THEME = "theme/egelance"
@@ -129,7 +130,8 @@ PLUGINS = [
     'tag_cloud',
     'goodreads_activity',
     'simple_footnotes',
-    'pelican_gist'
+    'pelican_gist',
+    'post_stats'
 ] # 'better_codeblock_line_numbering', 'tipue_search',
 
 MD_EXTENSIONS = [ 'codehilite(css_class=highlight, linenums=True)', 'extra'] # 'fenced_code',
