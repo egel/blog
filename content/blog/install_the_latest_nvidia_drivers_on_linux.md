@@ -14,48 +14,52 @@ Author:   Maciej Sypień
 And it's time that I had to face with reinstall of the Nvidia driver on my Mint
 17 distribution.
 
-There arises some problems with Nvidia proprietary drivers. As a pro Linux guy
-I pressed `ctrl`+`alt`+`F1`, and got a black screen with flashing cursor. YES! -
-I shouted immediately - the console not broke down for good - I sad to myself in
-mind.
+Well, while using my distro, there appear couple of problems with "Nvidia proprietary drivers".
+As a pro Linux guy I pressed `ctrl`+`alt`+`F1`, and got a black screen with flashing cursor. YES! - I shouted immediately - the console not broke down for good - I sad to myself in mind.
 
-I red somewhere that the problem could to do something with the framebuffer. So
-I made few modifications to `/etc/default/grub`. Remember - backup always go
-first!
+I red somewhere, that the problem could have something with the framebuffer. So I made few modifications to `/etc/default/grub`.
 
-    :::bash
-    sudo cp /etc/default/grub /etc/default/grub.bak
+> Please remember, backup always go first!
+
+```shell
+sudo cp /etc/default/grub /etc/default/grub.bak
+```
 
 Now edit the grub file by entering
 
-    :::bash
-    sudo pluma /etc/default/grub
+```shell
+sudo vim /etc/default/grub
+```
 
-While editing in your favorite editor, uncomment the lines, simply by removing
-the `#` in front of those lines.
+While editing in your favorite editor (I choose `vim`), uncomment the lines, simply by removing the `#` in front of those lines.
 
-    :::apache
-    #GRUB_TERMINAL=console
-    #GRUB_GFXMODE=640x480
+> If your monitor support better resolutions you can change `GRUB_GFXMODE` for another value, my highest was `1024x768`.
+
+```
+GRUB_TERMINAL=console
+GRUB_GFXMODE=640x480
+```
 
 Save the file and run `update-grub` to implement the changes
 
-    :::bash
-    sudo update-grub
+```shell
+sudo update-grub
+```
 
+Now, I had to resolve which display manager do I have on my Mint?
 
-Now I had to resolve and which display manager do I have on it?
+```shell
+cat /etc/X11/default-display-manager
+```
 
-    :::bash
-    cat /etc/X11/default-display-manager
+In my case, it was `mdm`, so then I stopped display manager, installed drivers and enabled display manager again.
 
-In my case was `mdm`, then:
+```shell
+sudo service mdm stop
+chmod +x /path/to/downloaded/driver/NVIDIA-Linux-x86_64-*.run
+sudo sh /path/to/downloaded/driver/NVIDIA-Linux-x86_64-*.run
+sudo service mdm start
+```
 
-    :::bash
-    sudo service mdm stop
-    chmod +x /path/to/downloaded/driver/NVIDIA-Linux-x86_64-*.run
-    sudo sh /path/to/downloaded/driver/NVIDIA-Linux-x86_64-*.run
-    sudo service mdm start
-
-That is it. We are alive again :)
+That's it. After pressing `Alt` + `Ctrl` + `F8` the graphical interface showed up as well as a smile on my face :)
 
