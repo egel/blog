@@ -7,8 +7,14 @@ Authors:    Maciej Sypień
 Summary:    I will show you how to compile and install vim from source files.
             You will see how simple it can be.
 
+You may wonder why to install vim from source files if there are precompiled, ready to install packages available in your package managers. Yeah that is true, but there are also few "however".
+
+If you compile and install from the source, the program is then the best suited to your system its software and also for the hardware. Moreover you can also use the latest versions, especially those not avaiable in the package managers.
+
+There are also some light and dark side of doing it from the source, but for vim I think is the best possible way to have blazing fast text editor.
+
 ### Before you start
-We need to check some related libs/languages that vim or vim's plugins may require to work properly.
+We need to check some related libraries and languages that vim or vim's plugins may require to work properly. So we check them:
 
 *   Lua + LuaJIT
 *   Ruby
