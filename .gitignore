@@ -1,5 +1,5 @@
 # pelican
-output/
+# output/ # disabled due to using github with submodules for output
 
 # use simlink to global folder ~/.pelican-plugins
 plugins
@@ -7,9 +7,9 @@ plugins
 # use simlink to global folder ~/.pelican-themes
 theme/
 
-
 # Python
 *.pid
 *.pyc
 *.swp
 npm-debug.log
+
