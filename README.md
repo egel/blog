@@ -2,17 +2,15 @@
 Made with Pelican static generator.
 
 
-## Initial
+## Setup
 Download main repository
 
 ```bash
 cd ~/workspace
-git clone --recursive git@bitbucket.org:egel/pelican-egel-blog.git
+git clone --recursive git@github:egel/blog.git
 ```
 
-
 Download plugins
-
 ```bash
 git clone --recursive https://github.com/getpelican/pelican-plugins ~/.pelican-plugins
 ln -s $HOME/.pelican-plugins $HOME/workspace/pelican-egel-blog/plugins
