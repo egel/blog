@@ -121,7 +121,7 @@ server {
 
 
 ## License
-MIT 2015 Maciej Sypień
+GPLv3 2015 Maciej Sypień
 
 
 [issue-InsecurePlatformWarning]: http://stackoverflow.com/questions/29134512/insecureplatformwarning-a-true-sslcontext-object-is-not-available-this-prevent
