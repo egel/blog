@@ -5,7 +5,7 @@ Status:     published
 Category:   How to
 Tags:       apache, mysql, php, domains
 Summary:    We will install standard and secure Linux - Apache - MySQL - PHP
-            configuration with PHPMyAdmin for easy database management and 
+            configuration with PHPMyAdmin for easy database management and
             create sample Apache's VirtualHost. Shall we begin? :)
 
 
@@ -41,28 +41,29 @@ I think this is good, start example to play with :) Enjoy.
 -   [Common problems](#common-problems)
 
 
-Dobry polski [artykuł](http://www.ubuntu-pomoc.org/instalacja-apache-php5-mysql/) oraz [angieslki][article_about_apache2_url].
+Good [Polish article](http://www.ubuntu-pomoc.org/instalacja-apache-php5-mysql/) and [English article][article_about_apache2_url].
 
 
 Let's begin from updating our Debian based system (Ubuntu):
 
-    :::shell
-    sudo apt-get update
-
+```shell
+sudo apt-get update
+```
 
 ### Apache
 Installation Apache 2.4 with its useful dependencies:
 
-    :::shell
-    sudo apt-get install apache2 apache2-doc apache2-utils apache2-mpm-worker
+```shell
+sudo apt-get install apache2 apache2-doc apache2-utils apache2-mpm-worker
+```
 
+Then restart the service with:
 
-and restart the service with
+```shell
+sudo service apache2 restart
+```
 
-    :::shell
-    sudo service apache2 restart
-
-Or also you can use good, oldshool [daemon][wikipedia-daemon] `sudo /etc/init.d/apache2 restart`.
+Or also you can use good, old school [daemon][wikipedia-daemon] `sudo /etc/init.d/apache2 restart`.
 
 Now we take a peek on our server's version by writing `apache2 -v` in your
 console.
@@ -81,15 +82,15 @@ like user owner.
 
 To check if your current user belongs to `www-data` group simply do:
 
-    :::shell
-    groups $USER
-
+```shell
+groups $USER
+```
 
 Now add existing user to `www-data` group.
 
-    :::shell
-    sudo usermod -a -G $USER www-data
-
+```shell
+sudo usermod -a -G $USER www-data
+```
 
 > Somtimes it is a good practice to check `SERVER_CONFIG_FILE`.
 >     /usr/sbin/apache2 -V
@@ -101,30 +102,31 @@ Now add existing user to `www-data` group.
 Basic apache configuration does not impose add the server name, but I really
 don't like to see some text like this below, when I reloading the server.
 
-    :::shell
-     * Restarting web server apache2
-    AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
-     ...done.
-
+```shell
+ * Restarting web server apache2
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+ ...done.
+```
 
 That's why we will name it :)
 
-    :::shell
-    echo "ServerName localhost" | sudo tee /etc/apache2/conf-available/servername.conf
+```shell
+echo "ServerName localhost" | sudo tee /etc/apache2/conf-available/servername.conf
+```
 
+Then we're enable its name in for apache config by
 
-then we're enable its name in for apache config by
-
-    :::shell
-    sudo a2enconf servername
+```shell
+sudo a2enconf servername
+```
 
 Just restart the server to make sure that all is done correctly.
 
-    :::shell
-    sudo service apache2 restart
-     * Restarting web server apache2
-      ...done.
-
+```shell
+sudo service apache2 restart
+ * Restarting web server apache2
+  ...done.
+```
 
 ...and now full smile should appear on your face :)
 
@@ -136,40 +138,41 @@ install it along.
 During the installation process program ask you for the root password, so we
 write it and **remeber it** for later use.
 
-:::shell
+```shell
 sudo apt-get install mysql-server
+```
 
 That's it for the database server :)
 
 
 ### PHP
-Instalation of the PHP interperter isn't hard. One important thing is to install
+Installation of the PHP interpreter isn't hard. One important thing is to install
 all modules related to our new setup, enable it, and configure to suite your
-needs. I'll show you most commony used setup to save your precious time
+needs. I'll show you most commonly used setup to save your precious time
 searching it through Internet.
 
 ####  Installation of PHP interpreter
 Below we will install all useful modules, and enable them Apache server and PHP.
 
-    :::shell
-    $ sudo apt-get install php5 php5-cli php5-common php5-gd libapache2-mod-php5 php5-mysql libapache2-mod-auth-mysql apache2-mpm-prefork libapache2-mod-php5 php5-mcrypt
-    $ sudo a2enmod php5
-    $ sudo a2enmod rewrite
-    $ sudo php5enmod mcrypt   # required by phpMyAdmin
-
+```shell
+$ sudo apt-get install php5 php5-cli php5-common php5-gd libapache2-mod-php5 php5-mysql libapache2-mod-auth-mysql apache2-mpm-prefork libapache2-mod-php5 php5-mcrypt
+$ sudo a2enmod php5
+$ sudo a2enmod rewrite
+$ sudo php5enmod mcrypt   # required by phpMyAdmin
+```
 
 #### Configuration files
 Into below Apache's PHP configuration file stored at
 `/etc/php5/apache2/php.ini`, it worth to change default parameters according to
 those presented below. There are most commonly changed variables for PHP.
 
-    :::ini
-    upload_max_filesize = 50M
-    post_max_size = 50M
-    display_errors = On
-    display_startup_errors = On
-    track_errors = On
-
+```ini
+upload_max_filesize = 50M
+post_max_size = 50M
+display_errors = On
+display_startup_errors = On
+track_errors = On
+```
 
 
 #### Other useful configuration files
@@ -180,50 +183,56 @@ those presented below. There are most commonly changed variables for PHP.
 
 
 ### PHPMyAdmin
-
 Installation of PHPMyAdmin is trivial.
 
-    :::shell
-    sudo apt-get install phpmyadmin
+```shell
+sudo apt-get install phpmyadmin
+```
 
-During installion, wizard ask you for:
+During the installation, wizard will ask you for:
 
 1.  Which WWW Server would you like to choose. We mark (with space key)
     `apache2`.
-2.  Next window is the configuration of phpmyadmin package and integration with
+2.  Next window is the configuration of phpMyAdmin package and integration with
     current database. We mark `Yes`.
 
-> Sometimes we made mistake during this installion process, so command to reopen
+> Sometimes we made mistake during this installation process, so command to reopen
 > this configuration wizard is `sudo dpkg-reconfigure phpmyadmin`.
 
 ### Add VirtualHost
 
 > **Good practice:** If you want to create site ex: `egel.pl`, write conf file like this `egel.pl.conf`
 
-    cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/pelican-egel-blog.local.conf
+```shell
+cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/pelican-egel-blog.local.conf
+```
 
-and create something like this
+And create something like this
 
-    <VirtualHost *:80>
-      ServerAdmin admin@example.com
-      ServerName pelican-egel-blog.local
-      DocumentRoot /var/www/pelican-egel-blog.local/public_html/
-      <Directory /var/www/pelican-egel-blog.local/public_html/>
-        AllowOverride All
-      </Directory>
+```apache
+<VirtualHost *:80>
+  ServerAdmin admin@example.com
+  ServerName pelican-egel-blog.local
+  DocumentRoot /var/www/pelican-egel-blog.local/public_html/
+  <Directory /var/www/pelican-egel-blog.local/public_html/>
+    AllowOverride All
+  </Directory>
 
-      ErrorLog ${APACHE_LOG_DIR}/error.log
-      CustomLog ${APACHE_LOG_DIR}/access.log combined
-    </VirtualHost>
+  ErrorLog ${APACHE_LOG_DIR}/error.log
+  CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+```
 
-save it.
+Save it.
 
-    :::shell
-    sudo ln -s $HOME/workspace/pelican-egel-blog/output/ /var/www/pelican-egel-blog.local/public_html
-    sudo a2ensite pelican-egel-blog.local.conf
-    echo "127.0.0.1 pelican-egel-blog.local" | sudo tee /etc/hosts
+```shell
+sudo ln -s $HOME/workspace/pelican-egel-blog/output/ /var/www/pelican-egel-blog.local/public_html
+sudo a2ensite pelican-egel-blog.local.conf
+echo "127.0.0.1 pelican-egel-blog.local" | sudo tee /etc/hosts
+```
 
-then `sudo service apache2 reload` and open
+Then `sudo service apache2 reload` and open
+
 
 ### Creating public_html directory for the user
 Some people not agree with it (mainly by security issues it can cause) but
@@ -247,129 +256,137 @@ it).
 Into this file we need to comment some lines (`##`) like in below snippet.
 
 
-    :::apache
-    <FilesMatch ".+\.ph(p[345]?|t|tml)$">
-        SetHandler application/x-httpd-php
-    </FilesMatch>
-    <FilesMatch ".+\.phps$">
-        SetHandler application/x-httpd-php-source
-        # Deny access to raw php sources by default
-        # To re-enable it's recommended to enable access to the files
-        # only in specific virtual host or directory
-        Order Deny,Allow
-        Deny from all
-    </FilesMatch>
-    # Deny access to files without filename (e.g. '.php')
-    <FilesMatch "^\.ph(p[345]?|t|tml|ps)$">
-        Order Deny,Allow
-        Deny from all
-    </FilesMatch>
+```apache
+<FilesMatch ".+\.ph(p[345]?|t|tml)$">
+    SetHandler application/x-httpd-php
+</FilesMatch>
+<FilesMatch ".+\.phps$">
+    SetHandler application/x-httpd-php-source
+    # Deny access to raw php sources by default
+    # To re-enable it's recommended to enable access to the files
+    # only in specific virtual host or directory
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
+# Deny access to files without filename (e.g. '.php')
+<FilesMatch "^\.ph(p[345]?|t|tml|ps)$">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
 
-    # Running PHP scripts in user directories is disabled by default
-    #
-    # To re-enable PHP in user directories comment the following lines
-    # (from <IfModule ...> to </IfModule>.) Do NOT set it to On as it
-    # prevents .htaccess files from disabling it.
-    ##<IfModule mod_userdir.c>
-    ##    <Directory /home/*/public_html>
-    ##        php_admin_flag engine Off
-    ##    </Directory>
-    ##</IfModule>
+# Running PHP scripts in user directories is disabled by default
+#
+# To re-enable PHP in user directories comment the following lines
+# (from <IfModule ...> to </IfModule>.) Do NOT set it to On as it
+# prevents .htaccess files from disabling it.
+##<IfModule mod_userdir.c>
+##    <Directory /home/*/public_html>
+##        php_admin_flag engine Off
+##    </Directory>
+##</IfModule>
+```
 
 Now we set server, so that we can throw files into the `~/public_html`
 directory. It maybe necessary to give the appropriate rights for the directory
 so we need to take this under consideration as well.
 
-    :::shell
-    mkdir ~/public_html
-    chmod 775 ~/public_html
-    sudo a2enmod userdir
+```shell
+mkdir ~/public_html
+chmod 775 ~/public_html
+sudo a2enmod userdir
+```
 
-Now restart the apache and since this moment we can easly use `~/public_html` in
+Now restart the apache and since this moment we can easily use `~/public_html` in
 all user's catalogs like the server's one.
 
-    :::shell
-    sudo /etc/init.d/apache2 restart
+```shell
+sudo /etc/init.d/apache2 restart
+```
 
 
+##### Setup the httpd.conf
+We locate our `httpd.conf` file.
 
-##### Ustawienie httpd.conf
+> ** For the different systems vary called **, for example, for Ubuntu 14.04 64-bit is a `apache2.conf`
 
-Lokalizujemy nasz plik `httpd.conf`.
+We remember the path for running apache2
 
-**Dla różnych systemów różnie sie nazywa**, dla przykładu dla Ubuntu 14.04 64-bit to 'apache2.conf'
+```shell
+$ ps -ef | grep apache
+apache   12846 14590  0 Oct20 ?        00:00:00 /usr/sbin/apache2
+```
 
-Pobieramy ścieżkę uruchomionego apacha2
+Now we add `-V` flag
 
-    :::shell
-    $ ps -ef | grep apache
-    apache   12846 14590  0 Oct20 ?        00:00:00 /usr/sbin/apache2
+```shell
+$ /usr/sbin/apache2 -V | grep SERVER_CONFIG_FILE
+-D SERVER_CONFIG_FILE="/etc/apache2/apache2.conf"
+```
 
-
-Teraz dodajemy flagę -V
-
-    :::shell
-    $ /usr/sbin/apache2 -V | grep SERVER_CONFIG_FILE
-    -D SERVER_CONFIG_FILE="/etc/apache2/apache2.conf"
-
-
-Teraz otwieramy plik i możemy dodać naszą ścieżkę `public_html` do pliku:
-
-    :::apache
-    <Directory /home/maciej/public_html/>
-        Options Indexes FollowSymLinks
-        AllowOverride All
-        Require all granted
-    </Directory>
+Next we are open the file and we can add our path to `public_html` inside:
 
 
-restart i jesteśmy w domu
+```apache
+<Directory /home/maciej/public_html/>
+    Options Indexes FollowSymLinks
+    AllowOverride All
+    Require all granted
+</Directory>
+```
 
-##### Może pojawic sie problem z "index.php not found"
+restart and we are home.
 
-    Not Found
+##### May occur the problem like "index.php not found"
 
-    The requested URL /index.php was not found on this server.
+```
+Not Found
 
-Prawdopodobnym podwodem jest przepisywanie url w np: Joomla (`Konfiguracja globalna` > `Zastosuj przepisywanie URL` na **OFF**)
+The requested URL /index.php was not found on this server.
+```
+Probably the cause of that is rewriting the URL into for example:
+
+-   Joomla: `Global config` > `Adjust rewriting URLs` and set for **OFF**
+
 
 ### Problem #1
 
-  Once you install the module, the module will be available in the `/etc/apache2/mods-available` directory. You can use the `a2enmod` command to enable a module. You can use the `a2dismod` command to disable a module. Once you enable the module, the module will be available in the the `/etc/apache2/mods-enabled` directory.
+Once you install the module, the module will be available in the `/etc/apache2/mods-available` directory. You can use the `a2enmod` command to enable a module. You can use the `a2dismod` command to disable a module. Once you enable the module, the module will be available in the `/etc/apache2/mods-enabled` directory.
 
-  Example: `sudo a2enmod rewrite`
+Example: `sudo a2enmod rewrite`
+
 
 ### Problem #2
   [Apache2 on ubuntu - PHP downloading files insteed of run](http://stackoverflow.com/questions/6245895/apache2-on-ubuntu-php-files-downloading)
 
 
 ### Problem #3
-**Pliki** powinny mieć prawa **664**, natomiast **katalogi 755**.
+**Files** should have permissions rights **664**, while **directories 755**.
 
-> Wyjątkiem są oczywiście pliki wykonywalne.
+> The exceptions are, of course, executable files.
 
-Przykład zmiany ustawień dla obu katalogów (rekurencyjnie)
+Example of changes for both types, files and directories (recursively)
 
-    :::shell
-    $ find ~/public_html -type d -exec chmod 755 {} \;
-    $ find ~/public_html -type f -exec chmod 644 {} \;
+```shell
+$ find ~/public_html -type d -exec chmod 755 {} \;
+$ find ~/public_html -type f -exec chmod 644 {} \;
+```
 
 
 ### Problem #4
-Aktualizacja wszystkich folderów i plików na `www-data` w katalogu `public_html`
+Updating all folders and files for `www-data` user into the `public_html` directory.
 
-    :::bash
-    #!/bin/bash
-    sudo adduser $USER www-data
-    sudo chown -R www-data:www-data /home/$USER/public_html
-    sudo chmod -R 775 /home/$USER/public_html
-
+```bash
+#!/bin/bash
+sudo adduser $USER www-data
+sudo chown -R www-data:www-data /home/$USER/public_html
+sudo chmod -R 775 /home/$USER/public_html
+```
 
 Save it inside `/home/$USER/bin` and make it executable using:
 
-    :::shell
-    sudo chmod +x /home/$USER/bin/public_html_fix.sh
-
+```shell
+sudo chmod +x /home/$USER/bin/public_html_fix.sh
+```
 
 
  [jdownloader_shell_installer]: http://installer.jdownloader.org/jd_unix_0_9.sh
