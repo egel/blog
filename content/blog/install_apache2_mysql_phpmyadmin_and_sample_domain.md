@@ -93,9 +93,12 @@ sudo usermod -a -G $USER www-data
 ```
 
 > Somtimes it is a good practice to check `SERVER_CONFIG_FILE`.
+>
+>     :::bash
 >     /usr/sbin/apache2 -V
 >     source /etc/apache2/envvars
 >     /usr/sbin/apache2 -V
+>
 > Should be something like `-D SERVER_CONFIG_FILE="apache2.conf"`
 
 #### Add a name to the server
