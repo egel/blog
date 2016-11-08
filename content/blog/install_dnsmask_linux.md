@@ -2,7 +2,7 @@ Title:		Install and configure dnsmasq on linux
 Slug:			install-and-configure-dnsmasq-on-linux
 Date:			2016-11-05
 Status:	  Published
-Category: how to
+Category: How to
 Tags:	    linux, frontend
 Authors:	Maciej Sypień
 Summary:  In few small steps I will try to show you how to setup your own instance of dnsmasq.
