@@ -225,8 +225,8 @@ At this point, I invite you to the next and probably the final 4th part of creat
 
 This will be one of the most interesting articles in a series, as it works with ready examples of implementation of the `biblatex` and `biber` is RARE (in particular Polish LaTeX community). At the date of publication of this article, the above combination seems to be the most effective solution for storing and formatting bibliographies. At this moment I would love to, to invite you for next article from this series :)
 
-[1]: http://blog.egel.pl/thesis-in-latex-part-1.html
-[2]: http://blog.egel.pl/thesis-in-latex-part-2.html
+[1]: http://egel.pl/thesis-in-latex-part-1.html
+[2]: http://egel.pl/thesis-in-latex-part-2.html
 [3]: https://github.com/egel/uek-latex-thesis-class
 [4]: https://github.com/egel/latex-thesis-example
 [5]: http://git-scm.com/

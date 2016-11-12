@@ -349,6 +349,6 @@ will be pleased to invite to to next, third part and it will contain:
 
 ...well, fun will be guarantee ;)
 
-[1]: http://blog.egel.pl/praca-dyplomowa-w-latex-cz1/
+[1]: http://egel.pl/praca-dyplomowa-w-latex-cz1/
 [wiki-latex-labels-and-cross-ref]: https://en.wikibooks.org/wiki/LaTeX/Labels_and_Cross-referencing
 
