@@ -72,6 +72,7 @@ passwd root
 vi /etc/locale.gen    # uncoment all for you lang: en_US
 locale-gen
 ln -s /usr/share/zoneinfo/Europe/Berlin /etc/localtime
+timedatectl set-ntp true
 hwclock --systohc
 echo vbox > /etc/hostname
 
@@ -117,24 +118,7 @@ netctl start ethernet-dhcp
 > dhcpcd enp0s3
 > ```
 
-
-### Further steps
-Now we have system installed.
-
-
-```shell
-pacman -Syu
-pacman -S vim git tmux
-
-# Additional packages
-bash-completion
-
-# not checked but needed
-exfat-fuse exfat-utils
-```
-
-
-User
+### Create user
 
 ```shell
 useradd -m -g users -G wheel,storage,power,sys,adm -s /bin/zsh maciej
@@ -142,12 +126,39 @@ passwd maciej
 vim /etc/sudoers    # Uncomment: wheel ALL=(ALL) ALL
 ```
 
-**Now SWITCH to new created user!**
+**Now SWITCH to new created user!** by `logout` just for savety purpose.
+
+
+### Further steps
+Now we have system installed.
+
 
 ```shell
-su maciej
+sudo pacman -Syu
+sudo pacman -S gvim git tmux htop
 ```
 
+-   For bash legacy I usually install `bash-completion`.
+-   For checking hardware `lshw hwinfo`.
+-   For supporting different drives I install `exfat-utils dosfstools jfsutils ntfs-3g mtools` and for partitioning I like `gparted` and `gpart` for fixing drives.
+-   For graphics `gimp inkscape` and `imagemagick` for console operations.
+-   For FTP `filezilla`.
+-   For LaTeX I usually install all packages `texlive-most texlive-lang`
+
+
+# Hardware
+
+
+# support exfat + disk manager
+exfat-fuse
+
+filezilla
+
+imagemagick
+
+# LaTeX
+texlive-core
+```
 
 ### Install display manager
 
@@ -160,13 +171,26 @@ sudo systemctl enable gdm.service
 
 reboot and done
 
+### Install the nVidia drivers
+First we check graphic card:
+
+```bash
+lspci -k | grep -A 2 -E "(VGA|3D)"
+```
+
+In my laptop have GeForce GT 425m, so according to [Arch Linux wiki about nvidia]() I have to install `nvidia` + `nvidia-libgl` and enable service.
+
+> It might wants uninstall other `mesa-libgl` package, agree for that (Y).
 
 ```shell
-sudo pacman -S nvidia nvidia-utils
+sudo pacman -S nvidia nvidia-utils nvidia-libgl
+sudo systemctl enable nvidia-persistenced.service
 ```
+
+then we need reboot
+
 and check by `lsmod | grep nvidia`
 
-> No animations with nvidia? Try install `nvidia-libgl` instead of default `mesa-libgl`.
 
 
 ### Other programs for Arch
