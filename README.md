@@ -7,7 +7,7 @@ Download main repository
 
 ```bash
 cd ~/workspace
-git clone --recursive git@github:egel/blog.git
+git clone --recursive git@github.com:egel/blog.git
 ```
 
 Download plugins
