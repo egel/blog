@@ -20,8 +20,21 @@ ln -s $HOME/.pelican-plugins $HOME/workspace/pelican-egel-blog/plugins
 Before next move we need to fix python [InsecurePlatformWarning issue][issue-InsecurePlatformWarning]
 
 ```bash
-sudo apt-get install libffi-dev libssl-dev #
+sudo apt-get install libffi-dev libssl-dev # Debian
+sudo pacman -S libffi # Arch
 ```
+
+[Install `virtualenvwrapper`](http://virtualenvwrapper.readthedocs.io/en/latest/install.html)
+
+```shell
+# Debian/Ubuntu
+sudo apt-get install virtualenvwrapper
+
+# Arch
+sudo pacman -S python-pip python-setuptools python-virtualenv python-virtualenvwrapper
+sudo pacman -S python2-pip python2-setuptools python2-virtualenv python-virtualenvwrapper
+```
+
 
 Set the environment
 
