@@ -1,10 +1,9 @@
 Title:		How to partition your hard drive for Linux
 Slug:			how-to-partition-your-hard-drive-for-linux
 Date:			2016-12-01
-<!-- Modified:	2016-12-01 -->
 Status:		Draft
 Category: Diary
-Tags:			apache2, vim
+Tags:			linux, console,
 Authors:	Maciej Sypień
 <!-- Summary: Sample summary -->
 
