@@ -138,8 +138,9 @@ MD_EXTENSIONS = [ 'codehilite(css_class=highlight, linenums=True)', 'extra'] # '
 
 DIRECT_TEMPLATES = (('index', 'tags', 'categories', 'archives', 'reading-list', 'search'))
 
-DISQUS_SHORT_NAME = "egel"
-GOOGLE_ANALYTICS  = 'UA-26456669-2'
+# We not need disqus & analytics while development
+#DISQUS_SHORT_NAME = "egel"
+#GOOGLE_ANALYTICS  = 'UA-26456669-2'
 
 SUMMARY_MAX_LENGTH      = 50
 NEWEST_FIRST_ARCHIVES   = True  # Show most recent posts first

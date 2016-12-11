@@ -26,5 +26,6 @@ AUTHOR_FEED_RSS         = None
 # don't delete our .git submodule dir
 DELETE_OUTPUT_DIRECTORY = False
 
-DISQUS_SITENAME     = "The Egel's Blog"
-GOOGLE_ANALYTICS    = 'UA-26456669-2'
+DISQUS_SHORT_NAME = "egel"
+GOOGLE_ANALYTICS  = 'UA-26456669-2'
+
