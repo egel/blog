@@ -38,7 +38,7 @@ I was mailed by automatic DO mailer, that my server have become an attacker of d
 >
 >
 > Please login to view the ticket:
-> https://<DO I will not sponsor your links!>/support/tickets
+> https://%DO I will not sponsor your links here!%/support/tickets
 >
 > Thanks so much,
 > DigitalOcean
