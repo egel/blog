@@ -1,7 +1,7 @@
 Title:		My linux stack
 Slug:			my-linux-stack
 Date:			2016-11-21
-Status:		Published
+Status:		Draft
 Category: Diary
 Tags:			terminal, linux,
 Authors:	Maciej Sypień
