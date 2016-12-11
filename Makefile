@@ -103,12 +103,13 @@ publish:
 	# Add downloading submodules due to in development mode I remove entire output
 	# directory and when I want upload final version it download lates submodule
 	# with output and I reload it with publishconf settings.
+	rm -rf $(OUTPUTDIR)
 	git submodule update --init --recursive
-	cd output && git checkout -f master && cd ..
+	cd $(OUTPUTDIR) && git checkout -f master && cd ..
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
 publish_github: publish
-	cd output && git add -A && git commit -m "Update" && git push && cd ..
+	cd $(OUTPUTDIR) && git add -A && git commit -m "Update" && git push && cd ..
 
 ssh_upload: publish
 	scp -P $(SSH_PORT) -r $(OUTPUTDIR)/* $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)
