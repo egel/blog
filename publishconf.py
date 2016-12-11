@@ -23,6 +23,8 @@ TRANSLATION_FEED_ATOM   = 'feeds/all-%s.atom.xml'
 AUTHOR_FEED_ATOM        = None
 AUTHOR_FEED_RSS         = None
 
+PLUGINS.append('minify')
+
 # don't delete our .git submodule dir
 DELETE_OUTPUT_DIRECTORY = False
 
