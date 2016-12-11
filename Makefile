@@ -97,6 +97,11 @@ stopserver:
 	@echo 'Stopped Pelican and SimpleHTTPServer processes running in background.'
 
 publish:
+	# Add downloading submodules due to in development mode I remove entire output
+	# directory and when I want upload final version it download lates submodule
+	# with output and I reload it with publishconf settings.
+	git submodule update --init --recursive
+	cd output && git checkout -f master && cd ..
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
 ssh_upload: publish
