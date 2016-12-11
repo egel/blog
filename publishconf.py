@@ -23,11 +23,19 @@ TRANSLATION_FEED_ATOM   = 'feeds/all-%s.atom.xml'
 AUTHOR_FEED_ATOM        = None
 AUTHOR_FEED_RSS         = None
 
-PLUGINS.append('minify')
-
 # don't delete our .git submodule dir
 DELETE_OUTPUT_DIRECTORY = False
 
 DISQUS_SHORT_NAME = "egel"
 GOOGLE_ANALYTICS  = 'UA-26456669-2'
+
+
+# minify
+MINIFY = {
+  'remove_comments': True,
+  'remove_all_empty_space': True,
+  'remove_optional_attribute_quotes': False
+}
+
+PLUGINS.append('minify')
 
