@@ -157,7 +157,7 @@ The list:
 
 ### Install display manager
 
-I choose [Gnome3](https://www.gnome.org/gnome-3/) for my graphical environment, because now may problems has been fixed and it quite nice.
+I choose [Gnome3](https://www.gnome.org/gnome-3/) for my graphical environment, because now many problems has been fixed by maintainers and it's looks quite nice.
 
 ```shell
 sudo pacman -S gnome gnome-extra gnome-tweek-tool
@@ -168,22 +168,22 @@ Reboot system with `sudo reboot` and we're done with installation of GUI.
 
 
 ### Install the nVidia drivers
-First we check graphic card:
+First we check which graphic card we have:
 
 ```bash
 lspci -k | grep -A 2 -E "(VGA|3D)"
 ```
 
-In my laptop have **GeForce GT 425m**, so according to [Arch Linux wiki about nvidia](). I have to install `nvidia nvidia-libgl` and enable service.
+In my laptop I've got **GeForce GT 425m**, so according to [Arch Linux wiki about nvidia](). I have to install `nvidia nvidia-libgl` and enable service.
 
-> It might wants to uninstall other `mesa-libgl` package (this package have some problems with doing animations for some graphic cards, like mine), so agree for that by pressing (Y).
+> It might wants to uninstall `mesa-libgl` package (this package have some problems with handling animations for some graphic cards), so agree for that by pressing (Y).
 
 ```shell
 sudo pacman -S nvidia nvidia-utils nvidia-libgl
 sudo systemctl enable nvidia-persistenced.service
 ```
 
-Then we have to reboot the system and check by `lsmod | grep nvidia`.
+Then we have to reboot the system and check `lsmod | grep nvidia`.
 
 ### The end
 Now you should have full operational Arch Linux system - and yes, you should be proud of yourself!
