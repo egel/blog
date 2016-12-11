@@ -10,7 +10,10 @@ import sys
 sys.path.append(os.curdir)
 from pelicanconf import *
 
-SITEURL = 'http://pelican.egel.pl'
+SITEURL = 'http://egel.pl'
+
+# Following items are often useful when publishing
+# We wants absolute URLs
 RELATIVE_URLS = False
 
 FEED_ALL_ATOM           = 'feeds/all.atom.xml'
@@ -20,9 +23,8 @@ TRANSLATION_FEED_ATOM   = 'feeds/all-%s.atom.xml'
 AUTHOR_FEED_ATOM        = None
 AUTHOR_FEED_RSS         = None
 
-DELETE_OUTPUT_DIRECTORY = True
-
-# Following items are often useful when publishing
+# don't delete our .git submodule dir
+DELETE_OUTPUT_DIRECTORY = False
 
 DISQUS_SITENAME     = "The Egel's Blog"
 GOOGLE_ANALYTICS    = 'UA-26456669-2'
