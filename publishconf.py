@@ -13,8 +13,12 @@ from pelicanconf import *
 SITEURL = 'http://pelican.egel.pl'
 RELATIVE_URLS = False
 
-FEED_ALL_ATOM       = 'feeds/all.atom.xml'
-CATEGORY_FEED_ATOM  = 'feeds/%s.atom.xml'
+FEED_ALL_ATOM           = 'feeds/all.atom.xml'
+CATEGORY_FEED_ATOM      = 'feeds/category/%s.atom.xml'
+TAG_FEED_ATOM           = 'feeds/tag/%s.atom.xml'
+TRANSLATION_FEED_ATOM   = 'feeds/all-%s.atom.xml'
+AUTHOR_FEED_ATOM        = None
+AUTHOR_FEED_RSS         = None
 
 DELETE_OUTPUT_DIRECTORY = True
 

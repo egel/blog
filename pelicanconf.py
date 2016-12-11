@@ -155,16 +155,16 @@ AUTHOR = "Maciej Sypień"
 
 
 # Feed generation is usually not desired when developing
-FEED_ALL_ATOM           = 'feeds/all.atom.xml'
-CATEGORY_FEED_ATOM      = 'feeds/category/%s.atom.xml'
-TAG_FEED_ATOM           = 'feeds/tag/%s.atom.xml'
-TRANSLATION_FEED_ATOM   = 'feeds/all-%s.atom.xml'
-AUTHOR_FEED_ATOM        = None
-AUTHOR_FEED_RSS         = None
+#  FEED_ALL_ATOM           = 'feeds/all.atom.xml'
+#  CATEGORY_FEED_ATOM      = 'feeds/category/%s.atom.xml'
+#  TAG_FEED_ATOM           = 'feeds/tag/%s.atom.xml'
+#  TRANSLATION_FEED_ATOM   = 'feeds/all-%s.atom.xml'
+#  AUTHOR_FEED_ATOM        = None
+#  AUTHOR_FEED_RSS         = None
 
 
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+RELATIVE_URLS = True
 
