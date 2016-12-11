@@ -45,6 +45,9 @@ help:
 	@echo '   make clean                          remove the generated files         '
 	@echo '   make regenerate                     regenerate files upon modification '
 	@echo '   make publish                        generate using production settings '
+	@echo '   make publish                        generate using production settings '
+	@echo '                                       then commit and push to github     '
+	@echo '                                       automatically                      '
 	@echo '   make serve [PORT=8000]              serve site at http://localhost:8000'
 	@echo '   make serve-global [SERVER=0.0.0.0]  serve (as root) to $(SERVER):80    '
 	@echo '   make devserver [PORT=8000]          start/restart develop_server.sh    '
@@ -105,9 +108,7 @@ publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
 publish_github: publish
-	cd output
-	git add . && git commit -m "Update"
-	cd ..
+	cd output && git add -A && git commit -m "Update" && git push && cd ..
 
 ssh_upload: publish
 	scp -P $(SSH_PORT) -r $(OUTPUTDIR)/* $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)
