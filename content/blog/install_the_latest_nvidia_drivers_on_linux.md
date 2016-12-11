@@ -3,7 +3,7 @@ Date:     2015-11-02
 Status:   published
 Lang:     en
 Category: How to
-Tags:     linux, console
+Tags:     linux, terminal, console
 Author:   Maciej Sypień
 
 
@@ -11,11 +11,11 @@ Author:   Maciej Sypień
   ![Tmux]({filename}/images/terminal_icon.png)
 </div>
 
-And it's time that I had to face with reinstall of the Nvidia driver on my Mint
+The time has come that I had to face with reinstall of the Nvidia driver on my Mint
 17 distribution.
 
 Well, while using my distro, there appear couple of problems with "Nvidia proprietary drivers".
-As a pro Linux guy I pressed `ctrl`+`alt`+`F1`, and got a black screen with flashing cursor. YES! - I shouted immediately - the console not broke down for good - I sad to myself in mind.
+As a pro Linux guy (laugh),  I pressed `ctrl`+`alt`+`F1`, and got a black screen with flashing cursor. YES! - I shouted immediately - the console isn't broken for good - I sad to myself in mind.
 
 I red somewhere, that the problem could have something with the framebuffer. So I made few modifications to `/etc/default/grub`.
 
