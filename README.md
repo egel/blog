@@ -48,7 +48,7 @@ workon pelicanblog
 deactivate
 ```
 
-then run server to test (it works in backgroud)
+Then run server to test (it works in background)
 
 ```bash
 workon pelicanblog
@@ -58,8 +58,24 @@ workon pelicanblog
 or run tmux session
 
 ```bash
-./tmux-console.sh
+./tmux.sh
 ```
+
+## Publishing
+Update content of `publishconf.py` to suite your needs and then:
+
+> This process can be automated, but for now I prefer manual approach.
+
+```
+make publish  # that will clone output submodule, switch to master and generate output
+cd output
+git add .
+git commit -m "Update"
+cd ..
+git add output
+git commit -m "Upgrade: output submodule to latest version"
+```
+
 
 ## Development
 
