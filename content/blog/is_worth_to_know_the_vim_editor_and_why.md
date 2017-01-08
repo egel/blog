@@ -90,9 +90,8 @@ When you will work with servers, in most cases you will have opportunity to open
 
 I realize, that may sound a bit childish, but this childishness disappears from the face of people that watching you when you suddenly switching between dozen of terminal windows (ex.: tmux/vim). In this moment they might begin to believe and you can hear something like: "Ok, you have some skill" ;)
 
-<div class="videoWrapper">
-  <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/7KLlFhuFNkY" frameborder="0" allowfullscreen></iframe> -->
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/VZar4VSP0P0" frameborder="0" allowfullscreen></iframe>
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/VZar4VSP0P0" frameborder="0" allowfullscreen></iframe>
 </div>
 
 
