@@ -1,6 +1,11 @@
 # pelican
 # output/ # disabled due to using github with submodules for output
 
+
+# Editor
+.idea/
+*.iml
+
 # use simlink to global folder ~/.pelican-plugins
 plugins
 
