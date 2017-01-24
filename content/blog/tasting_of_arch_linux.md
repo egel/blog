@@ -141,13 +141,14 @@ Now we'll install additional useful stuff. You may or may not to install it, it'
 My **must have** list.
 ```shell
 sudo pacman -Syu
-sudo pacman -S gvim git tmux htop
+sudo pacman -S gvim git tmux htop jack2
 ```
 
 The list:
 
 -   For bash I usually install `bash-completion`.
 -   For checking hardware `lshw hwinfo`.
+-   For mini-jack support `jack2`
 -   For supporting different drives I install `exfat-utils dosfstools jfsutils ntfs-3g mtools` and for partitioning I like `gparted` and `gpart` for fixing drives.
 -   For graphics `gimp inkscape` and `imagemagick` for console operations.
 -   For FTP `filezilla`.
