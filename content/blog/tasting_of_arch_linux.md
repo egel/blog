@@ -55,7 +55,7 @@ In this part we will format our partitions and enable Linux SWAP:
 mksf.ext4 /dev/sda2
 mount /dev/sda2 /mnt
 mkswap /dev/sda1
-swapon /dev/sda2
+swapon /dev/sda1
 pacstrap /mnt base base-devel # most basic packages
 ```
 
