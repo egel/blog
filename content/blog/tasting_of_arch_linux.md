@@ -72,7 +72,7 @@ arch-chroot /mnt
 passwd root
 vi /etc/locale.gen    # uncoment all for you lang: en_US
 locale-gen
-ln -s /usr/share/zoneinfo/Europe/Berlin /etc/localtime
+ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 timedatectl set-ntp true
 hwclock --systohc
 echo vbox > /etc/hostname
