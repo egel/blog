@@ -13,7 +13,7 @@ git clone --recursive git@github.com:egel/blog.git
 Download plugins
 ```bash
 git clone --recursive https://github.com/getpelican/pelican-plugins ~/.pelican-plugins
-ln -s $HOME/.pelican-plugins $HOME/workspace/pelican-egel-blog/plugins
+ln -s $HOME/.pelican-plugins $HOME/workspace/blog/plugins
 ```
 
 
