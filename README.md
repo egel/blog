@@ -19,7 +19,7 @@ ln -s $HOME/.pelican-plugins $HOME/workspace/blog/plugins
 
 Before next move we need to fix python [InsecurePlatformWarning issue][issue-InsecurePlatformWarning]
 
-```bash
+```shell
 sudo apt-get install libffi-dev libssl-dev # Debian
 sudo pacman -S libffi # Arch
 ```
@@ -33,13 +33,17 @@ sudo apt-get install virtualenvwrapper
 # Arch
 sudo pacman -S python-pip python-setuptools python-virtualenv python-virtualenvwrapper
 sudo pacman -S python2-pip python2-setuptools python2-virtualenv python-virtualenvwrapper
+
+# OSX
+brew install python python3
+pip install virtualenvwrapper
 ```
 
 
 Set the environment
 
-```bash
-mkvirtualenv pelicanblog
+```shell
+mkvirtualenv --python=$(which python3) pelicanblog
 workon pelicanblog
 (pelicanblog) pip install --upgrade pip
 (pelicanblog) pip install setuptools
@@ -50,14 +54,14 @@ deactivate
 
 Then run server to test (it works in background)
 
-```bash
+```shell
 workon pelicanblog
 ./develop_server.py start
 ```
 
 or run tmux session
 
-```bash
+```shell
 ./tmux.sh
 ```
 
@@ -66,7 +70,7 @@ Update content of `publishconf.py` to suite your needs and then:
 
 > This process can be automated, but for now I prefer manual approach.
 
-```
+```shell
 make publish  # that will clone output submodule, switch to master and generate output
 cd output
 git add .
