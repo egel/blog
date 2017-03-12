@@ -104,7 +104,7 @@ server {
   access_log /var/log/nginx/blog.loc-access.log;
   error_log /var/log/nginx/blog.loc-error.log;
 
-  root /home/maciej/workspace/pelican-egel-blog/output/;
+  root /home/maciej/workspace/blog/output/;
 
   index index.html;
   autoindex off;
