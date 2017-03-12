@@ -1,4 +1,4 @@
-Title:		Install and configure dnsmasq on linux
+Title:		Install and configure dnsmasq on Linux
 Slug:			install-and-configure-dnsmasq-on-linux
 Date:			2016-11-05
 Status:	  Published
