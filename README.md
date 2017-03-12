@@ -48,15 +48,15 @@ workon pelicanblog
 (pelicanblog) pip install --upgrade pip
 (pelicanblog) pip install setuptools
 (pelicanblog) pip install requests[security]
-(pelicanblog) pip install -r requirements.txt --no-index --allow-external
-deactivate
+(pelicanblog) pip install -r requirements.txt
+(pelicanblog) deactivate
 ```
 
 Then run server to test (it works in background)
 
 ```shell
 workon pelicanblog
-./develop_server.py start
+(pelicanblog) ./develop_server.py start
 ```
 
 or run tmux session
