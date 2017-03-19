@@ -1,4 +1,5 @@
 Title:      Discover the Sublime Text 3 Beta
+Slug:       discover-the-sublime-text-3-beta
 Date:       2014-08-16 12:31
 Modified:   2015-10-01 19:30
 Status:     published
@@ -7,9 +8,11 @@ Tags:       text editor, sublime, gui
 Authors:    Maciej Sypień
 
 
+<!--
 <div class="intro-article-image-sm" markdown="1">
   ![Logo of Sublime Text 3]({filename}/images/Sublime_Text_Logo.png)
 </div>
+-->
 
 Sublime is just amazing text editor. I've loved it since I've taste it. However its uniqueness and some advantage in contrast with other GUI editors that is versatility of usage and huge staff of plug-ins supports user experience.
 
@@ -81,19 +84,20 @@ Instalation through Package Manager: Install Package > Less Syntax
 #### CoffeeScript
 Repository of plug-in: [CoffeeScript Sublime Plugin][25]
 
-    :::shell
-    $ cd ~/.config/sublime-text-3/Packages \
-      && rm -rf CoffeeScript \
-      && git clone https://github.com/Xavura/CoffeeScript-Sublime-Plugin.git CoffeeScript
-
+```shell
+cd ~/.config/sublime-text-3/Packages \
+  && rm -rf CoffeeScript \
+  && git clone https://github.com/Xavura/CoffeeScript-Sublime-Plugin.git CoffeeScript
+```
 
 #### Live Loader
 Repository of plug-in: [Github repo][26]
 
-    :::shell
-    $ cd ~/.config/sublime-text-3/Packages \
-      && rm -rf LiveReload \
-      && git clone -b devel https://github.com/dz0ny/LiveReload-sublimetext2.git LiveReload
+```shell
+cd ~/.config/sublime-text-3/Packages \
+  && rm -rf LiveReload \
+  && git clone -b devel https://github.com/dz0ny/LiveReload-sublimetext2.git LiveReload
+```
 
 This plug-in also be added as plug-in of your browser [LiveReload][27] and while
 saving file into Sublime the content will be automaticaly reloaded into browser.
@@ -162,11 +166,11 @@ To activate it go to `Preferences` > `Gruvbox Dark` and choose `gruvbox`.
 #### Color Scheme Selector
 The website of plug-in: <https://github.com/jugyo/SublimeColorSchemeSelector>
 
-    :::shell
-    $ cd ~/.config/sublime-text-3/Packages \
-      && rm -rf "ColorSchemeSelector" \
-      && git clone https://github.com/jugyo/SublimeColorSchemeSelector.git "ColorSchemeSelector"
-
+```shell
+cd ~/.config/sublime-text-3/Packages \
+  && rm -rf "ColorSchemeSelector" \
+  && git clone https://github.com/jugyo/SublimeColorSchemeSelector.git "ColorSchemeSelector"
+```
 
 
 ### Configuration
@@ -175,29 +179,29 @@ Here I paste my configurations of Sublime editor, but it can become outdated in 
 
 #### Key Bindings - User
 
-    :::json
-    [
-      { "keys": ["alt+up"], "command": "swap_line_up" },
-      { "keys": ["alt+down"], "command": "swap_line_down" },
+```javascript
+[
+  { "keys": ["alt+up"], "command": "swap_line_up" },
+  { "keys": ["alt+down"], "command": "swap_line_down" },
 
-      { "keys": ["ctrl+shift+up"], "command": "duplicate_line" },
-      { "keys": ["ctrl+shift+down"], "command": "duplicate_line" },
+  { "keys": ["ctrl+shift+up"], "command": "duplicate_line" },
+  { "keys": ["ctrl+shift+down"], "command": "duplicate_line" },
 
-      { "keys": ["ctrl+shift+x"], "command": "swap_case" },
+  { "keys": ["ctrl+shift+x"], "command": "swap_case" },
 
-      { "keys": ["ctrl+f5"], "command": "refresh_folder_list"},
+  { "keys": ["ctrl+f5"], "command": "refresh_folder_list"},
 
-      // Quick rename of current file (require SideBar Enhancements plug-in)
-      { "keys": ["f2"], "command": "side_bar_move" },
+  // Quick rename of current file (require SideBar Enhancements plug-in)
+  { "keys": ["f2"], "command": "side_bar_move" },
 
-      // Toggle side bar
-      { "keys": ["f9"], "command": "toggle_side_bar" }
-    ]
-
+  // Toggle side bar
+  { "keys": ["f9"], "command": "toggle_side_bar" }
+]
+```
 
 #### Settings - User
 
-```json
+```javascript
 {
   // Colors + Themes
   "theme": "Soda Dark 3.sublime-theme",
