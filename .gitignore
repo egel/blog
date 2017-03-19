@@ -7,10 +7,13 @@
 *.iml
 
 # use simlink to global folder ~/.pelican-plugins
-plugins
+pelican-plugins
 
 # use simlink to global folder ~/.pelican-themes
-theme/
+pelican-themes
+
+# local additional themes
+themes/
 
 # Python
 *.pid
