@@ -18,7 +18,9 @@ OUTPUT_PATH     = 'output/'
 
 STATIC_PATHS        = ['extras', 'images', 'downloads']
 ARTICLE_PATHS       = ['blog']
+ARTICLE_EXCLUDES    = []
 PAGE_PATHS          = ['pages']
+PAGE_EXCLUDES       = []
 ARCHIVES_URL        = "archives.html"
 READING_LIST_URL    = "reading-list.html"
 FAVICON             = "extras/favicon.png"
@@ -122,19 +124,30 @@ SHOW_ARTICLE_AUTHOR = False
 SHOW_ARTICLE_READTIME = True
 RELATED_POSTS_TEXT = "Few related posts:"
 
-THEME = "theme/egelance"
+THEME = "./themes/egelance"
 
-PLUGIN_PATHS = [ 'plugins' ]
+PLUGIN_PATHS = [ './pelican-plugins' ]
 PLUGINS = [
-    'related_posts',
-    'tag_cloud',
     'goodreads_activity',
-    'simple_footnotes',
     'pelican_gist',
-    'post_stats'
-] # 'better_codeblock_line_numbering', 'tipue_search',
+    'post_stats',
+    'related_posts',
+    'simple_footnotes',
+    'tag_cloud'
+]
+# 'better_codeblock_line_numbering', 'tipue_search',
 
-MD_EXTENSIONS = [ 'codehilite(css_class=highlight, linenums=True)', 'extra'] # 'fenced_code',
+MARKDOWN = {
+    'extension_configs': {
+        'markdown.extensions.codehilite': {
+            'css_class': 'highlight',
+            'linenums': True
+        },
+        'markdown.extensions.extra': {},
+        'markdown.extensions.meta': {},
+    },
+    'output_format': 'html5',
+}
 
 DIRECT_TEMPLATES = (('index', 'tags', 'categories', 'archives', 'reading-list', 'search'))
 
