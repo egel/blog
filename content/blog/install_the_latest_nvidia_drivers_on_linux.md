@@ -6,10 +6,11 @@ Category: How to
 Tags:     linux, terminal, console
 Author:   Maciej Sypień
 
-
+<!--
 <div class="intro-article-image-sm" markdown="1">
   ![Tmux]({filename}/images/terminal_icon.png)
 </div>
+-->
 
 The time has come that I had to face with reinstall of the Nvidia driver on my Mint
 17 distribution.

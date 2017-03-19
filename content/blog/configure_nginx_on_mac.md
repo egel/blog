@@ -5,10 +5,11 @@ Category:   How to
 Tags:       osx, nginx
 Authors:    Maciej Sypień
 
-
+<!--
 <div class="intro-article-image-sm" markdown="1">
   ![Logo of Sublime Text 3]({filename}/images/nginx_logo.png)
 </div>
+-->
 
 If you store all your configurations for nginx servers on your Mac into single
 file... you probably can do it better.
@@ -36,7 +37,10 @@ Now some info about important file locations:
  - *default.conf* and *default-ssl.conf* to `/usr/local/etc/nginx/sites-available`
  - homebrew.mxcl.nginx.plist to `/Library/LaunchDaemons/`
 
+For log files you can use `/usr/local/var/log/nginx` directory. For example if you have frontend configuration for your static blog configuration `blog.loc.conf`.
+
 ### Improve nginx.conf file
+If you use Linux most the time you will feel more familiar with below configuration, just because it try to be very same as Linux's version of nginx implement that.
 
 Probably the most important part of this snippet is last two `include` methods.
 
@@ -47,7 +51,7 @@ now you can put separate configurations for your server configurations.
 type: `sudo mkdir -p /Library/Logs/nginx`
 
 ```nginx
-#user  nobody;
+user www-data staff;
 worker_processes 1;
 
 error_log /Library/Logs/nginx/error.log;

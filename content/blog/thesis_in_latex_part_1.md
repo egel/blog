@@ -1,4 +1,5 @@
 Title:      Thesis in LaTeX - part 1
+Slug:       thesis-in-latex-part-1
 Date:       2014-10-12 19:00:05
 Lang:       en
 Status:     published
@@ -7,9 +8,9 @@ Tags:       latex, university
 <!-- Summary: -->
 
 
-<div class="intro-article-image-md" markdown="1">
-  ![LaTeX logo]({filename}/images/LaTeX_logo.png)
-</div>
+<!-- <div class="intro-article-image-md" markdown="1"> -->
+  <!-- ![LaTeX logo]({filename}/images/LaTeX_logo.png) -->
+<!-- </div> -->
 
 In one simple sentence, LaTeX it is an extension of TeX language, although TeX
 in real life is a collation of macros. This is not a official definition, rather

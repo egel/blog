@@ -1,14 +1,16 @@
 Title:      Thesis in LaTeX - part 2
+Slug:       thesis-in-latex-part-2
 Date:       2014-10-19 12:21:49
 Lang:       en
 Status:     published
 Category:   Self improvement
 Tags:       latex, university
 
-
+<!--
 <div class="intro-article-image-md" markdown="1">
   ![LaTeX logo]({filename}/images/LaTeX_logo.png)
 </div>
+-->
 
 I assume, that at the moment of reading this second part of writing thesis in
 LaTeX, you have already red the previous [part 1]({filename}thesis_in_latex_part_1.md)

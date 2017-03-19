@@ -6,10 +6,11 @@ Category:   How to
 Tags:       linux, install
 Authors:    Maciej Sypień
 
-
+<!--
 <div class="intro-article-image-sm" markdown="1">
   ![Logo of Sublime Text 3]({filename}/images/linux_logo_pinguin.jpg)
 </div>
+-->
 
 This should be obvious task for average Linux user, but there are hundreds of
 thousands methods how to install program from archive file like `.tar`,

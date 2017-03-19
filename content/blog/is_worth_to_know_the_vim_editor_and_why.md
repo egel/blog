@@ -5,12 +5,15 @@ Status:     published
 Category:   Self improvement
 Tags:       vim, text-editor
 Authors:    Maciej Sypień
-<!-- Summary:    I'll try to gather all my current experience about writing the code, also writing in many text editors and finally express my opinion that is that worth to learn Vi/Vim.  -->
+<!--
+Summary:    I'll try to gather all my current experience about writing the code, also writing in many text editors and finally express my opinion that is that worth to learn Vi/Vim.
+-->
 
-
+<!--
 <div class="intro-article-image-sm" markdown="1">
   ![Logo of Vim]({filename}/images/Vim_logo.png)
 </div>
+-->
 
 This topic has been long on my mind, but in the end I want to share with you with my reflections on the one of the earliest text editors. Yes, I am talking about Vi/Vim.
 

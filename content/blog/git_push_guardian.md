@@ -4,12 +4,15 @@ Lang:       en
 Status:     published
 Category:   Self improvement
 Tags:       git, terminal
-<!-- Summary: -->
+<!--
+Summary:
+-->
 
-
+<!--
 <div class="intro-article-image-md" markdown="1">
   ![LaTeX logo]({filename}/images/git_logo-mini.png)
 </div>
+-->
 
 Recently I wondering how to improve my workflow with Git. I came across the Web
 and found some article which pointed on git hooks and were introduced in

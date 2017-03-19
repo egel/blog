@@ -5,15 +5,14 @@ Category:   Diary
 Tags:       angularjs, nginx, apiary, frontend
 Authors:    Maciej Sypień
 
-
+<!--
 <div class="intro-article-image-sm" markdown="1">
   ![Logo of Sublime Text 3]({filename}/images/nginx_logo.png)
 </div>
+-->
 
 Recently I have been working on some cloud project with my coworkers. We used
- [AngularJS][angularjs-webpage] as frontend framework and
-[Apiary][apiary-webpage] as a backend bridge for RESTful API, while the real
-backend was being built.
+ [AngularJS][angularjs-webpage] as frontend framework and [Apiary][apiary-webpage] as a backend bridge for RESTful API, while the real backend was being built.
 
 The main gole for proper nginx configuration was to serve `*.example.dev`
 domains, but with some exceptions (restrictions) for subdomains:

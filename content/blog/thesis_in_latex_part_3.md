@@ -1,12 +1,15 @@
 Title:      Thesis in LaTeX - part 3
+Slug:       thesis-in-latex-part-3
 Date:       2015-04-06
 Status:     published
 Category:   Self improvement
 Tags:       latex, university
 
+<!--
 <div class="intro-article-image-md" markdown="1">
   ![LaTeX logo]({filename}/images/LaTeX_logo.png)
 </div>
+-->
 
 In this article I will try to explain how to prepare front page for our thesis in LaTeX. I&nbsp;will also say something about good practices in writing and how to proper format the content into LaTeX files using the built-in commands. Furthermore I will show you how to use other commands provided by additional packages for LaTeX.
 
