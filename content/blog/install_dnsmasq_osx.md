@@ -1,7 +1,7 @@
 Title:		Install and configure dnsmasq on Mac OSX
 Slug:			install-and-configure-dnsmasq-on-mac-osx
 Date:			2016-11-05
-Status:	  Published
+Status:	  Draft
 Category: How to
 Tags:	    osx, dnsmasq, terminal
 Authors:	Maciej Sypień

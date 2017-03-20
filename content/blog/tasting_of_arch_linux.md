@@ -8,10 +8,11 @@ Tags:			linux, arch, terminal
 Authors:	Maciej Sypień
 Summary:  Whole process of installation and my reflections upon the Arch Linux.
 
+<!--
 <div class="intro-article-image-sm" markdown="1">
   ![Linux logo]({filename}/images/archlinux_logo.png)
 </div>
-
+-->
 
 I have to admit that installation of Arch Linux can be difficult for many people, but that exactly is real fun!
 
