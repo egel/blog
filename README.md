@@ -75,6 +75,7 @@ make publish  # that will clone output submodule, switch to master and generate 
 cd output
 git add .
 git commit -m "Update"
+git push
 cd ..
 git add output
 git commit -m "Upgrade: output submodule to latest version"
