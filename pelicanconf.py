@@ -8,7 +8,6 @@ SITENAME        = "The Egel's Blog"
 SITE_SLOGAN     = "Do more in less time"
 SITE_SUBSLOGAN  = "Simplicity and clarity of the implementation"
 SITEURL         = 'http://blog.loc' # local develop
-#SITEURL         = 'http://blog.egel.pl' # public
 TIMEZONE        = 'Europe/Warsaw'
 DEFAULT_LANG    = 'en'
 CURRENT_DATE    = datetime.datetime.now()
@@ -135,6 +134,17 @@ PLUGINS = [
     'simple_footnotes',
     'tag_cloud'
 ]
+
+# minify
+MINIFY = {
+  'remove_comments': True,
+  'remove_all_empty_space': True,
+  'remove_optional_attribute_quotes': False
+}
+
+PLUGINS.append('minify')
+
+
 # 'better_codeblock_line_numbering', 'tipue_search',
 
 MARKDOWN = {
