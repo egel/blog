@@ -47,7 +47,7 @@ exit 1
 ```
 
 #### Installation
-Save above snippet save as `.git/hooks/pre-commit` into your git repository and **do not forget to make the file executable** `chmod +x .git/hooks/pre-commit`.
+Save above snippet as `.git/hooks/pre-commit` into your git repository and **do not forget to make the file executable** `chmod +x .git/hooks/pre-commit`.
 
 [github]: https://github.com
 
