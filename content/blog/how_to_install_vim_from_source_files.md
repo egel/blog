@@ -1,17 +1,30 @@
 Title:      How to install Vim from the source files
 Date:       2016-10-10
+Modified:   2017-05-03
 Status:     published
 Category:   How to
-Tags:       text-editor, latex, install
+Tags:       text-editor, vim, linux, source-files, ubuntu
 Authors:    Maciej Sypień
 Summary:    I will show you how to compile and install vim from source files.
             You will see how simple it can be.
 
-You may wonder why to install vim from source files if there are precompiled, ready to install packages available in your package managers. Yeah that is true, but there are also few "however".
+If you reading this article you're probably a Vim user or somebody who has lost. If you're a Vim lady or Vim guy that's great, because I will will say something how to compile your new Vim instance, directly from the source files.
+
+You may wonder:
+
+> "Why to install Vim from source files if there are precompiled, ready to install packages available in your package managers"
+
+Yeah, that is good question, but there are also few other phrases which might say "However...".
 
 If you compile and install from the source, the program is then the best suited to your system its software and also for the hardware. Moreover you can also use the latest versions, especially those not avaiable in the package managers.
 
 There are also some light and dark side of doing it from the source, but for vim I think is the best possible way to have blazing fast text editor.
+
+### One click installer
+
+For Linux distributions with `apt-get` package magager (basically all based on Debian, but other should also works) I've provided a simple one click installer.
+
+<!-- [[ gist egel:74ecc84c8d6ccaf697f63e7202585ab1 ]] -->
 
 ### Before you start
 We need to check some related libraries and languages that vim or vim's plugins may require to work properly. So we check them:
@@ -21,11 +34,21 @@ We need to check some related libraries and languages that vim or vim's plugins 
 *   Perl
 *   Python v2 & v3
 
+> Scripts that should work for Ubuntu 16.04 might look like i.e.:
+>
+>     :::bash
+>     sudo apt-get update -y
+>     sudo apt-get remove -y --purge vim vim-runtime vim-gnome vim-tiny vim-common vim-gui-common
+>     sudo apt-get install -y liblua5.1-dev luajit libluajit-5.1
+>     sudo apt-get install -y python-dev python3-dev ruby-dev libperl-dev mercurial libncurses5-dev libgnome2-dev libgnomeui-dev libgtk2.0-dev libatk1.0-dev libbonoboui2-dev libcairo2-dev libx11-dev libxpm-dev libxt-dev
+>
+> Or you can use this [automatic script installer for the latest version of Vim for Linux Ubuntu 16.04](https://gist.github.com/egel/74ecc84c8d6ccaf697f63e7202585ab1) (Vim8, for the time of writing this article)
+
 The results of checking I present below, because I think that it might be helpful for many beginners as I was once ;)
 
 ```bash
 $ lua -v
-Lua 5.2.3  Copyright (C) 1994-2013 Lua.org, PUC-Rio
+Lua 5.1.3  Copyright (C) 1994-2013 Lua.org, PUC-Rio
 ```
 
 ```bash
@@ -66,27 +89,27 @@ $ which python3
 
 
 ### Installation for linux
-The installation is simple. Probably the scariest thing might be vim's configuration flags, but it is also very clear.
+The installation is simple. Probably the scariest thing while vim installation is the configuration of flags, but this topic is also very clear.
 
-The flags are very simple. The hardest to understand might be python `--with-python-config-dir` because the config directory might be different depends on system.
+The flags are simple, but the hardest one might be `--with-python-config-dir`, because the config directory can different depends on system.
 
-To check it run:
+To check it, run:
 
 ```bash
-$ find /usr/lib/python2.7 -type d -name "config*"
-/usr/lib/python2.7/dist-packages/configobj-4.7.2.egg-info
-/usr/lib/python2.7/dist-packages/configglue-1.1.2.egg-info
-/usr/lib/python2.7/dist-packages/configglue
-/usr/lib/python2.7/config-x86_64-linux-gnu
+$ python-config --configdir
 ```
 
-I my case they are:
+```bash
+$ python3-config --configdir
+```
+
+I my case it they ware:
 
 *   for python 2: `/usr/lib/python2.7/config-x86_64-linux-gnu`
 *   for python 3: `/usr/lib/python3.4/config-3.4m-x86_64-linux-gnu`
 
 
-The downloaded version also matters, so if downloaded version is v7.4 you write `vim74` or v8.0 you put `vim80`. You need to correct this path with relevant `VIMRUNTIMEDIR` configuration variable.
+The downloaded version also matters, so if downloaded version is v7.4 you write `vim74` or v8.0 you put `vim80`. You need to correct this path with relevant `VIMRUNTIMEDIR` configuration variable. In the script below it's already set to `vim80`.
 
 > If you do not know which is the latest version (tag) from vim's github repository, you can check it by downloading repo, enter into it and run `$ git describe --abbrev=0 --tags` which checks the latest tag.
 
@@ -96,20 +119,23 @@ cd /tmp
 git clone https://github.com/vim/vim
 cd vim/
 ./configure --with-features=huge \
+            --enable-multibyte \
             --enable-gui=auto \
+            --enable-gtk2-check \
+            --enable-gtk3-check \
+            --enable-gnome-check \
             --enable-cscope \
             --enable-largefile \
-            --enable-pythoninterp \
-            --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu \
-            --enable-python3interp \
-            --with-python3-config-dir=/usr/lib/python3.4/config-3.4m-x86_64-linux-gnu \
+            --enable-pythoninterp=dynamic --with-python-config-dir=$(python-config --configdir) \
+            --enable-python3interp=dynamic --with-python3-config-dir=$(python3-config --configdir) \
             --enable-perlinterp \
-            --enable-rubyinterp \
-            --enable-luainterp \
+            --enable-rubyinterp=dynamic \
+            --enable-luainterp=dynamic \
             --with-luajit \
-            --enable-fail-if-missing \
+            --with-x \
             --prefix=/usr \
-            --with-compiledby="Maciej Sypień <maciejsypien@gmail.com>"
+            --with-compiledby="Maciej Sypień <maciejsypien@gmail.com>" \
+            --enable-fail-if-missing
 make VIMRUNTIMEDIR=/usr/share/vim/vim80
 sudo make install
 ```
@@ -166,5 +192,5 @@ Compilation: gcc -c -I. -Iproto -DHAVE_CONFIG_H -DFEAT_GUI_GTK  -pthread -I/usr/
 Linking: gcc   -L. -fstack-protector -rdynamic -Wl,-export-dynamic -Wl,-E   -L/usr/local/lib -Wl,--as-needed -o vim   -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgio-2.0 -lpangoft2-1.0 -lpangocairo-1.0 -lgdk_pixbuf-2.0 -lcairo -lpango-1.0 -lfontconfig -lgobject-2.0 -lglib-2.0 -lfreetype   -lSM -lICE -lXpm -lXt -lX11 -lXdmcp -lSM -lICE  -lm -ltinfo -lnsl  -lselinux   -ldl  -L/usr/lib/x86_64-linux-gnu -lluajit-5.1 -Wl,-E  -fstack-protector -L/usr/local/lib  -L/usr/lib/perl/5.18/CORE -lperl -ldl -lm -lpthread -lcrypt    -Wl,-R/home/maciej/.rvm/rubies/ruby-2.2.1/lib -L/home/maciej/.rvm/rubies/ruby-2.2.1/lib -lruby -lpthread -ldl -lcrypt -lm  -L/home/maciej/.rvm/rubies/ruby-2.2.1/lib
 ```
 
-Awesome, now you are ready to discover the vim! Good luck hacker! See you on the grid ;)
+Awesome! Now you are ready to discover the Vim! Good luck hacker! See you on the grid ;)
 
